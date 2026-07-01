@@ -114,7 +114,8 @@ Status: 🚧 Em andamento
 - [ ] Bloquear inventário antes do login
 - [ ] Bloquear interações com blocos e entidades antes do login
 - [ ] Bloquear dano antes do login
-- [ ] Desativar Pokémon, NPCs, economia e gameplay no Auth Lobby
+- [x] Impedir spawn e carregamento de Pokémon no Auth Lobby
+- [ ] Desativar NPCs, economia e demais gameplays no Auth Lobby
 
 ### Seletor de servidores
 

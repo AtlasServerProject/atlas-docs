@@ -71,3 +71,15 @@ Spawn exato obrigatório no Auth Lobby para todas as conexões.
 v1.13.0
 
 Proteção de construção do Auth Lobby com exceção exclusiva para Dono e Admin.
+
+---
+
+v1.14.0
+
+Primeira integração com eventos de spawn do Cobblemon; substituída após o teste revelar que comandos ignoravam o cancelamento.
+
+---
+
+v1.14.1
+
+Bloqueio absoluto de entidades Pokémon no Auth Lobby, validado contra spawn por comando.
