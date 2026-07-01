@@ -65,3 +65,9 @@ Título de entrada compacto e definição do spawn global do Auth Lobby.
 v1.12.2
 
 Spawn exato obrigatório no Auth Lobby para todas as conexões.
+
+---
+
+v1.13.0
+
+Proteção de construção do Auth Lobby com exceção exclusiva para Dono e Admin.

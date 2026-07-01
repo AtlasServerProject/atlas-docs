@@ -109,7 +109,8 @@ Status: 🚧 Em andamento
 
 - [x] Enviar todo jogador ao Auth Lobby ao entrar
 - [x] Manter o jogador no Auth Lobby após autenticar
-- [ ] Bloquear quebra e colocação de blocos antes do login
+- [x] Bloquear quebra e colocação de blocos para jogadores comuns
+- [x] Liberar construção somente para Dono/Owner/Admin/ADM
 - [ ] Bloquear inventário antes do login
 - [ ] Bloquear interações com blocos e entidades antes do login
 - [ ] Bloquear dano antes do login
