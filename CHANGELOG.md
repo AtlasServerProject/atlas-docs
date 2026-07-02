@@ -143,3 +143,15 @@ Instalado o Lobby Emerald como `atlas:emerald` e adicionado o seletor por bússo
 v1.17.1
 
 Corrigido o destino do Lobby Emerald para `975.5 179 1573.5`, orientado para leste.
+
+---
+
+v1.18.0
+
+Primeira implementação da proteção de queda e whitelist de Pokémon no Lobby Emerald; substituída após o teste revelar resolução incorreta do mundo durante eventos de spawn.
+
+---
+
+v1.18.1
+
+Corrigida a resolução da dimensão nos eventos do Cobblemon. O Lobby Emerald permite a escolha do inicial, bloqueia dano de queda e aceita somente espécies fracas explicitamente aprovadas.

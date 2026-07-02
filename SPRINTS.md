@@ -134,6 +134,11 @@ Status: 🚧 Em andamento
 ### Lobby Emerald
 
 - [ ] Proteger o mapa contra alterações não autorizadas
+- [x] Bloquear dano de queda no Lobby Emerald
+- [x] Permitir escolha do Pokémon inicial no Lobby Emerald
+- [x] Restringir spawns a Pokémon fracos de rotas iniciais
+- [x] Bloquear Pokémon especiais por whitelist de espécies
+- [ ] Validar em jogo o spawn natural de espécies permitidas
 - [x] Implementar `/spawn` para retornar ao Hub central do Atlas
 - [x] Restringir `/spawn` a jogadores autenticados
 - [ ] Validar em jogo o retorno do Emerald ao Hub com `/spawn`

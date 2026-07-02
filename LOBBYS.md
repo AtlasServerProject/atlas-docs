@@ -82,6 +82,23 @@ contém apenas o Lobby Emerald. A bússola não pode ser movida ou descartada, �
 removida ao entrar no Emerald e restaurada automaticamente ao retornar ao Auth
 Lobby.
 
+Jogadores não recebem dano de queda no Lobby Emerald. Diferente do Auth Lobby,
+o Emerald permite que cada jogador escolha seu Pokémon inicial.
+
+Os Pokémon selvagens do lobby seguem uma whitelist de espécies fracas de rotas
+iniciais. Atualmente são permitidos:
+
+```text
+Bidoof, Bunnelby, Caterpie, Fletchling, Goldeen, Hoothoot, Lechonk,
+Lillipup, Magikarp, Patrat, Pidgey, Pidove, Pikipek, Rattata,
+Rookidee, Sentret, Skwovet, Starly, Tarountula, Weedle, Wurmple,
+Yungoos e Zigzagoon.
+```
+
+Qualquer espécie fora da lista é cancelada antes do spawn e removida caso seja
+carregada de dados persistidos. Com isso, lendários, míticos, Ultra Beasts,
+Paradoxos e demais Pokémon especiais não podem permanecer no Lobby Emerald.
+
 O comando `/spawn` levará o jogador autenticado de volta ao Hub central do
 Atlas. No lançamento, esse destino é o spawn do Auth Lobby, onde fica o seletor
 de servidores. Assim, um jogador que estiver no Emerald poderá retornar ao Hub
