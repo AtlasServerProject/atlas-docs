@@ -137,3 +137,9 @@ Refinado o limitador para considerar cinco falhas dentro de uma janela móvel de
 v1.17.0
 
 Instalado o Lobby Emerald como `atlas:emerald` e adicionado o seletor por bússola com entrega pós-login, proteção do item, menu exclusivo do Emerald e restauração automática no Auth Lobby.
+
+---
+
+v1.17.1
+
+Corrigido o destino do Lobby Emerald para `975.5 179 1573.5`, orientado para leste.

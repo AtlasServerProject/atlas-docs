@@ -67,9 +67,10 @@ O mapa está instalado como a dimensão `atlas:emerald`. O seletor envia o jogad
 para o centro do spawn original do mapa:
 
 ```text
-X: 988.5
-Y: 176
+X: 975.5
+Y: 179
 Z: 1573.5
+Orientação: leste (-90°)
 ```
 
 Fora dos chunks existentes, a dimensão utiliza geração vazia para impedir a
