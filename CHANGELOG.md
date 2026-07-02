@@ -101,3 +101,9 @@ Proteção total contra dano antes da autenticação e bloqueio de dano de queda
 v1.14.3
 
 Ordenação determinística do TAB pela prioridade dos cargos, mantendo Dono, ADM, MOD e SUP acima de VIPs e Players.
+
+---
+
+v1.14.4
+
+Bloqueio autoritativo da escolha de Pokémon inicial no Auth Lobby antes que o Cobblemon grave a escolha ou entregue o Pokémon.

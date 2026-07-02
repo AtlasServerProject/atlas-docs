@@ -117,7 +117,8 @@ Status: 🚧 Em andamento
 - [x] Bloquear todo dano antes do login
 - [x] Bloquear dano de queda de jogadores dentro do Auth Lobby
 - [x] Impedir spawn e carregamento de Pokémon no Auth Lobby
-- [ ] Impedir escolha e recebimento de Pokémon inicial no Auth Lobby
+- [x] Impedir escolha e recebimento de Pokémon inicial no Auth Lobby
+- [ ] Validar em jogo a tentativa de escolher um inicial no Auth Lobby
 - [ ] Desativar NPCs, economia e demais gameplays no Auth Lobby
 
 ### Seletor de servidores
