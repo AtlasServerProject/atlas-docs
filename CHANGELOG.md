@@ -89,3 +89,9 @@ Bloqueio absoluto de entidades Pokémon no Auth Lobby, validado contra spawn por
 Documentação operacional
 
 Adicionada a referência dos comandos `sudo playit status` e `sudo playit attach`, incluindo a consulta do endereço externo e a validação dos serviços necessários.
+
+---
+
+v1.14.2
+
+Proteção total contra dano antes da autenticação e bloqueio de dano de queda no Auth Lobby. Os chunks existentes do mapa também foram convertidos para o bioma `minecraft:the_void`.

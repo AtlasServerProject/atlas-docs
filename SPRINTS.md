@@ -99,6 +99,7 @@ Status: 🚧 Em andamento
 - [x] Criar mensagens de boas-vindas do Atlas Cobblemon
 - [x] Verificar mensagens e command blocks nos chunks
 - [x] Limpar dados legados de jogadores e Cobblemon
+- [x] Converter os biomas dos chunks existentes do Auth Lobby para `minecraft:the_void`
 - [x] Instalar o Auth Lobby como mundo inicial
 - [ ] Instalar o Lobby Emerald como mundo selecionável
 - [x] Definir o spawn global do Auth Lobby
@@ -113,8 +114,10 @@ Status: 🚧 Em andamento
 - [x] Liberar construção somente para Dono/Owner/Admin/ADM
 - [ ] Bloquear inventário antes do login
 - [ ] Bloquear interações com blocos e entidades antes do login
-- [ ] Bloquear dano antes do login
+- [x] Bloquear todo dano antes do login
+- [x] Bloquear dano de queda de jogadores dentro do Auth Lobby
 - [x] Impedir spawn e carregamento de Pokémon no Auth Lobby
+- [ ] Impedir escolha e recebimento de Pokémon inicial no Auth Lobby
 - [ ] Desativar NPCs, economia e demais gameplays no Auth Lobby
 
 ### Seletor de servidores
@@ -129,9 +132,16 @@ Status: 🚧 Em andamento
 ### Lobby Emerald
 
 - [ ] Proteger o mapa contra alterações não autorizadas
+- [ ] Implementar `/spawn` para retornar ao spawn do lobby atual
+- [ ] Permitir que `/spawn` retorne jogadores de áreas jogáveis ao hub correspondente
 - [ ] Preparar acesso ao Survival Emerald
 - [ ] Reservar integração para NPCs, crates, rankings e tutorial
 - [ ] Reservar integração para scoreboard e BossBar
+
+### Hierarquia visual
+
+- [ ] Ordenar o TAB por `Dono > ADM > MOD > SUP > VIPs > Players`
+- [ ] Garantir que nenhum Player ou VIP apareça acima da Staff
 
 ### Entrega
 
