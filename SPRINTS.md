@@ -133,8 +133,9 @@ Status: 🚧 Em andamento
 ### Lobby Emerald
 
 - [ ] Proteger o mapa contra alterações não autorizadas
-- [ ] Implementar `/spawn` para retornar ao spawn do lobby atual
-- [ ] Permitir que `/spawn` retorne jogadores de áreas jogáveis ao hub correspondente
+- [x] Implementar `/spawn` para retornar ao Hub central do Atlas
+- [x] Restringir `/spawn` a jogadores autenticados
+- [ ] Validar o retorno do Emerald ao Hub após a instalação do Lobby Emerald
 - [ ] Preparar acesso ao Survival Emerald
 - [ ] Reservar integração para NPCs, crates, rankings e tutorial
 - [ ] Reservar integração para scoreboard e BossBar

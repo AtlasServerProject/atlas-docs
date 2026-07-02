@@ -107,3 +107,9 @@ Ordenação determinística do TAB pela prioridade dos cargos, mantendo Dono, AD
 v1.14.4
 
 Bloqueio autoritativo da escolha de Pokémon inicial no Auth Lobby antes que o Cobblemon grave a escolha ou entregue o Pokémon.
+
+---
+
+v1.15.0
+
+Adicionado `/spawn` para jogadores autenticados retornarem ao Hub central e ao seletor de servidores.

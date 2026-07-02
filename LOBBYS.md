@@ -63,10 +63,10 @@ O Lobby Emerald será o hub do primeiro servidor do Atlas. Ele concentrará aces
 ao Survival Emerald, NPCs, crates, rankings, tutorial, loja, eventos, scoreboard
 e navegação.
 
-O comando `/spawn` levará o jogador ao spawn do hub correspondente ao servidor
-em que ele estiver. No Emerald, por exemplo, o jogador poderá sair do Survival
-Emerald e retornar ao Lobby Emerald. O comando não deve ignorar a autenticação
-nem transportar silenciosamente o jogador entre servidores diferentes.
+O comando `/spawn` levará o jogador autenticado de volta ao Hub central do
+Atlas. No lançamento, esse destino é o spawn do Auth Lobby, onde fica o seletor
+de servidores. Assim, um jogador que estiver no Emerald poderá retornar ao Hub
+e escolher novamente seu destino. O comando nunca ignora a autenticação.
 
 ## Hierarquia no TAB
 
