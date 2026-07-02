@@ -35,7 +35,7 @@ Versão final: `v1.4.0`
 
 ## Sprint 3 — Authentication
 
-Status: 🚧 Em andamento
+Status: ✅ Concluída
 
 ### Fundação
 
@@ -119,7 +119,12 @@ Status: 🚧 Em andamento
 - [x] Impedir spawn e carregamento de Pokémon no Auth Lobby
 - [x] Impedir escolha e recebimento de Pokémon inicial no Auth Lobby
 - [x] Validar em jogo a tentativa de escolher um inicial no Auth Lobby
-- [ ] Desativar NPCs, economia e demais gameplays no Auth Lobby
+
+### Gameplay do Auth Lobby
+
+- [ ] Desativar NPCs
+- [ ] Desativar economia
+- [ ] Desativar demais gameplays
 
 ### Seletor de servidores
 
@@ -129,7 +134,10 @@ Status: 🚧 Em andamento
 - [x] Exibir inicialmente apenas o servidor Emerald
 - [x] Teleportar para o Lobby Emerald após a seleção
 - [x] Restaurar a bússola ao retornar ao Auth Lobby
-- [ ] Validar visualmente a bússola e o menu com um jogador autenticado
+- [ ] Preparar arquitetura para Sword
+- [ ] Preparar arquitetura para Shield
+- [x] Restaurar a bússola ao retornar ao Auth Lobby
+- [x] Validar visualmente a bússola e o menu com um jogador autenticado
 
 ### Lobby Emerald
 
@@ -143,8 +151,12 @@ Status: 🚧 Em andamento
 - [x] Restringir `/spawn` a jogadores autenticados
 - [ ] Validar em jogo o retorno do Emerald ao Hub com `/spawn`
 - [ ] Preparar acesso ao Survival Emerald
-- [ ] Reservar integração para NPCs, crates, rankings e tutorial
-- [ ] Reservar integração para scoreboard e BossBar
+- [ ] Implementar NPCs
+- [ ] Implementar tutorial
+- [ ] Implementar rankings
+- [ ] Implementar crates
+- [ ] Implementar BossBar
+- [ ] Implementar scoreboard
 
 ### Hierarquia visual
 
@@ -162,7 +174,25 @@ Status: 🚧 Em andamento
 
 ---
 
-## Sprint 5 — Homes
+## Sprint 5 — Gameplay Rules
+
+Status: ⏳ Planejada
+
+Objetivo: padronizar toda a experiência PvE.
+
+- [ ] Desativar PvP
+- [ ] Desativar fome
+- [ ] Desativar dano de queda
+- [ ] Implementar regras por mundo
+- [ ] Proteger os lobbys
+- [ ] Definir limites automáticos dos mapas
+- [ ] Teleportar automaticamente ao sair da área
+- [ ] Proteger contra o Void
+- [ ] Preparar exceções para arenas futuras
+
+---
+
+## Sprint 6 — Home System
 
 Status: ⏳ Planejada
 
@@ -173,21 +203,298 @@ Status: ⏳ Planejada
 - [ ] `/home`
 - [ ] `/sethome`
 - [ ] `/delhome`
-- [ ] Limites por cargo e VIP
+- [ ] Cooldowns
+- [ ] Limites por cargo
 - [ ] Teleporte seguro
-- [ ] Cooldown de teleporte
 
 ---
 
-## Backlog
+## Sprint 7 — Anti Lag & Recovery
 
-- Claims
-- VIP
-- Crates
-- GTS
-- Missões
-- Eventos
-- API REST
-- Website e loja
-- CLI administrativa
-- Integração com Discord
+Status: ⏳ Planejada
+
+### Anti Lag
+
+- [ ] Limpeza de drops
+- [ ] Limpeza de Pokémon
+- [ ] Monitoramento de TPS
+- [ ] `/atlas cleanup`
+
+### Item Recovery
+
+- [ ] `/lixeira`
+- [ ] `/dropados`
+- [ ] Recuperação de itens
+- [ ] Expiração
+- [ ] Logs
+
+---
+
+## Sprint 8 — Moderation & Staff
+
+Status: ⏳ Planejada
+
+### Punições
+
+- [ ] Warn
+- [ ] Kick
+- [ ] Mute
+- [ ] Ban
+- [ ] BanIP
+
+### Staff
+
+- [ ] Freeze
+- [ ] StaffMode
+- [ ] InvSee
+- [ ] EnderSee
+- [ ] Staff Notes
+- [ ] Histórico
+
+### Broadcast
+
+- [ ] Warn privado
+- [ ] Ban global
+- [ ] Configuração
+
+### Regras
+
+- [ ] Sistema de Rules
+- [ ] Aceite obrigatório
+
+---
+
+## Sprint 9 — Economy Expansion
+
+Status: ⏳ Planejada
+
+### Economia
+
+- [ ] Pesquisa Pokémon
+- [ ] Contratos
+- [ ] Mercado
+- [ ] Profissões
+- [ ] Oferta e demanda
+- [ ] Ginásios
+- [ ] Login diário
+
+### Filosofia
+
+- Coins apenas jogando
+- Sem venda infinita de blocos
+- Sem economia Pay-to-Win
+
+---
+
+## Sprint 10 — Quest Module
+
+Status: ⏳ Planejada
+
+- [ ] Quest principal
+- [ ] Quest diária
+- [ ] Quest semanal
+- [ ] Quest de evento
+- [ ] NPCs Professores
+
+---
+
+## Sprint 11 — Atlas Events
+
+Status: ⏳ Planejada
+
+### Eventos Pokémon
+
+- [ ] Lendários
+- [ ] Ultra Beasts
+- [ ] Paradox
+- [ ] Míticos
+
+### Spawn
+
+- [ ] Anunciar bioma
+- [ ] BossBar
+
+### Desfecho
+
+- [ ] Capturado
+- [ ] Derrotado
+- [ ] Desapareceu
+- [ ] Tempo expirado
+
+### Discord
+
+- [ ] Webhook
+
+---
+
+## Sprint 12 — Tournament Module
+
+Status: ⏳ Planejada
+
+- [ ] Inscrição
+- [ ] Chaveamento
+- [ ] Arenas
+- [ ] Ranking
+- [ ] Temporadas
+
+---
+
+## Sprint 13 — Gym Module
+
+Status: ⏳ Planejada
+
+- [ ] Ginásios
+- [ ] Puzzles
+- [ ] Líderes
+- [ ] Insígnias
+- [ ] Elite Four
+
+---
+
+## Sprint 14 — Pokédex Progression
+
+Status: ⏳ Planejada
+
+### Academia Atlas
+
+- [ ] Progressão por porcentagem: 10%, 20%, 30% ... 100%
+
+### Professor Atlas — conclusão em 100%
+
+- [ ] Tag exclusiva
+- [ ] Hall dos Professores
+- [ ] `/pc`
+- [ ] `/pokeheal`
+- [ ] `/legendary`
+
+### Hall
+
+- [ ] NPCs
+- [ ] Estatísticas
+- [ ] Data da conquista
+
+### Categorias
+
+- [ ] Kanto
+- [ ] Johto
+- [ ] Hoenn
+- [ ] Demais regiões
+
+### Tipos
+
+- [ ] Dragões
+- [ ] Fadas
+- [ ] Fantasmas
+- [ ] Demais tipos
+
+---
+
+## Sprint 15 — Achievement Module
+
+Status: ⏳ Planejada
+
+- [ ] Conquistas
+- [ ] Títulos
+- [ ] Partículas
+- [ ] Cosméticos
+
+---
+
+## Sprint 16 — Atlas Seasons
+
+Status: ⏳ Planejada
+
+### Jornada Atlas
+
+- [ ] Passe gratuito
+- [ ] Passe Premium
+- [ ] XP
+- [ ] Desafios
+- [ ] Temporadas
+
+### Filosofia
+
+- Não vender Atlas Tokens
+- Tokens apenas jogando
+- VIP possui trilha Premium
+- Nunca Pay-to-Win
+
+---
+
+## Sprint 17 — VIP System
+
+Status: ⏳ Planejada
+
+### Qualidade de vida
+
+- [ ] Homes extras
+- [ ] Backpack
+- [ ] PVs
+- [ ] Fly somente nos lobbys
+- [ ] Back
+- [ ] Spawn
+- [ ] RTP
+
+### Cosméticos
+
+- [ ] Tags
+- [ ] Partículas
+- [ ] Emotes
+- [ ] Bicicletas
+- [ ] Mochilas
+
+---
+
+## Sprint 18 — Staff Academy
+
+Status: ⏳ Planejada
+
+- [ ] Manual da Staff
+- [ ] Código de Conduta
+- [ ] Casos práticos
+- [ ] Guia dos comandos
+- [ ] Fluxo de atendimento
+- [ ] Centro de Treinamento
+
+---
+
+## Sprint 19 — API & Painel
+
+Status: ⏳ Planejada
+
+- [ ] REST API
+- [ ] Website
+- [ ] Loja
+- [ ] Painel administrativo
+- [ ] Discord
+- [ ] CLI
+
+---
+
+## Sprint 20 — Atlas Network
+
+Status: 🔮 Futuro
+
+### Servidores previstos
+
+- [x] Emerald
+- [ ] Sword
+- [ ] Shield
+- [ ] Ruby
+- [ ] Sapphire
+
+### Estrutura por servidor
+
+- [ ] Economia própria
+- [ ] Eventos próprios
+- [ ] GTS própria
+- [ ] Mundo próprio
+
+### Sistemas compartilhados
+
+- [x] Login
+- [x] Conta
+- [x] Premium
+- [ ] Amigos
+- [x] Staff global
+- [x] Restaurar a bússola ao retornar ao Auth Lobby
