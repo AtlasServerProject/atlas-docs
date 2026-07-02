@@ -61,8 +61,8 @@ Status: 🚧 Em andamento
 - [x] Bloquear chat e comandos antes do login
 - [x] Bloquear inventário e interações antes do login
 - [x] Bloquear dano antes do login
-- [ ] Limitar tentativas e aplicar cooldown
-- [ ] Ocultar mensagens sensíveis dos logs
+- [x] Limitar tentativas e aplicar cooldown
+- [x] Ocultar mensagens sensíveis dos logs
 
 ### Premium
 
@@ -72,10 +72,10 @@ Status: 🚧 Em andamento
 
 ### Entrega
 
-- [ ] Testes de registro, login e reconexão
+- [x] Testes de registro, login e reconexão
 - [x] Documentação da versão
 - [x] Build e implantação da v1.8.0
-- [ ] Validação Premium e Offline em jogo
+- [x] Validação Premium e Offline em jogo
 
 ---
 
@@ -104,7 +104,7 @@ Status: 🚧 Em andamento
 - [ ] Instalar o Lobby Emerald como mundo selecionável
 - [x] Definir o spawn global do Auth Lobby
 - [x] Forçar o spawn exato em toda conexão
-- [ ] Validar o spawn do Auth Lobby em jogo
+- [x] Validar o spawn do Auth Lobby em jogo
 
 ### Auth Lobby
 

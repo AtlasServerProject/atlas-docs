@@ -119,3 +119,15 @@ Adicionado `/spawn` para jogadores autenticados retornarem ao Hub central e ao s
 v1.16.0
 
 Bloqueados cliques de inventário, receitas, inventário criativo e interações com blocos, itens e entidades antes da autenticação.
+
+---
+
+v1.16.1
+
+Adicionado bloqueio de cinco minutos após cinco senhas inválidas, sem registrar senha, hash ou IP nos logs de segurança.
+
+---
+
+v1.16.2
+
+Refinado o limitador para considerar cinco falhas dentro de uma janela móvel de dez minutos, evitando acúmulo indefinido de erros antigos.
