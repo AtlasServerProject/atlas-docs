@@ -15,3 +15,7 @@ Servidor profissional de Cobblemon.
 Veja a documentação em:
 
 atlas-docs/
+
+## Operação
+
+- [Acesso externo com Playit](PLAYIT.md)

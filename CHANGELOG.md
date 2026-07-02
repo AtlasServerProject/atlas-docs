@@ -83,3 +83,9 @@ Primeira integração com eventos de spawn do Cobblemon; substituída após o te
 v1.14.1
 
 Bloqueio absoluto de entidades Pokémon no Auth Lobby, validado contra spawn por comando.
+
+---
+
+Documentação operacional
+
+Adicionada a referência dos comandos `sudo playit status` e `sudo playit attach`, incluindo a consulta do endereço externo e a validação dos serviços necessários.
