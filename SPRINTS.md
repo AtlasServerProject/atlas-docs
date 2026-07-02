@@ -101,7 +101,7 @@ Status: 🚧 Em andamento
 - [x] Limpar dados legados de jogadores e Cobblemon
 - [x] Converter os biomas dos chunks existentes do Auth Lobby para `minecraft:the_void`
 - [x] Instalar o Auth Lobby como mundo inicial
-- [ ] Instalar o Lobby Emerald como mundo selecionável
+- [x] Instalar o Lobby Emerald como mundo selecionável
 - [x] Definir o spawn global do Auth Lobby
 - [x] Forçar o spawn exato em toda conexão
 - [x] Validar o spawn do Auth Lobby em jogo
@@ -118,24 +118,25 @@ Status: 🚧 Em andamento
 - [x] Bloquear dano de queda de jogadores dentro do Auth Lobby
 - [x] Impedir spawn e carregamento de Pokémon no Auth Lobby
 - [x] Impedir escolha e recebimento de Pokémon inicial no Auth Lobby
-- [ ] Validar em jogo a tentativa de escolher um inicial no Auth Lobby
+- [x] Validar em jogo a tentativa de escolher um inicial no Auth Lobby
 - [ ] Desativar NPCs, economia e demais gameplays no Auth Lobby
 
 ### Seletor de servidores
 
-- [ ] Entregar a bússola somente após autenticação
-- [ ] Impedir que a bússola seja movida, descartada ou perdida
-- [ ] Abrir o menu de servidores ao usar a bússola
-- [ ] Exibir inicialmente apenas o servidor Emerald
-- [ ] Teleportar para o Lobby Emerald após a seleção
-- [ ] Restaurar a bússola ao retornar ao Auth Lobby
+- [x] Entregar a bússola somente após autenticação
+- [x] Impedir que a bússola seja movida, descartada ou perdida
+- [x] Abrir o menu de servidores ao usar a bússola
+- [x] Exibir inicialmente apenas o servidor Emerald
+- [x] Teleportar para o Lobby Emerald após a seleção
+- [x] Restaurar a bússola ao retornar ao Auth Lobby
+- [ ] Validar visualmente a bússola e o menu com um jogador autenticado
 
 ### Lobby Emerald
 
 - [ ] Proteger o mapa contra alterações não autorizadas
 - [x] Implementar `/spawn` para retornar ao Hub central do Atlas
 - [x] Restringir `/spawn` a jogadores autenticados
-- [ ] Validar o retorno do Emerald ao Hub após a instalação do Lobby Emerald
+- [ ] Validar em jogo o retorno do Emerald ao Hub com `/spawn`
 - [ ] Preparar acesso ao Survival Emerald
 - [ ] Reservar integração para NPCs, crates, rankings e tutorial
 - [ ] Reservar integração para scoreboard e BossBar

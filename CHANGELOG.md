@@ -131,3 +131,9 @@ Adicionado bloqueio de cinco minutos após cinco senhas inválidas, sem registra
 v1.16.2
 
 Refinado o limitador para considerar cinco falhas dentro de uma janela móvel de dez minutos, evitando acúmulo indefinido de erros antigos.
+
+---
+
+v1.17.0
+
+Instalado o Lobby Emerald como `atlas:emerald` e adicionado o seletor por bússola com entrega pós-login, proteção do item, menu exclusivo do Emerald e restauração automática no Auth Lobby.

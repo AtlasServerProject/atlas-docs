@@ -63,6 +63,24 @@ O Lobby Emerald será o hub do primeiro servidor do Atlas. Ele concentrará aces
 ao Survival Emerald, NPCs, crates, rankings, tutorial, loja, eventos, scoreboard
 e navegação.
 
+O mapa está instalado como a dimensão `atlas:emerald`. O seletor envia o jogador
+para o centro do spawn original do mapa:
+
+```text
+X: 988.5
+Y: 176
+Z: 1573.5
+```
+
+Fora dos chunks existentes, a dimensão utiliza geração vazia para impedir a
+criação de terreno aleatório ao redor do lobby.
+
+Após autenticar no Auth Lobby, o jogador recebe uma bússola protegida no slot
+central da barra rápida. Ela abre um menu de nove slots que, no lançamento,
+contém apenas o Lobby Emerald. A bússola não pode ser movida ou descartada, é
+removida ao entrar no Emerald e restaurada automaticamente ao retornar ao Auth
+Lobby.
+
 O comando `/spawn` levará o jogador autenticado de volta ao Hub central do
 Atlas. No lançamento, esse destino é o spawn do Auth Lobby, onde fica o seletor
 de servidores. Assim, um jogador que estiver no Emerald poderá retornar ao Hub
