@@ -59,8 +59,8 @@ Status: 🚧 Em andamento
 
 - [x] Bloquear movimentação antes do login
 - [x] Bloquear chat e comandos antes do login
-- [ ] Bloquear inventário e interações antes do login
-- [ ] Bloquear dano antes do login
+- [x] Bloquear inventário e interações antes do login
+- [x] Bloquear dano antes do login
 - [ ] Limitar tentativas e aplicar cooldown
 - [ ] Ocultar mensagens sensíveis dos logs
 
@@ -112,8 +112,8 @@ Status: 🚧 Em andamento
 - [x] Manter o jogador no Auth Lobby após autenticar
 - [x] Bloquear quebra e colocação de blocos para jogadores comuns
 - [x] Liberar construção somente para Dono/Owner/Admin/ADM
-- [ ] Bloquear inventário antes do login
-- [ ] Bloquear interações com blocos e entidades antes do login
+- [x] Bloquear inventário antes do login
+- [x] Bloquear interações com blocos, itens e entidades antes do login
 - [x] Bloquear todo dano antes do login
 - [x] Bloquear dano de queda de jogadores dentro do Auth Lobby
 - [x] Impedir spawn e carregamento de Pokémon no Auth Lobby

@@ -113,3 +113,9 @@ Bloqueio autoritativo da escolha de Pokémon inicial no Auth Lobby antes que o C
 v1.15.0
 
 Adicionado `/spawn` para jogadores autenticados retornarem ao Hub central e ao seletor de servidores.
+
+---
+
+v1.16.0
+
+Bloqueados cliques de inventário, receitas, inventário criativo e interações com blocos, itens e entidades antes da autenticação.
