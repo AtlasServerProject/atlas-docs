@@ -95,3 +95,9 @@ Adicionada a referência dos comandos `sudo playit status` e `sudo playit attach
 v1.14.2
 
 Proteção total contra dano antes da autenticação e bloqueio de dano de queda no Auth Lobby. Os chunks existentes do mapa também foram convertidos para o bioma `minecraft:the_void`.
+
+---
+
+v1.14.3
+
+Ordenação determinística do TAB pela prioridade dos cargos, mantendo Dono, ADM, MOD e SUP acima de VIPs e Players.

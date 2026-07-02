@@ -140,8 +140,9 @@ Status: 🚧 Em andamento
 
 ### Hierarquia visual
 
-- [ ] Ordenar o TAB por `Dono > ADM > MOD > SUP > VIPs > Players`
-- [ ] Garantir que nenhum Player ou VIP apareça acima da Staff
+- [x] Ordenar o TAB por `Dono > ADM > MOD > SUP > VIPs > Players`
+- [x] Garantir por prioridade que nenhum Player ou VIP apareça acima da Staff
+- [ ] Validar visualmente a ordenação do TAB com jogadores de cargos diferentes
 
 ### Entrega
 
