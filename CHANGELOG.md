@@ -203,3 +203,9 @@ Adicionada uma fila antecipada de destinos seguros inspirada no BetterRTP, torna
 v1.20.4
 
 Adicionado aquecimento de três segundos ao `/rtp`, cancelado sem cooldown caso o jogador se mova.
+
+---
+
+v1.20.5
+
+Liberado o uso de `/rtp` tanto no Lobby Emerald quanto dentro do Survival Emerald.
