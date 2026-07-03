@@ -39,6 +39,8 @@ No Lobby Emerald, o comando `/rtp` envia o jogador para um terreno seguro do Sur
 
 A busca continua em segundo plano até encontrar um destino válido. Ela não é encerrada por falta de um local nas primeiras tentativas, não consome o cooldown antes do teleporte e não cria solicitações duplicadas quando o jogador repete o comando.
 
+Para reduzir o tempo de espera, o servidor mantém uma fila de 32 destinos previamente carregados e validados. Cada uso consome um destino e a reserva é reabastecida gradualmente, seguindo a estratégia de fila usada pelo BetterRTP sem bloquear o tick do servidor.
+
 Cooldown entre usos:
 
 | Cargo | Tempo |

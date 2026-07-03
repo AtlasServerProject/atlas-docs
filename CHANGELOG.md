@@ -191,3 +191,9 @@ Corrigido o fluxo do `/rtp`: o comando agora é usado no Lobby Emerald e envia o
 v1.20.2
 
 O `/rtp` agora mantém uma busca persistente e assíncrona até encontrar um destino seguro, sem exigir novas tentativas do jogador.
+
+---
+
+v1.20.3
+
+Adicionada uma fila antecipada de destinos seguros inspirada no BetterRTP, tornando o `/rtp` praticamente imediato.
