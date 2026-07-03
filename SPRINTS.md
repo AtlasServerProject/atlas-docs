@@ -152,7 +152,7 @@ Status: 🚧 Em andamento
 - [x] Validar em jogo o retorno do Emerald ao Hub com `/spawn`
 - [x] Preparar acesso ao Survival Emerald
 - [x] Criar o mundo `atlas:survival_emerald`
-- [x] Implementar `/lobby` para retornar do Survival ao Lobby Emerald
+- [x] Implementar `/lobby emerald` para retornar do Survival ao Lobby Emerald
 - [ ] Implementar NPCs
 - [ ] Implementar tutorial
 - [ ] Implementar rankings
@@ -192,6 +192,9 @@ Objetivo: padronizar toda a experiência PvE.
 - [x] Pré-gerar automaticamente os 375 × 375 chunks do Survival Emerald
 - [x] Implementar `/rtp` seguro no Survival Emerald
 - [x] Aplicar cooldown de `/rtp` por cargo
+- [x] Preservar a última posição no Survival entre reconexões e reinícios
+- [x] Retornar ao Lobby Emerald após morte no Survival
+- [x] Implementar saída voluntária com `/lobby emerald`
 - [ ] Proteger contra o Void
 - [ ] Preparar exceções para arenas futuras
 

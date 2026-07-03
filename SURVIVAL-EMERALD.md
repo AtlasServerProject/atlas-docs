@@ -31,11 +31,20 @@ infra/scripts/atlas-cli pregenerate-survival continue
 
 ## Retorno ao Lobby Emerald
 
-Jogadores autenticados dentro do Survival Emerald podem executar `/lobby`. O comando os leva ao spawn do Lobby Emerald em `975.5 179 1573.5`.
+Jogadores autenticados dentro do Survival Emerald podem executar `/lobby emerald`. O comando os leva ao spawn do Lobby Emerald em `975.5 179 1573.5` e remove a posição de retorno salva.
+
+## Persistência da posição
+
+A posição no Survival Emerald é salva no PostgreSQL a cada 30 segundos e ao desconectar. Ao reconectar ou após um reinício, o jogador autentica normalmente e retorna ao mesmo ponto, mesmo que ainda não tenha criado uma home.
+
+A posição persistente é removida somente quando:
+
+- o jogador morre no Survival Emerald e retorna ao Lobby Emerald;
+- o jogador escolhe sair com `/lobby emerald`.
 
 ## Teleporte aleatório
 
-No Lobby Emerald, o comando `/rtp` envia o jogador para um terreno seguro do Survival Emerald, entre 500 e 2850 blocos do centro. O mesmo comando pode ser usado novamente dentro do Survival para trocar de região. Água, lava, blocos de magma, espaços obstruídos e posições fora da borda são rejeitados. Dentro do Survival, `/lobby` realiza o caminho de volta.
+No Lobby Emerald, o comando `/rtp` envia o jogador para um terreno seguro do Survival Emerald, entre 500 e 2850 blocos do centro. O mesmo comando pode ser usado novamente dentro do Survival para trocar de região. Água, lava, blocos de magma, espaços obstruídos e posições fora da borda são rejeitados. Dentro do Survival, `/lobby emerald` realiza o caminho de volta.
 
 A busca continua em segundo plano até encontrar um destino válido. Ela não é encerrada por falta de um local nas primeiras tentativas, não consome o cooldown antes do teleporte e não cria solicitações duplicadas quando o jogador repete o comando.
 

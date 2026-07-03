@@ -209,3 +209,9 @@ Adicionado aquecimento de três segundos ao `/rtp`, cancelado sem cooldown caso 
 v1.20.5
 
 Liberado o uso de `/rtp` tanto no Lobby Emerald quanto dentro do Survival Emerald.
+
+---
+
+v1.21.0
+
+Adicionada persistência da última posição no Survival Emerald, restauração após autenticação e retorno ao lobby somente por morte ou `/lobby emerald`.
