@@ -197,3 +197,9 @@ O `/rtp` agora mantém uma busca persistente e assíncrona até encontrar um des
 v1.20.3
 
 Adicionada uma fila antecipada de destinos seguros inspirada no BetterRTP, tornando o `/rtp` praticamente imediato.
+
+---
+
+v1.20.4
+
+Adicionado aquecimento de três segundos ao `/rtp`, cancelado sem cooldown caso o jogador se mova.

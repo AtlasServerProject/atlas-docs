@@ -41,6 +41,8 @@ A busca continua em segundo plano até encontrar um destino válido. Ela não é
 
 Para reduzir o tempo de espera, o servidor mantém uma fila de 32 destinos previamente carregados e validados. Cada uso consome um destino e a reserva é reabastecida gradualmente, seguindo a estratégia de fila usada pelo BetterRTP sem bloquear o tick do servidor.
 
+Após executar `/rtp`, o jogador deve permanecer parado durante três segundos. Qualquer deslocamento cancela a solicitação, devolve o destino reservado à fila e não aplica cooldown. Olhar ao redor continua permitido.
+
 Cooldown entre usos:
 
 | Cargo | Tempo |
