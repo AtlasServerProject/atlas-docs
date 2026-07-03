@@ -1,5 +1,15 @@
 # Sprints do Atlas
 
+## Próximas prioridades
+
+1. Validar em jogo toda a persistência entregue na v1.21.0.
+2. Concluir as regras essenciais da Sprint 5: PvP, fome, dano de queda, Void e exceções para arenas.
+3. Concluir o isolamento de gameplay do Auth Lobby.
+4. Implementar a Sprint 6 — Home System, começando por `HomeRepository` e `HomeService`.
+5. Retomar o conteúdo visual do Lobby Emerald: NPCs, tutorial, rankings, crates, BossBar e scoreboard.
+
+---
+
 ## Sprint 1 — Core Foundation
 
 Status: ✅ Concluída
@@ -108,7 +118,8 @@ Status: 🚧 Em andamento
 
 ### Auth Lobby
 
-- [x] Enviar todo jogador ao Auth Lobby ao entrar
+- [x] Enviar jogadores sem posição persistente ao Auth Lobby ao entrar
+- [x] Restaurar jogadores do Survival após autenticação
 - [x] Manter o jogador no Auth Lobby após autenticar
 - [x] Bloquear quebra e colocação de blocos para jogadores comuns
 - [x] Liberar construção somente para Dono/Owner/Admin/ADM
@@ -136,7 +147,6 @@ Status: 🚧 Em andamento
 - [x] Restaurar a bússola ao retornar ao Auth Lobby
 - [ ] Preparar arquitetura para Sword
 - [ ] Preparar arquitetura para Shield
-- [x] Restaurar a bússola ao retornar ao Auth Lobby
 - [x] Validar visualmente a bússola e o menu com um jogador autenticado
 
 ### Lobby Emerald
@@ -153,6 +163,7 @@ Status: 🚧 Em andamento
 - [x] Preparar acesso ao Survival Emerald
 - [x] Criar o mundo `atlas:survival_emerald`
 - [x] Implementar `/lobby emerald` para retornar do Survival ao Lobby Emerald
+- [x] Pré-gerar integralmente o Survival Emerald
 - [ ] Implementar NPCs
 - [ ] Implementar tutorial
 - [ ] Implementar rankings
@@ -173,6 +184,7 @@ Status: 🚧 Em andamento
 - [x] Testar fluxo com conta Premium
 - [x] Testar fluxo com conta Offline
 - [x] Validar reconexão, logout e expiração de sessão
+- [x] Build e implantação da v1.21.0
 
 ---
 
@@ -190,13 +202,23 @@ Objetivo: padronizar toda a experiência PvE.
 - [x] Definir limite de 6000 × 6000 blocos para o Survival Emerald
 - [x] Reposicionar jogadores que ultrapassarem o limite
 - [x] Pré-gerar automaticamente os 375 × 375 chunks do Survival Emerald
-- [x] Implementar `/rtp` seguro no Survival Emerald
+- [x] Implementar `/rtp` seguro no Lobby e Survival Emerald
 - [x] Aplicar cooldown de `/rtp` por cargo
+- [x] Manter fila rápida de destinos seguros
+- [x] Cancelar `/rtp` por movimento sem aplicar cooldown
 - [x] Preservar a última posição no Survival entre reconexões e reinícios
 - [x] Retornar ao Lobby Emerald após morte no Survival
 - [x] Implementar saída voluntária com `/lobby emerald`
 - [ ] Proteger contra o Void
 - [ ] Preparar exceções para arenas futuras
+
+### Validação pendente da v1.21.0
+
+- [ ] Validar retorno à posição após reconexão Premium
+- [ ] Validar retorno à posição após `/login` Offline
+- [ ] Validar persistência após reinício completo do servidor
+- [ ] Validar morte no Survival e retorno ao Lobby Emerald
+- [ ] Validar limpeza da posição com `/lobby emerald`
 
 ---
 
@@ -440,8 +462,8 @@ Status: ⏳ Planejada
 - [ ] PVs
 - [ ] Fly somente nos lobbys
 - [ ] Back
-- [ ] Spawn
-- [ ] RTP
+- [x] Spawn
+- [x] RTP com vantagens de cooldown por cargo
 
 ### Cosméticos
 
@@ -475,7 +497,7 @@ Status: ⏳ Planejada
 - [ ] Loja
 - [ ] Painel administrativo
 - [ ] Discord
-- [ ] CLI
+- [x] CLI
 
 ---
 
