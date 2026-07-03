@@ -185,3 +185,9 @@ Adicionado `/rtp` seguro no Survival Emerald, com cooldown progressivo por cargo
 v1.20.1
 
 Corrigido o fluxo do `/rtp`: o comando agora é usado no Lobby Emerald e envia o jogador para um local seguro no Survival Emerald.
+
+---
+
+v1.20.2
+
+O `/rtp` agora mantém uma busca persistente e assíncrona até encontrar um destino seguro, sem exigir novas tentativas do jogador.
