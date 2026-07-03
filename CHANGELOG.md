@@ -215,3 +215,9 @@ Liberado o uso de `/rtp` tanto no Lobby Emerald quanto dentro do Survival Emeral
 v1.21.0
 
 Adicionada persistência da última posição no Survival Emerald, restauração após autenticação e retorno ao lobby somente por morte ou `/lobby emerald`.
+
+---
+
+v1.22.0
+
+Primeira entrega do Home System, com homes nomeadas, home principal, limites e cooldowns por cargo e teleporte seguro.

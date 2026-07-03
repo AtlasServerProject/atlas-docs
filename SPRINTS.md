@@ -224,18 +224,26 @@ Objetivo: padronizar toda a experiência PvE.
 
 ## Sprint 6 — Home System
 
-Status: ⏳ Planejada
+Status: 🚧 Em andamento
 
 - [x] Migration `homes`
-- [ ] HomeModule
-- [ ] HomeRepository
-- [ ] HomeService
-- [ ] `/home`
-- [ ] `/sethome`
-- [ ] `/delhome`
-- [ ] Cooldowns
-- [ ] Limites por cargo
-- [ ] Teleporte seguro
+- [x] Migration complementar `024_home_system.sql`
+- [x] HomeModule
+- [x] HomeRepository
+- [x] HomeService
+- [x] `/home [nome]`
+- [x] `/sethome <nome>`
+- [x] `/delhome <nome>`
+- [x] `/homes`
+- [x] Home principal automática
+- [x] Cooldowns por cargo
+- [x] Limites por cargo
+- [x] Teleporte seguro
+- [x] Aquecimento e cancelamento por movimento
+- [ ] Validar criação, atualização e exclusão em jogo
+- [ ] Validar limites com Player, VIP e Staff
+- [ ] Validar home obstruída e cancelamento por movimento
+- [ ] Projetar GUI e ícones das homes
 
 ---
 
