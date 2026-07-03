@@ -150,7 +150,9 @@ Status: 🚧 Em andamento
 - [x] Implementar `/spawn` para retornar ao Hub central do Atlas
 - [x] Restringir `/spawn` a jogadores autenticados
 - [x] Validar em jogo o retorno do Emerald ao Hub com `/spawn`
-- [ ] Preparar acesso ao Survival Emerald
+- [x] Preparar acesso ao Survival Emerald
+- [x] Criar o mundo `atlas:survival_emerald`
+- [x] Implementar `/lobby` para retornar do Survival ao Lobby Emerald
 - [ ] Implementar NPCs
 - [ ] Implementar tutorial
 - [ ] Implementar rankings
@@ -176,17 +178,18 @@ Status: 🚧 Em andamento
 
 ## Sprint 5 — Gameplay Rules
 
-Status: ⏳ Planejada
+Status: 🚧 Em andamento
 
 Objetivo: padronizar toda a experiência PvE.
 
 - [ ] Desativar PvP
 - [ ] Desativar fome
 - [ ] Desativar dano de queda
-- [ ] Implementar regras por mundo
-- [ ] Proteger os lobbys
-- [ ] Definir limites automáticos dos mapas
-- [ ] Teleportar automaticamente ao sair da área
+- [x] Implementar regras por mundo
+- [x] Proteger os lobbys
+- [x] Definir limite de 6000 × 6000 blocos para o Survival Emerald
+- [x] Reposicionar jogadores que ultrapassarem o limite
+- [x] Pré-gerar automaticamente os 375 × 375 chunks do Survival Emerald
 - [ ] Proteger contra o Void
 - [ ] Preparar exceções para arenas futuras
 

@@ -161,3 +161,15 @@ Corrigida a resolução da dimensão nos eventos do Cobblemon. O Lobby Emerald p
 v1.18.2
 
 Renomeada a mensagem de proteção para Hub e estendido o bloqueio de quebra e colocação ao Lobby Emerald.
+
+---
+
+v1.19.0
+
+Criado o Survival Emerald com área de 6000 × 6000 blocos, pré-geração dos 375 × 375 chunks e comando `/lobby` para retornar ao Lobby Emerald.
+
+---
+
+v1.19.1
+
+Reforçado o limite do Survival Emerald com reposicionamento automático de jogadores que tentarem ultrapassar a área definida.
