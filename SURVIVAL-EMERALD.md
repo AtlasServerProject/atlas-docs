@@ -28,7 +28,7 @@ Jogadores autenticados dentro do Survival Emerald podem executar `/lobby`. O com
 
 ## Teleporte aleatório
 
-O comando `/rtp` procura um terreno seguro entre 500 e 2850 blocos do centro. Água, lava, blocos de magma, espaços obstruídos e posições fora da borda são rejeitados.
+No Lobby Emerald, o comando `/rtp` envia o jogador para um terreno seguro do Survival Emerald, entre 500 e 2850 blocos do centro. Água, lava, blocos de magma, espaços obstruídos e posições fora da borda são rejeitados. Dentro do Survival, `/lobby` realiza o caminho de volta.
 
 Cooldown entre usos:
 

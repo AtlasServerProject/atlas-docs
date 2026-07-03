@@ -179,3 +179,9 @@ Reforçado o limite do Survival Emerald com reposicionamento automático de joga
 v1.20.0
 
 Adicionado `/rtp` seguro no Survival Emerald, com cooldown progressivo por cargo e validação do terreno de destino.
+
+---
+
+v1.20.1
+
+Corrigido o fluxo do `/rtp`: o comando agora é usado no Lobby Emerald e envia o jogador para um local seguro no Survival Emerald.
