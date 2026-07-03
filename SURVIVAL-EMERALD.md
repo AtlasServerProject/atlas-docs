@@ -25,3 +25,18 @@ A configuração `continueOnRestart` mantém a tarefa após reinicializações.
 ## Retorno ao Lobby Emerald
 
 Jogadores autenticados dentro do Survival Emerald podem executar `/lobby`. O comando os leva ao spawn do Lobby Emerald em `975.5 179 1573.5`.
+
+## Teleporte aleatório
+
+O comando `/rtp` procura um terreno seguro entre 500 e 2850 blocos do centro. Água, lava, blocos de magma, espaços obstruídos e posições fora da borda são rejeitados.
+
+Cooldown entre usos:
+
+| Cargo | Tempo |
+|---|---:|
+| Dono / ADM | Instantâneo |
+| MOD / SUP | 1 minuto |
+| VIP++ | 1 minuto |
+| VIP+ | 1 minuto e 50 segundos |
+| VIP | 2 minutos e 30 segundos |
+| Player | 3 minutos |

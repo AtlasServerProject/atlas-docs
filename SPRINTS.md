@@ -190,6 +190,8 @@ Objetivo: padronizar toda a experiência PvE.
 - [x] Definir limite de 6000 × 6000 blocos para o Survival Emerald
 - [x] Reposicionar jogadores que ultrapassarem o limite
 - [x] Pré-gerar automaticamente os 375 × 375 chunks do Survival Emerald
+- [x] Implementar `/rtp` seguro no Survival Emerald
+- [x] Aplicar cooldown de `/rtp` por cargo
 - [ ] Proteger contra o Void
 - [ ] Preparar exceções para arenas futuras
 

@@ -173,3 +173,9 @@ Criado o Survival Emerald com área de 6000 × 6000 blocos, pré-geração dos 3
 v1.19.1
 
 Reforçado o limite do Survival Emerald com reposicionamento automático de jogadores que tentarem ultrapassar a área definida.
+
+---
+
+v1.20.0
+
+Adicionado `/rtp` seguro no Survival Emerald, com cooldown progressivo por cargo e validação do terreno de destino.
