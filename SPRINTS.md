@@ -141,15 +141,15 @@ Status: 🚧 Em andamento
 
 ### Lobby Emerald
 
-- [ ] Proteger o mapa contra alterações não autorizadas
+- [x] Proteger o mapa contra alterações não autorizadas
 - [x] Bloquear dano de queda no Lobby Emerald
 - [x] Permitir escolha do Pokémon inicial no Lobby Emerald
 - [x] Restringir spawns a Pokémon fracos de rotas iniciais
 - [x] Bloquear Pokémon especiais por whitelist de espécies
-- [ ] Validar em jogo o spawn natural de espécies permitidas
+- [x] Validar em jogo o spawn natural de espécies permitidas
 - [x] Implementar `/spawn` para retornar ao Hub central do Atlas
 - [x] Restringir `/spawn` a jogadores autenticados
-- [ ] Validar em jogo o retorno do Emerald ao Hub com `/spawn`
+- [x] Validar em jogo o retorno do Emerald ao Hub com `/spawn`
 - [ ] Preparar acesso ao Survival Emerald
 - [ ] Implementar NPCs
 - [ ] Implementar tutorial
@@ -162,15 +162,15 @@ Status: 🚧 Em andamento
 
 - [x] Ordenar o TAB por `Dono > ADM > MOD > SUP > VIPs > Players`
 - [x] Garantir por prioridade que nenhum Player ou VIP apareça acima da Staff
-- [ ] Validar visualmente a ordenação do TAB com jogadores de cargos diferentes
+- [x] Validar visualmente a ordenação do TAB com jogadores de cargos diferentes
 
 ### Entrega
 
 - [x] Documentar a arquitetura dos lobbys
 - [x] Build e implantação da v1.12.0
-- [ ] Testar fluxo com conta Premium
-- [ ] Testar fluxo com conta Offline
-- [ ] Validar reconexão, logout e expiração de sessão
+- [x] Testar fluxo com conta Premium
+- [x] Testar fluxo com conta Offline
+- [x] Validar reconexão, logout e expiração de sessão
 
 ---
 

@@ -155,3 +155,9 @@ Primeira implementação da proteção de queda e whitelist de Pokémon no Lobby
 v1.18.1
 
 Corrigida a resolução da dimensão nos eventos do Cobblemon. O Lobby Emerald permite a escolha do inicial, bloqueia dano de queda e aceita somente espécies fracas explicitamente aprovadas.
+
+---
+
+v1.18.2
+
+Renomeada a mensagem de proteção para Hub e estendido o bloqueio de quebra e colocação ao Lobby Emerald.
