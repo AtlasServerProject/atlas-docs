@@ -22,6 +22,13 @@ infra/scripts/atlas-cli pregenerate-survival status
 
 A configuração `continueOnRestart` mantém a tarefa após reinicializações.
 
+Durante testes com jogadores, a geração pode ser pausada e retomada sem perder progresso:
+
+```bash
+infra/scripts/atlas-cli pregenerate-survival pause
+infra/scripts/atlas-cli pregenerate-survival continue
+```
+
 ## Retorno ao Lobby Emerald
 
 Jogadores autenticados dentro do Survival Emerald podem executar `/lobby`. O comando os leva ao spawn do Lobby Emerald em `975.5 179 1573.5`.
