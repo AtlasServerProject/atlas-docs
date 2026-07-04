@@ -257,3 +257,9 @@ Adicionado teleporte seguro e clicável para claims próprias diretamente pelo `
 v1.23.4
 
 Corrigida a numeração do `/claimslist`: claims apagadas deixam de aparecer e as restantes são renumeradas sequencialmente sem expor IDs internos.
+
+---
+
+v1.23.5
+
+Corrigida a gamerule `doTileDrops` do Survival Emerald e adicionada garantia automática de drops a cada inicialização.

@@ -194,6 +194,8 @@ Status: ✅ Concluída
 
 Status: 🚧 Em andamento
 
+- [x] Garantir drops de blocos e plantas no Survival Emerald
+
 Objetivo: padronizar toda a experiência PvE.
 
 - [ ] Desativar PvP
@@ -251,7 +253,7 @@ Status: 🚧 Em andamento
 
 ## Sprint 7 — Claims & Protection
 
-Status: 🚧 Em andamento
+Status: ✅ Concluída
 
 ### Fundação
 
