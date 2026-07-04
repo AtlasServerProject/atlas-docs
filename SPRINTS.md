@@ -136,6 +136,8 @@ Status: 🚧 Em andamento
 - [ ] Desativar NPCs
 - [ ] Desativar economia
 - [ ] Desativar demais gameplays
+- [x] Bloquear todos os comandos no Hub mesmo após autenticação
+- [x] Permitir exclusivamente `/login` e `/register` no Hub
 
 ### Seletor de servidores
 

@@ -221,3 +221,9 @@ Adicionada persistência da última posição no Survival Emerald, restauração
 v1.22.0
 
 Primeira entrega do Home System, com homes nomeadas, home principal, limites e cooldowns por cargo e teleporte seguro.
+
+---
+
+v1.22.1
+
+Bloqueados todos os comandos no Auth Hub, inclusive após autenticação, mantendo somente `/login` e `/register`.
