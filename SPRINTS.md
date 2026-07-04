@@ -257,37 +257,37 @@ Status: 🚧 Em andamento
 
 - [x] Migration `claims`
 - [x] Migration `claim_members`
-- [ ] Migration complementar e índices
-- [ ] ClaimModule
-- [ ] ClaimRepository
-- [ ] ClaimService
+- [x] Migration complementar e índices
+- [x] ClaimModule
+- [x] ClaimRepository
+- [x] ClaimService
 
 ### Criação e inspeção
 
-- [ ] Selecionar dois cantos com pá dourada
-- [ ] Inspecionar claims com graveto
-- [ ] Limite total de blocos por cargo
-- [ ] Tamanho mínimo de claim
-- [ ] Impedir sobreposição
-- [ ] Restringir claims ao Survival Emerald
+- [x] Selecionar dois cantos com pá dourada
+- [x] Inspecionar claims com graveto
+- [x] Limite total de blocos por cargo
+- [x] Tamanho mínimo de claim
+- [x] Impedir sobreposição
+- [x] Restringir claims ao Survival Emerald
 
 ### Proteções
 
-- [ ] Bloquear quebra e colocação por terceiros
-- [ ] Proteger baús e demais contêineres
-- [ ] Proteger portas, botões e interações
+- [x] Bloquear quebra e colocação por terceiros
+- [x] Proteger baús e demais contêineres
+- [x] Proteger portas, botões e interações
 - [ ] Proteger entidades e Pokémon do proprietário
 - [ ] Proteger contra fluidos, fogo, explosões e pistões
 - [ ] Bypass administrativo auditável
 
 ### Confiança e gestão
 
-- [ ] `/trust <jogador>`
-- [ ] `/containertrust <jogador>`
-- [ ] `/accesstrust <jogador>`
-- [ ] `/untrust <jogador>`
-- [ ] `/abandonclaim`
-- [ ] `/claimslist`
+- [x] `/trust <jogador>`
+- [x] `/containertrust <jogador>`
+- [x] `/accesstrust <jogador>`
+- [x] `/untrust <jogador>`
+- [x] `/abandonclaim`
+- [x] `/claimslist`
 - [ ] Visualizar limites da claim
 
 ---

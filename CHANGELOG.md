@@ -227,3 +227,9 @@ Primeira entrega do Home System, com homes nomeadas, home principal, limites e c
 v1.22.1
 
 Bloqueados todos os comandos no Auth Hub, inclusive após autenticação, mantendo somente `/login` e `/register`.
+
+---
+
+v1.23.0
+
+Primeira entrega funcional de Claims & Protection no Survival Emerald, com seleção por pá dourada, inspeção por graveto, confiança cumulativa, limites por cargo e persistência PostgreSQL.

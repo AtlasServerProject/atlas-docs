@@ -22,7 +22,7 @@ Os níveis são cumulativos:
 
 O proprietário sempre possui controle total. Dono e ADM terão bypass administrativo, com auditoria prevista antes da conclusão da Sprint.
 
-## Comandos planejados
+## Comandos disponíveis
 
 - `/trust <jogador>`
 - `/containertrust <jogador>`
@@ -34,3 +34,14 @@ O proprietário sempre possui controle total. Dono e ADM terão bypass administr
 ## Entregas posteriores
 
 Proteções contra explosões, pistões, fluidos indiretos, fogo, entidades e Pokémon serão adicionadas em etapas e validadas separadamente.
+
+## Limites de área
+
+- Player: 10.000 blocos.
+- VIP: 20.000 blocos.
+- VIP+: 30.000 blocos.
+- VIP++: 50.000 blocos.
+- MOD e SUP: 100.000 blocos.
+- Dono e ADM: 1.000.000 de blocos.
+
+O limite é a soma da área de todas as claims do jogador. Cada claim precisa medir ao menos 10 × 10 blocos.
