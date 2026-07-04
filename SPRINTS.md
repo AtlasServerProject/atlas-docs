@@ -297,14 +297,16 @@ Status: ✅ Concluída
 
 ## Sprint 8 — Anti Lag & Recovery
 
-Status: ⏳ Planejada
+Status: 🚧 Em andamento
 
 ### Anti Lag
 
-- [ ] Limpeza de drops
-- [ ] Limpeza de Pokémon
-- [ ] Monitoramento de TPS
-- [ ] `/atlas cleanup`
+- [x] Limpeza de drops antigos
+- [x] Limpeza segura de Pokémon selvagens distantes
+- [x] Monitoramento de TPS e MSPT
+- [x] `/atlas cleanup`
+- [x] `/atlas tps`
+- [x] Avisos antes da limpeza automática
 
 ### Item Recovery
 

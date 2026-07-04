@@ -263,3 +263,9 @@ Corrigida a numeração do `/claimslist`: claims apagadas deixam de aparecer e a
 v1.23.5
 
 Corrigida a gamerule `doTileDrops` do Survival Emerald e adicionada garantia automática de drops a cada inicialização.
+
+---
+
+v1.24.0
+
+Primeira entrega da Sprint 8 com monitoramento de TPS/MSPT e limpeza segura, automática e manual de drops antigos e Pokémon selvagens distantes.
