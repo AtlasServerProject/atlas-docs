@@ -31,6 +31,8 @@ O proprietário sempre possui controle total. Dono e ADM possuem bypass administ
 - `/abandonclaim`
 - `/claimslist`
 
+O `/claimslist` exibe cada claim como uma linha clicável. O botão `[TELEPORTAR]` procura um ponto seguro dentro da claim e permite acesso somente ao proprietário.
+
 ## Proteções indiretas
 
 - Explosões não destroem blocos protegidos.

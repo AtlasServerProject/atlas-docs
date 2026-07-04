@@ -245,3 +245,9 @@ Conclusão da Sprint 7 com proteção de entidades e Pokémon, bloqueios contra 
 v1.23.2
 
 Demarcação visual das claims com blocos de ouro falsos durante a seleção e inspeção, sem modificar o mapa.
+
+---
+
+v1.23.3
+
+Adicionado teleporte seguro e clicável para claims próprias diretamente pelo `/claimslist`.

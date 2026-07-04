@@ -288,6 +288,7 @@ Status: 🚧 Em andamento
 - [x] `/untrust <jogador>`
 - [x] `/abandonclaim`
 - [x] `/claimslist`
+- [x] Teleporte clicável para claims próprias no `/claimslist`
 - [x] Visualizar limites da claim com blocos de ouro falsos
 
 ---
