@@ -2,11 +2,11 @@
 
 ## Próximas prioridades
 
-1. Implementar a Sprint 7 — Claims & Protection.
-2. Validar e concluir a GUI da Sprint 6 — Home System.
-3. Concluir as regras essenciais da Sprint 5: PvP, fome, dano de queda, Void e exceções para arenas.
-4. Concluir o isolamento de gameplay do Auth Lobby.
-5. Retomar o conteúdo visual do Lobby Emerald: NPCs, tutorial, rankings, crates, BossBar e scoreboard.
+1. Validar e concluir a GUI da Sprint 6 — Home System.
+2. Concluir as regras essenciais da Sprint 5: PvP, fome, dano de queda, Void e exceções para arenas.
+3. Concluir o isolamento de gameplay do Auth Lobby.
+4. Retomar o conteúdo visual do Lobby Emerald: NPCs, tutorial, rankings, crates, BossBar e scoreboard.
+5. Retomar a Sprint 8 — Anti Lag & Recovery quando priorizada.
 
 ---
 
@@ -91,7 +91,7 @@ Status: ✅ Concluída
 
 ## Sprint 4 — Lobbys & Server Selector
 
-Status: 🚧 Em andamento
+Status: ✅ Concluída
 
 ### Arquitetura
 
@@ -276,9 +276,9 @@ Status: 🚧 Em andamento
 - [x] Bloquear quebra e colocação por terceiros
 - [x] Proteger baús e demais contêineres
 - [x] Proteger portas, botões e interações
-- [ ] Proteger entidades e Pokémon do proprietário
-- [ ] Proteger contra fluidos, fogo, explosões e pistões
-- [ ] Bypass administrativo auditável
+- [x] Proteger entidades e Pokémon do proprietário
+- [x] Proteger contra fluidos, fogo, explosões e pistões
+- [x] Bypass administrativo auditável
 
 ### Confiança e gestão
 
@@ -288,7 +288,7 @@ Status: 🚧 Em andamento
 - [x] `/untrust <jogador>`
 - [x] `/abandonclaim`
 - [x] `/claimslist`
-- [ ] Visualizar limites da claim
+- [x] Visualizar limites da claim com blocos de ouro falsos
 
 ---
 
@@ -360,6 +360,7 @@ Status: ⏳ Planejada
 - [ ] Oferta e demanda
 - [ ] Ginásios
 - [ ] Login diário
+- [ ] Kit diário com pá dourada para criação de claims
 
 ### Filosofia
 

@@ -233,3 +233,15 @@ Bloqueados todos os comandos no Auth Hub, inclusive após autenticação, manten
 v1.23.0
 
 Primeira entrega funcional de Claims & Protection no Survival Emerald, com seleção por pá dourada, inspeção por graveto, confiança cumulativa, limites por cargo e persistência PostgreSQL.
+
+---
+
+v1.23.1
+
+Conclusão da Sprint 7 com proteção de entidades e Pokémon, bloqueios contra explosões, pistões, fluidos e fogo, auditoria administrativa e bordas visuais por partículas.
+
+---
+
+v1.23.2
+
+Demarcação visual das claims com blocos de ouro falsos durante a seleção e inspeção, sem modificar o mapa.

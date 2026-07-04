@@ -20,7 +20,7 @@ Os níveis são cumulativos:
 2. `CONTAINER`: nível anterior mais baús e contêineres.
 3. `BUILD`: níveis anteriores mais quebra e colocação de blocos.
 
-O proprietário sempre possui controle total. Dono e ADM terão bypass administrativo, com auditoria prevista antes da conclusão da Sprint.
+O proprietário sempre possui controle total. Dono e ADM possuem bypass administrativo, e cada uso é auditado no PostgreSQL com jogador, ação, claim, mundo, coordenadas e horário.
 
 ## Comandos disponíveis
 
@@ -31,9 +31,15 @@ O proprietário sempre possui controle total. Dono e ADM terão bypass administr
 - `/abandonclaim`
 - `/claimslist`
 
-## Entregas posteriores
+## Proteções indiretas
 
-Proteções contra explosões, pistões, fluidos indiretos, fogo, entidades e Pokémon serão adicionadas em etapas e validadas separadamente.
+- Explosões não destroem blocos protegidos.
+- Pistões não movem nem empurram blocos para dentro ou para fora de claims.
+- Fluidos não avançam sobre áreas protegidas.
+- Fogo não se espalha nem consome blocos dentro de claims.
+- Ataques e interações de terceiros com entidades e Pokémon são bloqueados.
+
+Ao selecionar ou inspecionar uma claim, blocos de ouro falsos exibem temporariamente seu perímetro. Esses blocos existem apenas para o cliente do jogador, não alteram o mapa e são restaurados automaticamente.
 
 ## Limites de área
 
