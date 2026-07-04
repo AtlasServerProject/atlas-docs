@@ -2,10 +2,10 @@
 
 ## Próximas prioridades
 
-1. Validar em jogo toda a persistência entregue na v1.21.0.
-2. Concluir as regras essenciais da Sprint 5: PvP, fome, dano de queda, Void e exceções para arenas.
-3. Concluir o isolamento de gameplay do Auth Lobby.
-4. Implementar a Sprint 6 — Home System, começando por `HomeRepository` e `HomeService`.
+1. Implementar a Sprint 7 — Claims & Protection.
+2. Validar e concluir a GUI da Sprint 6 — Home System.
+3. Concluir as regras essenciais da Sprint 5: PvP, fome, dano de queda, Void e exceções para arenas.
+4. Concluir o isolamento de gameplay do Auth Lobby.
 5. Retomar o conteúdo visual do Lobby Emerald: NPCs, tutorial, rankings, crates, BossBar e scoreboard.
 
 ---
@@ -242,14 +242,57 @@ Status: 🚧 Em andamento
 - [x] Limites por cargo
 - [x] Teleporte seguro
 - [x] Aquecimento e cancelamento por movimento
-- [ ] Validar criação, atualização e exclusão em jogo
-- [ ] Validar limites com Player, VIP e Staff
-- [ ] Validar home obstruída e cancelamento por movimento
+- [x] Validar criação, atualização e exclusão em jogo
+- [x] Validar limites com Player, VIP e Staff
+- [x] Validar home obstruída e cancelamento por movimento
 - [ ] Projetar GUI e ícones das homes
 
 ---
 
-## Sprint 7 — Anti Lag & Recovery
+## Sprint 7 — Claims & Protection
+
+Status: 🚧 Em andamento
+
+### Fundação
+
+- [x] Migration `claims`
+- [x] Migration `claim_members`
+- [ ] Migration complementar e índices
+- [ ] ClaimModule
+- [ ] ClaimRepository
+- [ ] ClaimService
+
+### Criação e inspeção
+
+- [ ] Selecionar dois cantos com pá dourada
+- [ ] Inspecionar claims com graveto
+- [ ] Limite total de blocos por cargo
+- [ ] Tamanho mínimo de claim
+- [ ] Impedir sobreposição
+- [ ] Restringir claims ao Survival Emerald
+
+### Proteções
+
+- [ ] Bloquear quebra e colocação por terceiros
+- [ ] Proteger baús e demais contêineres
+- [ ] Proteger portas, botões e interações
+- [ ] Proteger entidades e Pokémon do proprietário
+- [ ] Proteger contra fluidos, fogo, explosões e pistões
+- [ ] Bypass administrativo auditável
+
+### Confiança e gestão
+
+- [ ] `/trust <jogador>`
+- [ ] `/containertrust <jogador>`
+- [ ] `/accesstrust <jogador>`
+- [ ] `/untrust <jogador>`
+- [ ] `/abandonclaim`
+- [ ] `/claimslist`
+- [ ] Visualizar limites da claim
+
+---
+
+## Sprint 8 — Anti Lag & Recovery
 
 Status: ⏳ Planejada
 
@@ -270,7 +313,7 @@ Status: ⏳ Planejada
 
 ---
 
-## Sprint 8 — Moderation & Staff
+## Sprint 9 — Moderation & Staff
 
 Status: ⏳ Planejada
 
@@ -304,7 +347,7 @@ Status: ⏳ Planejada
 
 ---
 
-## Sprint 9 — Economy Expansion
+## Sprint 10 — Economy Expansion
 
 Status: ⏳ Planejada
 
@@ -326,7 +369,7 @@ Status: ⏳ Planejada
 
 ---
 
-## Sprint 10 — Quest Module
+## Sprint 11 — Quest Module
 
 Status: ⏳ Planejada
 
@@ -338,7 +381,7 @@ Status: ⏳ Planejada
 
 ---
 
-## Sprint 11 — Atlas Events
+## Sprint 12 — Atlas Events
 
 Status: ⏳ Planejada
 
@@ -367,7 +410,7 @@ Status: ⏳ Planejada
 
 ---
 
-## Sprint 12 — Tournament Module
+## Sprint 13 — Tournament Module
 
 Status: ⏳ Planejada
 
@@ -379,7 +422,7 @@ Status: ⏳ Planejada
 
 ---
 
-## Sprint 13 — Gym Module
+## Sprint 14 — Gym Module
 
 Status: ⏳ Planejada
 
@@ -391,7 +434,7 @@ Status: ⏳ Planejada
 
 ---
 
-## Sprint 14 — Pokédex Progression
+## Sprint 15 — Pokédex Progression
 
 Status: ⏳ Planejada
 
@@ -429,7 +472,7 @@ Status: ⏳ Planejada
 
 ---
 
-## Sprint 15 — Achievement Module
+## Sprint 16 — Achievement Module
 
 Status: ⏳ Planejada
 
@@ -440,7 +483,7 @@ Status: ⏳ Planejada
 
 ---
 
-## Sprint 16 — Atlas Seasons
+## Sprint 17 — Atlas Seasons
 
 Status: ⏳ Planejada
 
@@ -461,7 +504,7 @@ Status: ⏳ Planejada
 
 ---
 
-## Sprint 17 — VIP System
+## Sprint 18 — VIP System
 
 Status: ⏳ Planejada
 
@@ -485,7 +528,7 @@ Status: ⏳ Planejada
 
 ---
 
-## Sprint 18 — Staff Academy
+## Sprint 19 — Staff Academy
 
 Status: ⏳ Planejada
 
@@ -498,7 +541,7 @@ Status: ⏳ Planejada
 
 ---
 
-## Sprint 19 — API & Painel
+## Sprint 20 — API & Painel
 
 Status: ⏳ Planejada
 
@@ -511,7 +554,7 @@ Status: ⏳ Planejada
 
 ---
 
-## Sprint 20 — Atlas Network
+## Sprint 21 — Atlas Network
 
 Status: 🔮 Futuro
 
