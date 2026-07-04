@@ -251,3 +251,9 @@ Demarcação visual das claims com blocos de ouro falsos durante a seleção e i
 v1.23.3
 
 Adicionado teleporte seguro e clicável para claims próprias diretamente pelo `/claimslist`.
+
+---
+
+v1.23.4
+
+Corrigida a numeração do `/claimslist`: claims apagadas deixam de aparecer e as restantes são renumeradas sequencialmente sem expor IDs internos.

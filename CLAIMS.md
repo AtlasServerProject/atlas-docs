@@ -31,7 +31,7 @@ O proprietário sempre possui controle total. Dono e ADM possuem bypass administ
 - `/abandonclaim`
 - `/claimslist`
 
-O `/claimslist` exibe cada claim como uma linha clicável. O botão `[TELEPORTAR]` procura um ponto seguro dentro da claim e permite acesso somente ao proprietário.
+O `/claimslist` exibe cada claim como uma linha clicável. O botão `[TELEPORTAR]` procura um ponto seguro dentro da claim e permite acesso somente ao proprietário. A numeração é sequencial e recalculada após exclusões; IDs internos do banco nunca são exibidos ao jogador.
 
 ## Proteções indiretas
 
