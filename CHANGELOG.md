@@ -383,3 +383,9 @@ Adicionado `/dev` para Dono/ADM ativarem OP vanilla e acesso administrativo ao `
 v1.26.4
 
 Auth Lobby resetado para um `minecraft:overworld` void/superflat próprio do Atlas, sem uso de mapa externo. Criada plataforma inicial autoral com spawn, NPC `Lobby Emerald` e barreiras invisíveis.
+
+---
+
+v1.26.5
+
+Schema do Auth Lobby aplicado no novo mundo void próprio, mantendo spawn, NPC `Lobby Emerald` e barreira invisível ao redor da construção.
