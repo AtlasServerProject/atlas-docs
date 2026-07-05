@@ -317,3 +317,9 @@ Comandos do WorldEdit restritos a Dono/OWNER e ADM/ADMIN em todos os mundos, inc
 v1.24.6
 
 Auth Lobby fechado com barreiras invisíveis nas laterais e no teto, preservando blocos existentes do mapa e mantendo chunks descarregados após a operação.
+
+---
+
+v1.24.7
+
+Lobby Emerald fechado com barreiras invisíveis nas laterais e no teto, usando carregamento temporário de chunks na dimensão `atlas:emerald`.

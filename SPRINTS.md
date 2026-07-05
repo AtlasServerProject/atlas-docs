@@ -160,6 +160,7 @@ Status: ✅ Concluída
 - [x] Restringir spawns a Pokémon fracos de rotas iniciais
 - [x] Bloquear Pokémon especiais por whitelist de espécies
 - [x] Manter Pokémon de jogadores liberados no Lobby Emerald
+- [x] Fechar o Lobby Emerald com paredes e teto de barreira invisível
 - [x] Validar em jogo o spawn natural de espécies permitidas
 - [x] Implementar `/spawn` para retornar ao Hub central do Atlas
 - [x] Restringir `/spawn` a jogadores autenticados
