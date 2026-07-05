@@ -377,3 +377,9 @@ Adicionado alias Atlas `/wand` para entregar o machado de seleção do WorldEdit
 v1.26.3
 
 Adicionado `/dev` para Dono/ADM ativarem OP vanilla e acesso administrativo ao `/op`/`/deop`, inclusive no Auth Hub.
+
+---
+
+v1.26.4
+
+Limpeza operacional do Auth Lobby: removidas sobras do mundo antigo no `minecraft:overworld`, preservando o lobby novo, spawn, NPC `Lobby Emerald` e criando backup localizado das regiões alteradas.

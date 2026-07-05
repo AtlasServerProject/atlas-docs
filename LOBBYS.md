@@ -50,6 +50,9 @@ O raio aleatório do spawn está desativado. Toda conexão é teleportada para o
 posição exata (`642.215 126 3534.426`), inclusive quando o jogador já possui uma
 posição anterior salva.
 
+O entorno antigo do `minecraft:overworld` foi limpo na versão `v1.26.4`,
+preservando a caixa segura do Auth Lobby novo e removendo sobras do mapa antigo.
+
 ## Seletor
 
 Depois da autenticação, uma bússola abrirá o menu de servidores. A primeira opção
