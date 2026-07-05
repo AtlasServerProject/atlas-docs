@@ -335,3 +335,9 @@ Corrigido o fluxo de autenticação para manter o jogador no Auth Hub após logi
 v1.24.9
 
 Corrigida a ponte de permissões vanilla para que Dono/OWNER e ADM/ADMIN possam usar comandos do WorldEdit, incluindo `//wand`, sem precisar de OP.
+
+---
+
+v1.24.10
+
+Schema temporário de Pokébola aplicado no Auth Lobby e fechado com barreira invisível própria ao redor, sem alterar o Lobby Emerald ou o Survival Emerald.
