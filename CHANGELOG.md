@@ -299,3 +299,9 @@ Instalado WorldEdit `7.3.8` para Fabric 1.21.1 como ferramenta de construção e
 Runtime do servidor
 
 Corrigido o runtime do Atlas para `-Xms1G -Xmx4G`, compatível com a RAM atual da máquina. O Chunky deixou de continuar automaticamente após reinício e o `atlas-cli pregenerate-survival` sem argumento agora consulta status em vez de iniciar pré-geração.
+
+---
+
+v1.24.4
+
+Liberado o machado de madeira do WorldEdit no Auth Hub para Dono/OWNER e ADM/ADMIN, mantendo a limpeza de inventário para jogadores comuns e preservando a bússola do seletor.
