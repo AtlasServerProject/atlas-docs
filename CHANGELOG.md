@@ -389,3 +389,9 @@ Auth Lobby resetado para um `minecraft:overworld` void/superflat próprio do Atl
 v1.26.5
 
 Schema do Auth Lobby aplicado no novo mundo void próprio, mantendo spawn, NPC `Lobby Emerald` e barreira invisível ao redor da construção.
+
+---
+
+v1.26.6
+
+NPC `Lobby Emerald` do Auth Lobby substituído de Villager para FakePlayer nativo do Fabric, inspirado no modelo de NPC player do ZNPCs.
