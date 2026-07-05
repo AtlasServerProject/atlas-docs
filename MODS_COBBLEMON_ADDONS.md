@@ -97,9 +97,9 @@ Se o problema persistir depois de alguns minutos, validar:
 
 ### CobbleDollars e economia Atlas
 
-O `CobbleDollars` adiciona uma camada própria de economia. Ele está instalado para teste, mas deve ser observado com cuidado para não conflitar futuramente com a economia oficial do Atlas.
+O `CobbleDollars` foi adotado como fonte oficial da economia Atlas.
 
-Se houver conflito de filosofia, moeda ou comandos, a decisão recomendada é manter a economia Atlas como fonte principal e usar o addon apenas se ele puder ser integrado ou limitado.
+Atlas Coins e CobbleDollars passam a representar a mesma moeda em jogo. Os comandos do Atlas devem usar a ponte documentada em `ECONOMY.md`, evitando moedas paralelas ou saldos divergentes.
 
 ### Worldgen e chunks já gerados
 

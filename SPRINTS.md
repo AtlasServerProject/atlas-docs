@@ -373,10 +373,14 @@ Status: ⏳ Planejada
 
 ## Sprint 10 — Economy Expansion
 
-Status: ⏳ Planejada
+Status: 🚧 Em andamento
 
 ### Economia
 
+- [x] Integrar Atlas Coins ao CobbleDollars
+- [x] Usar CobbleDollars como fonte oficial de saldo
+- [x] Atualizar `/saldo`
+- [x] Atualizar `/addmoney`
 - [ ] Pesquisa Pokémon
 - [ ] Contratos
 - [ ] Mercado

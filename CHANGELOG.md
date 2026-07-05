@@ -341,3 +341,9 @@ Corrigida a ponte de permissões vanilla para que Dono/OWNER e ADM/ADMIN possam 
 v1.24.10
 
 Schema temporário de Pokébola aplicado no Auth Lobby e fechado com barreira invisível própria ao redor, sem alterar o Lobby Emerald ou o Survival Emerald.
+
+---
+
+v1.25.0
+
+Integrada a economia do Atlas ao CobbleDollars. `/saldo` e `/addmoney` agora usam o saldo CobbleDollars como fonte oficial, mantendo o banco antigo apenas como legado.
