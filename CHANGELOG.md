@@ -329,3 +329,9 @@ Lobby Emerald fechado com barreiras invisíveis nas laterais e no teto, usando c
 v1.24.8
 
 Corrigido o fluxo de autenticação para manter o jogador no Auth Hub após login/autologin e preservar o inventário real ao usar a bússola para entrar no Lobby Emerald.
+
+---
+
+v1.24.9
+
+Corrigida a ponte de permissões vanilla para que Dono/OWNER e ADM/ADMIN possam usar comandos do WorldEdit, incluindo `//wand`, sem precisar de OP.
