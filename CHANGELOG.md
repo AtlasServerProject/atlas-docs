@@ -365,3 +365,9 @@ Adicionado o primeiro NPC oficial do Atlas no Auth Lobby. O NPC `Lobby Emerald` 
 v1.26.1
 
 Ajustado o spawn do Auth Lobby para o novo ponto do mapa atual e movido o NPC `Lobby Emerald` para a posição definida no lobby.
+
+---
+
+v1.26.2
+
+Adicionado alias Atlas `/wand` para entregar o machado de seleção do WorldEdit a Dono/ADM, evitando erro de comando desconhecido com a barra dupla do WorldEdit.

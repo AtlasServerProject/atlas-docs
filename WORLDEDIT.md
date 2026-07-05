@@ -2,6 +2,18 @@
 
 WorldEdit foi instalado como ferramenta administrativa para acelerar construção, ajustes de mapas, arenas, estruturas de eventos e manutenção visual dos lobbys.
 
+## Machado de seleção
+
+Use:
+
+```text
+/wand
+```
+
+O Atlas entrega um machado de madeira compatível com o WorldEdit para Dono/OWNER e ADM/ADMIN.
+
+Esse alias existe porque alguns clientes/modpacks podem exibir `//wand` como comando desconhecido dependendo de como a barra dupla é enviada ao servidor.
+
 ## Versão instalada
 
 - Mod: `worldedit-mod-7.3.8.jar`
