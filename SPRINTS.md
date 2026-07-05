@@ -129,6 +129,7 @@ Status: ✅ Concluída
 - [x] Bloquear dano de queda de jogadores dentro do Auth Lobby
 - [x] Impedir spawn e carregamento de Pokémon no Auth Lobby
 - [x] Impedir escolha e recebimento de Pokémon inicial no Auth Lobby
+- [x] Fechar o Auth Lobby com paredes e teto de barreira invisível
 - [x] Validar em jogo a tentativa de escolher um inicial no Auth Lobby
 
 ### Gameplay do Auth Lobby

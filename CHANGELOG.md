@@ -311,3 +311,9 @@ Liberado o machado de madeira do WorldEdit no Auth Hub para Dono/OWNER e ADM/ADM
 v1.24.5
 
 Comandos do WorldEdit restritos a Dono/OWNER e ADM/ADMIN em todos os mundos, incluindo Auth Hub, Lobby Emerald e Survival Emerald.
+
+---
+
+v1.24.6
+
+Auth Lobby fechado com barreiras invisíveis nas laterais e no teto, preservando blocos existentes do mapa e mantendo chunks descarregados após a operação.
