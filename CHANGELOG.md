@@ -269,3 +269,15 @@ Corrigida a gamerule `doTileDrops` do Survival Emerald e adicionada garantia aut
 v1.24.0
 
 Primeira entrega da Sprint 8 com monitoramento de TPS/MSPT e limpeza segura, automática e manual de drops antigos e Pokémon selvagens distantes.
+
+---
+
+v1.24.1
+
+Conclusão da Sprint 8 com `/lixeira`, `/dropados`, recuperação persistente no PostgreSQL, expiração automática e logs.
+
+---
+
+v1.24.2
+
+Adicionado `/endbattle`, tema sonoro por mundo, liberação controlada de Pokémon fracos no Lobby Emerald, respawn do Survival para o Lobby Emerald e documentação do pacote de addons Cobblemon.

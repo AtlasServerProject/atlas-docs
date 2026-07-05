@@ -23,3 +23,15 @@ Nunca são removidos Pokémon:
 - `/atlas cleanup`: força a mesma limpeza segura; disponível somente para Dono, ADM e console.
 
 Todas as execuções são registradas no log do servidor com as quantidades verificadas e removidas.
+
+## Recuperação de itens
+
+- `/lixeira` abre um baú virtual de 54 espaços.
+- Os itens deixados nele ficam recuperáveis por 15 minutos.
+- `/dropados` abre os itens disponíveis para o jogador.
+- Retirar um item do menu confirma sua recuperação.
+- Itens que permanecem no menu ao fechar continuam disponíveis pelo prazo restante renovado.
+- Drops removidos pela limpeza automática são armazenados quando o servidor consegue identificar seu jogador proprietário.
+- Os dados usam SNBT completo, preservando quantidade, nome, encantamentos e componentes.
+- A tabela PostgreSQL `item_recovery_entries` mantém os itens durante reinícios.
+- Entradas expiradas são removidas automaticamente e registradas no log.

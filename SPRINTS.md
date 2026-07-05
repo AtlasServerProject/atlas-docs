@@ -158,6 +158,7 @@ Status: ✅ Concluída
 - [x] Permitir escolha do Pokémon inicial no Lobby Emerald
 - [x] Restringir spawns a Pokémon fracos de rotas iniciais
 - [x] Bloquear Pokémon especiais por whitelist de espécies
+- [x] Manter Pokémon de jogadores liberados no Lobby Emerald
 - [x] Validar em jogo o spawn natural de espécies permitidas
 - [x] Implementar `/spawn` para retornar ao Hub central do Atlas
 - [x] Restringir `/spawn` a jogadores autenticados
@@ -172,6 +173,7 @@ Status: ✅ Concluída
 - [ ] Implementar crates
 - [ ] Implementar BossBar
 - [ ] Implementar scoreboard
+- [x] Adicionar tema sonoro de entrada por mundo
 
 ### Hierarquia visual
 
@@ -213,6 +215,7 @@ Objetivo: padronizar toda a experiência PvE.
 - [x] Preservar a última posição no Survival entre reconexões e reinícios
 - [x] Retornar ao Lobby Emerald após morte no Survival
 - [x] Implementar saída voluntária com `/lobby emerald`
+- [x] Adicionar `/endbattle` para jogadores encerrarem batalhas travadas
 - [ ] Proteger contra o Void
 - [ ] Preparar exceções para arenas futuras
 
@@ -297,7 +300,7 @@ Status: ✅ Concluída
 
 ## Sprint 8 — Anti Lag & Recovery
 
-Status: 🚧 Em andamento
+Status: ✅ Concluída
 
 ### Anti Lag
 
@@ -310,11 +313,19 @@ Status: 🚧 Em andamento
 
 ### Item Recovery
 
-- [ ] `/lixeira`
-- [ ] `/dropados`
-- [ ] Recuperação de itens
-- [ ] Expiração
-- [ ] Logs
+- [x] `/lixeira`
+- [x] `/dropados`
+- [x] Recuperação persistente de itens
+- [x] Expiração automática em 15 minutos
+- [x] Logs de armazenamento, recuperação e expiração
+
+### Modpack de testes
+
+- [x] Instalar addons Cobblemon da pasta `modsadd`
+- [x] Instalar dependências necessárias dos addons
+- [x] Validar boot do servidor com os addons
+- [x] Documentar pacote de mods e exigência de client igual ao servidor
+- [ ] Validar entrada de jogador com o pacote de cliente atualizado
 
 ---
 
