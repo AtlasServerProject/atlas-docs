@@ -35,7 +35,10 @@ NPC criado no Auth Lobby:
 Nome: Lobby Emerald (clique)
 Tipo: Villager vanilla
 Mundo: minecraft:overworld
-Coordenadas: 646.5 83.0 3529.5
+X: 628.622
+Y: 123.0
+Z: 3535.462
+Yaw: -90.0
 ```
 
 Comportamento:

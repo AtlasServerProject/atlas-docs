@@ -40,14 +40,14 @@ e advancements. Mensagens promocionais e links externos também foram removidos.
 Spawn global inicial:
 
 ```text
-X: 646
-Y: 83
-Z: 3535
-Orientação: oeste (90°)
+X: 642.215
+Y: 126
+Z: 3534.426
+Orientação: oeste (`yaw 91.8`, `pitch -3.4`)
 ```
 
 O raio aleatório do spawn está desativado. Toda conexão é teleportada para o
-centro do bloco (`646.5 83 3535.5`), inclusive quando o jogador já possui uma
+posição exata (`642.215 126 3534.426`), inclusive quando o jogador já possui uma
 posição anterior salva.
 
 ## Seletor

@@ -359,3 +359,9 @@ Adicionado `/pay <player> <valor>` para transferir CobbleDollars entre jogadores
 v1.26.0
 
 Adicionado o primeiro NPC oficial do Atlas no Auth Lobby. O NPC `Lobby Emerald` é persistente, sem IA, invulnerável e envia jogadores autenticados ao Lobby Emerald, mantendo o Auth Lobby sem gameplay externo.
+
+---
+
+v1.26.1
+
+Ajustado o spawn do Auth Lobby para o novo ponto do mapa atual e movido o NPC `Lobby Emerald` para a posição definida no lobby.
