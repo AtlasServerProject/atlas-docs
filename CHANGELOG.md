@@ -407,3 +407,9 @@ Hotfix temporário com `ArmorStand` para recuperar visibilidade do NPC após o t
 v1.26.8
 
 NPC visual do Auth Lobby migrado para Easy NPC `easy_npc:humanoid`, mantendo no Atlas Core apenas o clique por tag `atlas_npc_auth_emerald` para enviar jogadores autenticados ao Lobby Emerald.
+
+---
+
+v1.26.9
+
+Atualizado o modpack cliente com SimpleTMs, Xaero's Minimap, CobbleSounds, Cobblemon Interface e ícones Cobblemon para Xaero. `SimpleTMs` foi instalado no servidor e validado; CobbleTowns ficou pendente por incompatibilidade com Minecraft 1.21.1.

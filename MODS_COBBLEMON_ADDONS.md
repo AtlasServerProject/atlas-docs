@@ -123,3 +123,102 @@ O pacote deve conter:
 - todas as dependências acima.
 
 O pacote não precisa conter mods exclusivamente de servidor, como o Atlas Core.
+
+## Atualização de modpack — 2026-07-05 v2
+
+Novo pacote gerado:
+
+```text
+/home/somente/dev/atlas/atlas-client-modpack-2026-07-05-v2.tar.gz
+```
+
+Tamanho aproximado:
+
+```text
+657 MB
+```
+
+O crescimento de tamanho veio principalmente do resource pack `CobbleSounds[Complete]`, que possui muitos arquivos de áudio.
+
+### Adicionado ao servidor
+
+Instalado e validado no servidor:
+
+- `SimpleTMs-fabric-2.3.3.jar`
+
+Motivo:
+
+- adiciona TMs e TRs para Cobblemon;
+- compatível com Minecraft `1.21.1`;
+- compatível com Cobblemon `>=1.7.1`;
+- o Atlas usa Cobblemon `1.7.3`.
+
+Backup antes da instalação:
+
+```text
+/opt/atlas/server/backups/mod-versions/mods-pre-simpletms-20260705-233538.tar.gz
+```
+
+### Adicionado ao pacote do cliente
+
+Mods adicionados ao pacote de cliente:
+
+- `SimpleTMs-fabric-2.3.3.jar`
+- `easy_npc-fabric-1.21.1-6.0.21.jar`
+- `easy_npc_config_ui-fabric-1.21.1-6.0.21.jar`
+- `xaerominimap-fabric-1.21.1-26.1.0.jar`
+
+Resource packs adicionados ao pacote de cliente:
+
+- `CobbleSounds[Complete]_v1.4.1.zip`
+- `Cobblemon Interface v1.6.0.zip`
+- `Xaeros Cobblemon Icons v2.1.zip`
+
+### Observações sobre Xaero
+
+O `xaerominimap-fabric-1.21.1-26.1.0.jar` inclui o `XaeroLib` internamente em:
+
+```text
+META-INF/jars/xaerolib-fabric-1.21.1-1.1.15.jar
+```
+
+Por isso não foi necessário baixar um jar separado de `XaeroLib`.
+
+### Não instalado: Tim's TMs
+
+O mod `Cobblemon Tim's TMs` foi avaliado, mas não foi instalado.
+
+Motivo:
+
+```text
+depends: cobblemon >=1.6.1 <1.7.0
+```
+
+Como o Atlas usa Cobblemon `1.7.3`, esse mod poderia impedir o servidor de iniciar.
+
+### Não instalado: CobbleTowns
+
+O datapack `CobbleTowns v1.0.2` foi baixado apenas para análise, mas não foi ativado no mundo.
+
+Motivo:
+
+- publicado para Minecraft `1.20.1`;
+- `pack.mcmeta` informa `supported_formats: [18, 26]`;
+- o servidor Atlas está em Minecraft `1.21.1`;
+- ativar datapack de worldgen antigo pode falhar no boot ou gerar estruturas incorretas.
+
+Decisão:
+
+- manter CobbleTowns como pendente;
+- procurar uma versão atualizada para `1.21.1`;
+- ou criar/adaptar estruturas próprias do Atlas futuramente.
+
+### Validação da atualização
+
+Após instalar `SimpleTMs` no servidor:
+
+- servidor reiniciou com sucesso;
+- `SimpleTMs` registrou itens, blocos e datapack;
+- Easy NPC persistiu o NPC `Lobby Emerald`;
+- comando `/atlas tps` respondeu;
+- TPS estabilizou em `20.00`.
