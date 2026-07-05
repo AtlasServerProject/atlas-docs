@@ -395,3 +395,15 @@ Schema do Auth Lobby aplicado no novo mundo void próprio, mantendo spawn, NPC `
 v1.26.6
 
 NPC `Lobby Emerald` do Auth Lobby substituído de Villager para FakePlayer nativo do Fabric, inspirado no modelo de NPC player do ZNPCs.
+
+---
+
+v1.26.7
+
+Hotfix temporário com `ArmorStand` para recuperar visibilidade do NPC após o teste com FakePlayer; supersedido pela integração com Easy NPC.
+
+---
+
+v1.26.8
+
+NPC visual do Auth Lobby migrado para Easy NPC `easy_npc:humanoid`, mantendo no Atlas Core apenas o clique por tag `atlas_npc_auth_emerald` para enviar jogadores autenticados ao Lobby Emerald.
