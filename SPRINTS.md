@@ -205,9 +205,10 @@ Objetivo: padronizar toda a experiência PvE.
 - [ ] Desativar dano de queda
 - [x] Implementar regras por mundo
 - [x] Proteger os lobbys
-- [x] Definir limite de 6000 × 6000 blocos para o Survival Emerald
+- [x] Definir limite de 12000 × 12000 blocos para o Survival Emerald
 - [x] Reposicionar jogadores que ultrapassarem o limite
-- [x] Pré-gerar automaticamente os 375 × 375 chunks do Survival Emerald
+- [x] Pré-gerar automaticamente os 750 × 750 chunks do Survival Emerald
+- [x] Resetar o Survival Emerald com a mesma seed e estruturas/worldgen dos addons
 - [x] Implementar `/rtp` seguro no Lobby e Survival Emerald
 - [x] Aplicar cooldown de `/rtp` por cargo
 - [x] Manter fila rápida de destinos seguros
@@ -221,9 +222,9 @@ Objetivo: padronizar toda a experiência PvE.
 
 ### Validação pendente da v1.21.0
 
-- [ ] Validar retorno à posição após reconexão Premium
-- [ ] Validar retorno à posição após `/login` Offline
-- [ ] Validar persistência após reinício completo do servidor
+- [x] Validar retorno à posição após reconexão Premium
+- [x] Validar retorno à posição após `/login` Offline
+- [x] Validar persistência após reinício completo do servidor
 - [ ] Validar morte no Survival e retorno ao Lobby Emerald
 - [ ] Validar limpeza da posição com `/lobby emerald`
 
@@ -325,7 +326,7 @@ Status: ✅ Concluída
 - [x] Instalar dependências necessárias dos addons
 - [x] Validar boot do servidor com os addons
 - [x] Documentar pacote de mods e exigência de client igual ao servidor
-- [ ] Validar entrada de jogador com o pacote de cliente atualizado
+- [x] Validar entrada de jogador com o pacote de cliente atualizado
 
 ---
 

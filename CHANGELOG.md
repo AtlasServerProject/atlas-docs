@@ -281,3 +281,9 @@ Conclusão da Sprint 8 com `/lixeira`, `/dropados`, recuperação persistente no
 v1.24.2
 
 Adicionado `/endbattle`, tema sonoro por mundo, liberação controlada de Pokémon fracos no Lobby Emerald, respawn do Survival para o Lobby Emerald e documentação do pacote de addons Cobblemon.
+
+---
+
+v1.24.3
+
+Survival Emerald resetado com a mesma seed `27594263`, estruturas/worldgen dos addons habilitados, limite ampliado para 12000 × 12000 blocos e pré-geração atualizada para 750 × 750 chunks.

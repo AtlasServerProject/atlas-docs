@@ -5,11 +5,12 @@ O primeiro mundo de gameplay do Atlas é a dimensão `atlas:survival_emerald`.
 ## Dimensões
 
 - Centro: `0, 0`.
-- Tamanho: 6000 × 6000 blocos.
-- Grade: 375 × 375 chunks.
-- Limites: de aproximadamente `-3000` a `+3000` nos eixos X e Z.
+- Seed: `27594263`.
+- Tamanho: 12000 × 12000 blocos.
+- Grade: 750 × 750 chunks.
+- Limites: de aproximadamente `-6000` a `+6000` nos eixos X e Z.
 
-Esse tamanho oferece espaço suficiente para uma comunidade inicial sem criar um mundo excessivamente pesado. A expansão poderá ser feita de forma planejada quando houver necessidade.
+Esse tamanho oferece o dobro da área linear planejada inicialmente e permite que os addons de worldgen e estruturas tenham mais espaço para aparecer durante a exploração.
 
 ## Pré-geração
 
@@ -44,7 +45,7 @@ A posição persistente é removida somente quando:
 
 ## Teleporte aleatório
 
-No Lobby Emerald, o comando `/rtp` envia o jogador para um terreno seguro do Survival Emerald, entre 500 e 2850 blocos do centro. O mesmo comando pode ser usado novamente dentro do Survival para trocar de região. Água, lava, blocos de magma, espaços obstruídos e posições fora da borda são rejeitados. Dentro do Survival, `/lobby emerald` realiza o caminho de volta.
+No Lobby Emerald, o comando `/rtp` envia o jogador para um terreno seguro do Survival Emerald, entre 500 e 5850 blocos do centro. O mesmo comando pode ser usado novamente dentro do Survival para trocar de região. Água, lava, blocos de magma, espaços obstruídos e posições fora da borda são rejeitados. Dentro do Survival, `/lobby emerald` realiza o caminho de volta.
 
 A busca continua em segundo plano até encontrar um destino válido. Ela não é encerrada por falta de um local nas primeiras tentativas, não consome o cooldown antes do teleporte e não cria solicitações duplicadas quando o jogador repete o comando.
 
