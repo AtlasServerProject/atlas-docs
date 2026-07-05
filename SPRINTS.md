@@ -2,11 +2,11 @@
 
 ## Próximas prioridades
 
-1. Validar e concluir a GUI da Sprint 6 — Home System.
+1. Acompanhar e concluir a pré-geração integral do Survival Emerald.
 2. Concluir as regras essenciais da Sprint 5: PvP, fome, dano de queda, Void e exceções para arenas.
-3. Concluir o isolamento de gameplay do Auth Lobby.
-4. Retomar o conteúdo visual do Lobby Emerald: NPCs, tutorial, rankings, crates, BossBar e scoreboard.
-5. Retomar a Sprint 8 — Anti Lag & Recovery quando priorizada.
+3. Validar morte no Survival, retorno ao Lobby Emerald e limpeza de posição com `/lobby emerald`.
+4. Validar e concluir a GUI da Sprint 6 — Home System.
+5. Retomar o conteúdo visual do Lobby Emerald: NPCs, tutorial, rankings, crates, BossBar e scoreboard.
 
 ---
 
@@ -91,14 +91,14 @@ Status: ✅ Concluída
 
 ## Sprint 4 — Lobbys & Server Selector
 
-Status: ✅ Concluída
+Status: 🚧 Base funcional concluída; pendências visuais e expansão futura
 
 ### Arquitetura
 
 - [x] Definir fluxo `Auth Lobby → seletor → Lobby Emerald`
 - [x] Impedir teleporte automático após autenticação
 - [x] Preparar arquitetura inicial com mundos separados
-- [ ] Criar abstração compatível com futura Atlas Network
+- [ ] Criar abstração compatível com futura Atlas Network — futuro
 
 ### Mapas
 
@@ -119,7 +119,7 @@ Status: ✅ Concluída
 ### Auth Lobby
 
 - [x] Enviar jogadores sem posição persistente ao Auth Lobby ao entrar
-- [x] Restaurar jogadores do Survival após autenticação
+- [x] Impedir restauração automática do Survival após autenticação
 - [x] Manter o jogador no Auth Lobby após autenticar
 - [x] Bloquear quebra e colocação de blocos para jogadores comuns
 - [x] Liberar construção somente para Dono/Owner/Admin/ADM
@@ -150,8 +150,8 @@ Status: ✅ Concluída
 - [x] Manter o jogador no Auth Hub após login/autologin até escolher pela bússola
 - [x] Preservar o inventário real ao sair do Auth Hub pelo seletor
 - [x] Restaurar a bússola ao retornar ao Auth Lobby
-- [ ] Preparar arquitetura para Sword
-- [ ] Preparar arquitetura para Shield
+- [ ] Preparar arquitetura para Sword — futuro
+- [ ] Preparar arquitetura para Shield — futuro
 - [x] Validar visualmente a bússola e o menu com um jogador autenticado
 
 ### Lobby Emerald
@@ -170,7 +170,8 @@ Status: ✅ Concluída
 - [x] Preparar acesso ao Survival Emerald
 - [x] Criar o mundo `atlas:survival_emerald`
 - [x] Implementar `/lobby emerald` para retornar do Survival ao Lobby Emerald
-- [x] Pré-gerar integralmente o Survival Emerald
+- [x] Iniciar pré-geração integral do Survival Emerald
+- [ ] Concluir pré-geração integral do Survival Emerald
 - [ ] Implementar NPCs
 - [ ] Implementar tutorial
 - [ ] Implementar rankings
@@ -211,23 +212,25 @@ Objetivo: padronizar toda a experiência PvE.
 - [x] Proteger os lobbys
 - [x] Definir limite de 12000 × 12000 blocos para o Survival Emerald
 - [x] Reposicionar jogadores que ultrapassarem o limite
-- [x] Pré-gerar automaticamente os 750 × 750 chunks do Survival Emerald
+- [x] Iniciar pré-geração automática dos 750 × 750 chunks do Survival Emerald
+- [ ] Concluir pré-geração automática dos 750 × 750 chunks do Survival Emerald
 - [x] Resetar o Survival Emerald com a mesma seed e estruturas/worldgen dos addons
 - [x] Implementar `/rtp` seguro no Lobby e Survival Emerald
 - [x] Aplicar cooldown de `/rtp` por cargo
 - [x] Manter fila rápida de destinos seguros
 - [x] Cancelar `/rtp` por movimento sem aplicar cooldown
-- [x] Preservar a última posição no Survival entre reconexões e reinícios
+- [x] Salvar a última posição no Survival entre reconexões e reinícios
+- [ ] Definir fluxo de retorno opcional ao Survival salvo sem pular o seletor
 - [x] Retornar ao Lobby Emerald após morte no Survival
 - [x] Implementar saída voluntária com `/lobby emerald`
 - [x] Adicionar `/endbattle` para jogadores encerrarem batalhas travadas
 - [ ] Proteger contra o Void
 - [ ] Preparar exceções para arenas futuras
 
-### Validação pendente da v1.21.0
+### Validação pendente
 
-- [x] Validar retorno à posição após reconexão Premium
-- [x] Validar retorno à posição após `/login` Offline
+- [x] Validar que reconexão Premium permanece no Auth Hub até escolha pela bússola
+- [x] Validar que `/login` Offline permanece no Auth Hub até escolha pela bússola
 - [x] Validar persistência após reinício completo do servidor
 - [ ] Validar morte no Survival e retorno ao Lobby Emerald
 - [ ] Validar limpeza da posição com `/lobby emerald`
@@ -609,4 +612,3 @@ Status: 🔮 Futuro
 - [x] Premium
 - [ ] Amigos
 - [x] Staff global
-- [x] Restaurar a bússola ao retornar ao Auth Lobby
