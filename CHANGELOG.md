@@ -353,3 +353,9 @@ Integrada a economia do Atlas ao CobbleDollars. `/saldo` e `/addmoney` agora usa
 v1.25.1
 
 Adicionado `/pay <player> <valor>` para transferir CobbleDollars entre jogadores online, com validação de saldo, bloqueio de autopagamento e confirmação para os dois lados.
+
+---
+
+v1.26.0
+
+Adicionado o primeiro NPC oficial do Atlas no Auth Lobby. O NPC `Lobby Emerald` é persistente, sem IA, invulnerável e envia jogadores autenticados ao Lobby Emerald, mantendo o Auth Lobby sem gameplay externo.

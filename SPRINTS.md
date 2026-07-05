@@ -134,7 +134,9 @@ Status: 🚧 Base funcional concluída; pendências visuais e expansão futura
 
 ### Gameplay do Auth Lobby
 
-- [ ] Desativar NPCs
+- [x] Remover/desativar NPCs externos ou legados
+- [x] Permitir NPCs oficiais do Atlas apenas para navegação
+- [x] Adicionar NPC `Lobby Emerald` no Auth Lobby
 - [ ] Desativar economia
 - [ ] Desativar demais gameplays
 - [x] Bloquear todos os comandos no Hub mesmo após autenticação
@@ -156,6 +158,7 @@ Status: 🚧 Base funcional concluída; pendências visuais e expansão futura
 
 ### Lobby Emerald
 
+- [x] Criar base nativa para NPCs oficiais do Atlas
 - [x] Proteger o mapa contra alterações não autorizadas
 - [x] Bloquear dano de queda no Lobby Emerald
 - [x] Permitir escolha do Pokémon inicial no Lobby Emerald
