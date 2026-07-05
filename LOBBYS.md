@@ -50,8 +50,10 @@ O raio aleatório do spawn está desativado. Toda conexão é teleportada para o
 posição exata (`642.215 126 3534.426`), inclusive quando o jogador já possui uma
 posição anterior salva.
 
-O entorno antigo do `minecraft:overworld` foi limpo na versão `v1.26.4`,
-preservando a caixa segura do Auth Lobby novo e removendo sobras do mapa antigo.
+Na versão `v1.26.4`, o `minecraft:overworld` do Auth Lobby foi resetado para
+um mundo void/superflat próprio do Atlas, removendo o uso do mapa externo
+anterior. A build atual é uma plataforma autoral inicial com spawn, NPC de
+navegação e barreiras invisíveis.
 
 ## Seletor
 

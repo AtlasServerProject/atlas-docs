@@ -382,4 +382,4 @@ Adicionado `/dev` para Dono/ADM ativarem OP vanilla e acesso administrativo ao `
 
 v1.26.4
 
-Limpeza operacional do Auth Lobby: removidas sobras do mundo antigo no `minecraft:overworld`, preservando o lobby novo, spawn, NPC `Lobby Emerald` e criando backup localizado das regiões alteradas.
+Auth Lobby resetado para um `minecraft:overworld` void/superflat próprio do Atlas, sem uso de mapa externo. Criada plataforma inicial autoral com spawn, NPC `Lobby Emerald` e barreiras invisíveis.
