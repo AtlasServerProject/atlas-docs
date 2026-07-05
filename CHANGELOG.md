@@ -287,3 +287,15 @@ Adicionado `/endbattle`, tema sonoro por mundo, liberação controlada de Pokém
 v1.24.3
 
 Survival Emerald resetado com a mesma seed `27594263`, estruturas/worldgen dos addons habilitados, limite ampliado para 12000 × 12000 blocos e pré-geração atualizada para 750 × 750 chunks.
+
+---
+
+Ferramentas administrativas
+
+Instalado WorldEdit `7.3.8` para Fabric 1.21.1 como ferramenta de construção e manutenção de mapas. A Sprint 12 — Atlas Events foi iniciada com documentação do fluxo, filosofia, componentes e comandos previstos.
+
+---
+
+Runtime do servidor
+
+Corrigido o runtime do Atlas para `-Xms1G -Xmx4G`, compatível com a RAM atual da máquina. O Chunky deixou de continuar automaticamente após reinício e o `atlas-cli pregenerate-survival` sem argumento agora consulta status em vez de iniciar pré-geração.

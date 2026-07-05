@@ -21,14 +21,29 @@ infra/scripts/atlas-cli pregenerate-survival start
 infra/scripts/atlas-cli pregenerate-survival status
 ```
 
-A configuração `continueOnRestart` mantém a tarefa após reinicializações.
+A configuração `continueOnRestart` do Chunky fica desativada no servidor de testes. Isso impede que a pré-geração volte automaticamente após reinicializações e derrube o TPS sem intenção.
 
-Durante testes com jogadores, a geração pode ser pausada e retomada sem perder progresso:
+Durante testes com jogadores, a geração deve permanecer pausada. Ela pode ser pausada e retomada sem perder progresso:
 
 ```bash
 infra/scripts/atlas-cli pregenerate-survival pause
 infra/scripts/atlas-cli pregenerate-survival continue
 ```
+
+Se o servidor ficar pesado ou o console administrativo retornar `Connection refused`, pare a pré-geração e aguarde o TPS estabilizar:
+
+```bash
+infra/scripts/atlas-cli pregenerate-survival pause
+infra/scripts/atlas-cli exec "atlas tps"
+```
+
+O comando sem argumento apenas consulta o status:
+
+```bash
+infra/scripts/atlas-cli pregenerate-survival
+```
+
+Pré-geração de `12000 × 12000` blocos é pesada para a máquina atual. Rodar somente quando não houver jogadores online.
 
 ## Retorno ao Lobby Emerald
 

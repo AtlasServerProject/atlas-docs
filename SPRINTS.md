@@ -401,7 +401,14 @@ Status: ⏳ Planejada
 
 ## Sprint 12 — Atlas Events
 
-Status: ⏳ Planejada
+Status: 🚧 Em andamento
+
+### Planejamento
+
+- [x] Definir objetivo e filosofia dos eventos
+- [x] Documentar fluxo inicial de evento Pokémon
+- [x] Definir componentes técnicos previstos
+- [x] Definir comandos administrativos e públicos previstos
 
 ### Eventos Pokémon
 
