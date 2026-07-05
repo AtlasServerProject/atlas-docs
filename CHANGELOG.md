@@ -347,3 +347,9 @@ Schema temporário de Pokébola aplicado no Auth Lobby e fechado com barreira in
 v1.25.0
 
 Integrada a economia do Atlas ao CobbleDollars. `/saldo` e `/addmoney` agora usam o saldo CobbleDollars como fonte oficial, mantendo o banco antigo apenas como legado.
+
+---
+
+v1.25.1
+
+Adicionado `/pay <player> <valor>` para transferir CobbleDollars entre jogadores online, com validação de saldo, bloqueio de autopagamento e confirmação para os dois lados.

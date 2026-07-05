@@ -381,6 +381,7 @@ Status: 🚧 Em andamento
 - [x] Usar CobbleDollars como fonte oficial de saldo
 - [x] Atualizar `/saldo`
 - [x] Atualizar `/addmoney`
+- [x] Adicionar `/pay <player> <valor>`
 - [ ] Pesquisa Pokémon
 - [ ] Contratos
 - [ ] Mercado

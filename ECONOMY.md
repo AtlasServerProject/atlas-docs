@@ -40,6 +40,17 @@ Permissão necessária:
 atlas.economy.addmoney
 ```
 
+### `/pay <player> <valor>`
+
+Transfere CobbleDollars entre jogadores online.
+
+Regras:
+
+- o valor mínimo é `1`;
+- o jogador não pode pagar a si mesmo;
+- o destino precisa estar online;
+- a transferência só acontece se o pagador tiver saldo suficiente.
+
 ## Próximos cuidados
 
 - Migrar comandos futuros de economia para a mesma ponte.
