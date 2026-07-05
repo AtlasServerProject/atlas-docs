@@ -147,6 +147,8 @@ Status: ✅ Concluída
 - [x] Abrir o menu de servidores ao usar a bússola
 - [x] Exibir inicialmente apenas o servidor Emerald
 - [x] Teleportar para o Lobby Emerald após a seleção
+- [x] Manter o jogador no Auth Hub após login/autologin até escolher pela bússola
+- [x] Preservar o inventário real ao sair do Auth Hub pelo seletor
 - [x] Restaurar a bússola ao retornar ao Auth Lobby
 - [ ] Preparar arquitetura para Sword
 - [ ] Preparar arquitetura para Shield

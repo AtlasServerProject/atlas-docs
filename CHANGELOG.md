@@ -323,3 +323,9 @@ Auth Lobby fechado com barreiras invisíveis nas laterais e no teto, preservando
 v1.24.7
 
 Lobby Emerald fechado com barreiras invisíveis nas laterais e no teto, usando carregamento temporário de chunks na dimensão `atlas:emerald`.
+
+---
+
+v1.24.8
+
+Corrigido o fluxo de autenticação para manter o jogador no Auth Hub após login/autologin e preservar o inventário real ao usar a bússola para entrar no Lobby Emerald.
