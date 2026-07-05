@@ -371,3 +371,9 @@ Ajustado o spawn do Auth Lobby para o novo ponto do mapa atual e movido o NPC `L
 v1.26.2
 
 Adicionado alias Atlas `/wand` para entregar o machado de seleção do WorldEdit a Dono/ADM, evitando erro de comando desconhecido com a barra dupla do WorldEdit.
+
+---
+
+v1.26.3
+
+Adicionado `/dev` para Dono/ADM ativarem OP vanilla e acesso administrativo ao `/op`/`/deop`, inclusive no Auth Hub.

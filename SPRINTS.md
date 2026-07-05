@@ -37,6 +37,7 @@ Status: ✅ Concluída
 - [x] Sincronização de ranks em tempo real
 - [x] Administração completa por `/rank`
 - [x] Integração de permissões vanilla sem OP
+- [x] `/dev` para Dono/ADM ativarem OP vanilla quando necessário
 - [x] Feedback privado de comandos administrativos
 
 Versão final: `v1.4.0`
