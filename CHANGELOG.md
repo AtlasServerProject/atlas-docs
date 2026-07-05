@@ -305,3 +305,9 @@ Corrigido o runtime do Atlas para `-Xms1G -Xmx4G`, compatível com a RAM atual d
 v1.24.4
 
 Liberado o machado de madeira do WorldEdit no Auth Hub para Dono/OWNER e ADM/ADMIN, mantendo a limpeza de inventário para jogadores comuns e preservando a bússola do seletor.
+
+---
+
+v1.24.5
+
+Comandos do WorldEdit restritos a Dono/OWNER e ADM/ADMIN em todos os mundos, incluindo Auth Hub, Lobby Emerald e Survival Emerald.
