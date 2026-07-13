@@ -413,3 +413,97 @@ NPC visual do Auth Lobby migrado para Easy NPC `easy_npc:humanoid`, mantendo no 
 v1.26.9
 
 Atualizado o modpack cliente com SimpleTMs, Xaero's Minimap, CobbleSounds, Cobblemon Interface e ícones Cobblemon para Xaero. `SimpleTMs` foi instalado no servidor e validado; CobbleTowns ficou pendente por incompatibilidade com Minecraft 1.21.1.
+
+---
+
+v1.27.0
+
+Aplicadas regras globais PvE: PvP desativado, fome desativada, dano de queda bloqueado nos mundos gerenciados e proteção contra Void. A pré-geração do Survival Emerald foi retomada e a GUI futura das homes foi projetada com ícones e fluxo de uso.
+
+---
+
+v1.27.1
+
+Gerado o modpack cliente `v3-lite`, reduzindo o pacote de `657 MB` para `258 MB`. O `CobbleSounds[Complete]` foi substituído por uma versão BattleOnly do Atlas, mantendo sons de batalha e removendo músicas pesadas de mundo/bioma.
+
+---
+
+v1.27.2
+
+Gerado o modpack cliente `v4-nosounds`, removendo completamente o CobbleSounds para diagnosticar os timeouts em `Entrando no mundo...`. O pacote caiu para `168 MB` e mantém apenas Cobblemon Interface e ícones Cobblemon do Xaero como resource packs.
+
+---
+
+v1.27.3
+
+Gerado o modpack cliente `v7-current` com `144 MB`, alinhado à pasta de mods atual do servidor de testes. Os pacotes antigos `v3-lite`, `v4-nosounds`, `v5-minconnect` e `v6-coreconnect` foram removidos da raiz do projeto para evitar confusão.
+
+O pacote mantém Cobblemon, Easy NPC, Sophisticated Backpacks/Core/Storage, dependências necessárias, Xaero Minimap e os resource packs Cobblemon Interface + Xaero Cobblemon Icons. O `atlas-core.jar` continua fora do cliente por ser exclusivo do servidor.
+
+---
+
+v1.27.4
+
+Criado o resource pack `Atlas-CobbleSongs-Lite-v1.0.0.zip` com 12 faixas selecionadas do `CobbleSounds[Complete]`, reduzindo a trilha sonora para aproximadamente `25 MB`.
+
+Gerado o modpack cliente `v8-cobblesongs-lite` com `169 MB`, incluindo o pack de músicas leve junto do conjunto atual de mods e resource packs do Atlas.
+
+---
+
+v1.27.5
+
+Removidos `Sophisticated Backpacks`, `Sophisticated Core` e `Sophisticated Storage` do servidor após o cliente não carregar corretamente o mapa. Criado o modpack `v9-nosophisticated-cobblesongs-lite` com `165 MB`, mantendo o `Atlas CobbleSongs Lite` e removendo completamente o trio Sophisticated do pacote do cliente.
+
+---
+
+v1.27.6
+
+Confirmado que o problema de carregamento do mapa era causado pelo trio Sophisticated. O servidor permanece sem `Sophisticated Backpacks`, `Sophisticated Core` e `Sophisticated Storage`.
+
+O resource pack de música foi refeito como `CobbleSounds[AtlasLite]_v1.4.1.zip`, preservando os IDs originais do CobbleSounds em vez de IDs customizados `atlas.music.*`. Gerado o modpack cliente `v10-cobblesounds-atlaslite` com `165 MB`, sem Sophisticated e com o CobbleSounds AtlasLite incluído.
+
+---
+
+v1.27.7
+
+Hotfix do login no Auth Lobby: o teleporte para o spawn deixou de ocorrer diretamente no evento `JOIN` e passou a ser executado no tick seguinte do servidor.
+
+Esse ajuste evita conflito com o rastreamento interno de chunks do Minecraft, que estava gerando `Force-added player with duplicate UUID` e podia deixar o jogador preso no limbo mesmo com os arquivos do mapa intactos.
+
+---
+
+v1.27.8
+
+Temas musicais do Atlas conectados ao `CobbleSounds[AtlasLite]`: o Auth Lobby/Hub agora toca `cobblesounds:rustboro_city_hoenn2`, o Lobby Emerald toca `cobblesounds:introductions_hoenn` e o Survival Emerald usa `cobblesounds:route1_sinnoh`.
+
+O resource pack Lite foi refeito com aliases mínimos em `assets/minecraft/sounds.json` e correção do `surfing_hoenn2`, permitindo que o pacote leve funcione sem depender do CobbleSounds Complete. Gerado o modpack cliente `v11-cobblesounds-themefix`.
+
+---
+
+v1.27.9
+
+Sistema de música evoluído para prioridade por contexto. O Survival/RTP agora varia o tema entre rota base, rotas alternativas, água/mar e caverna, em vez de tocar uma única faixa fixa.
+
+Batalhas do Cobblemon agora têm prioridade sobre temas de área: ao iniciar uma batalha, o Atlas para a música atual e toca um tema de batalha; ao vencer, fugir ou usar `/endbattle`, a música de área volta automaticamente.
+
+---
+
+v1.27.10
+
+A limpeza automática do Survival Emerald agora remove Pokémon selvagens elegíveis independentemente do tempo de spawn. As proteções continuam ativas para Pokémon de jogadores, Pokémon em batalha, ocupados, vinculados a pastures/tethering ou próximos de jogadores.
+
+Drops continuam exigindo pelo menos 5 minutos no chão antes de serem removidos.
+
+---
+
+v1.28.0
+
+Primeira entrega da Sprint 9 com sistema de moderação e punições persistentes.
+
+Adicionados `/warn`, `/kick`, `/mute`, `/unmute`, `/ban`, `/unban`, `/banip`, `/unbanip` e `/punishments`. Mutes bloqueiam chat, bans bloqueiam entrada no servidor e BanIP bloqueia conexões pelo IP registrado. As punições ficam salvas no PostgreSQL e respeitam a hierarquia da staff.
+
+---
+
+v1.28.1
+
+Hotfix da Sprint 9: `/unban` agora também remove banimentos vanilla aplicados por engano com o comando `/ban` do Minecraft. Adicionados aliases seguros `/atlasban` e `/atlasunban` para evitar ambiguidade com o comando vanilla.

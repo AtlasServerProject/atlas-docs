@@ -174,6 +174,270 @@ Resource packs adicionados ao pacote de cliente:
 - `Cobblemon Interface v1.6.0.zip`
 - `Xaeros Cobblemon Icons v2.1.zip`
 
+## Atualização de modpack — 2026-07-07 v3-lite
+
+Novo pacote recomendado para testes:
+
+```text
+/home/somente/dev/atlas/atlas-client-modpack-2026-07-07-v3-lite.tar.gz
+```
+
+Tamanho aproximado:
+
+```text
+258 MB
+```
+
+Motivo da revisão:
+
+- o pacote v2 tinha `657 MB`;
+- o `CobbleSounds[Complete]` sozinho tinha aproximadamente `488 MB`;
+- a maior parte do peso vinha de músicas de bioma/mundo;
+- isso poderia travar clientes mais fracos durante o carregamento em `Entrando no mundo...`.
+
+Alterações:
+
+- removido `CobbleSounds[Complete]_v1.4.1.zip` do pacote padrão;
+- criado `CobbleSounds[BattleOnly]_v1.4.1-atlas-lite.zip`;
+- mantidos os sons de batalha do Cobblemon;
+- removidas músicas globais de mundo/bioma do CobbleSounds;
+- removido `easy_npc_config_ui-fabric-1.21.1-6.0.21.jar` do pacote padrão dos jogadores.
+
+Validação:
+
+- arquivo `.tar.gz` listado com sucesso;
+- resource pack BattleOnly validado com `ZipFile.testzip`;
+- 66 arquivos `.ogg` de batalha preservados;
+- 0 músicas de mundo/bioma preservadas;
+- `assets/minecraft/sounds.json` removido para evitar referências quebradas às músicas excluídas.
+
+Decisão:
+
+O v3-lite passa a ser o pacote recomendado para jogadores. O CobbleSounds completo deve ficar opcional para quem tiver máquina melhor e quiser a experiência musical completa.
+
+## Atualização de modpack — 2026-07-07 v4-nosounds
+
+Pacote de diagnóstico sem CobbleSounds:
+
+```text
+/home/somente/dev/atlas/atlas-client-modpack-2026-07-07-v4-nosounds.tar.gz
+```
+
+Tamanho aproximado:
+
+```text
+168 MB
+```
+
+Motivo:
+
+- o cliente continuou desconectando durante `Entrando no mundo...`;
+- para isolar completamente a camada de áudio, removemos qualquer versão do CobbleSounds do pacote;
+- esse pacote deve ser usado como teste principal de conexão.
+
+Resource packs mantidos:
+
+- `Cobblemon Interface v1.6.0.zip`
+- `Xaeros Cobblemon Icons v2.1.zip`
+
+Resource packs removidos:
+
+- `CobbleSounds[Complete]_v1.4.1.zip`
+- `CobbleSounds[BattleOnly]_v1.4.1-atlas-lite.zip`
+
+Validação:
+
+- `.tar.gz` aberto e listado com sucesso;
+- nenhuma entrada contendo `CobbleSounds` ou `cobblesounds`;
+- `easy_npc_config_ui` permanece fora do pacote padrão dos jogadores;
+- servidor validado com `20.00 TPS`.
+
+Decisão histórica:
+
+O `v4-nosounds` foi usado para diagnosticar os timeouts em `Entrando no mundo...`, mas foi substituído nos testes seguintes.
+
+## Atualização de modpack — 2026-07-07 v7-current
+
+Pacote histórico:
+
+```text
+/home/somente/dev/atlas/atlas-client-modpack-2026-07-07-v7-current.tar.gz
+```
+
+Tamanho aproximado:
+
+```text
+144 MB
+```
+
+Motivo:
+
+- alinhar o cliente exatamente com a pasta `mods` atual do servidor de testes;
+- remover pacotes antigos de diagnóstico (`v3-lite`, `v4-nosounds`, `v5-minconnect`, `v6-coreconnect`);
+- manter apenas os mods atualmente ativos no servidor, exceto `atlas-core.jar`, que é exclusivo do servidor;
+- manter recursos client-side úteis: Xaero Minimap, ícones Cobblemon para Xaero e Cobblemon Interface;
+- manter CobbleSounds fora do pacote padrão até existir o `Atlas CobbleSongs Lite`.
+
+Mods do pacote:
+
+- `Cobblemon-fabric-1.7.3+1.21.1.jar`
+- `ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar`
+- `accessories-fabric-1.1.0-beta.53+1.21.1.jar`
+- `architectury-13.0.8-fabric.jar`
+- `athena-fabric-1.21.1-4.0.6.jar`
+- `cloth-config-15.0.140-fabric.jar`
+- `easy_npc-fabric-1.21.1-6.0.21.jar`
+- `fabric-api-0.116.12+1.21.1.jar`
+- `geckolib-fabric-1.21.1-4.9.2.jar`
+- `owo-lib-0.13.0-alpha.15+1.21.jar`
+- `rctapi-fabric-1.21.1-0.15.2-beta.jar`
+- `sophisticatedbackpacks-1.21.1-3.23.4.3.106.jar`
+- `sophisticatedcore-1.21.1-1.2.9.21.168.jar`
+- `sophisticatedstorage-1.21.1-1.3.7.9.139.jar`
+- `xaerominimap-fabric-1.21.1-26.1.0.jar`
+
+Resource packs:
+
+- `Cobblemon Interface v1.6.0.zip`
+- `Xaeros Cobblemon Icons v2.1.zip`
+
+Validação:
+
+- `.tar.gz` listado com sucesso;
+- os pacotes antigos foram removidos da raiz do projeto;
+- o pacote contém `README-ATLAS-MODPACK.txt`;
+- o conteúdo está alinhado com o servidor atual.
+
+Observação:
+
+Este pacote foi substituído depois que o trio Sophisticated causou problema de carregamento de mapa no cliente.
+
+## Plano de áudio — CobbleSounds AtlasLite
+
+Após remover o CobbleSounds completo do pacote padrão, a decisão é reaproveitar apenas algumas faixas selecionadas em um pacote leve próprio do Atlas, mantendo os IDs originais do CobbleSounds.
+
+A curadoria completa está documentada em `SOUNDTRACK.md`.
+
+Regras:
+
+- não reinstalar o CobbleSounds completo como obrigatório;
+- criar um resource pack leve com apenas as faixas usadas;
+- manter músicas futuras documentadas até os sistemas correspondentes existirem;
+- validar conexão e carregamento do cliente antes de recomendar o pacote para jogadores.
+
+## Atualização de modpack — 2026-07-07 v8-cobblesongs-lite
+
+Pacote histórico com trilha leve:
+
+```text
+/home/somente/dev/atlas/atlas-client-modpack-2026-07-07-v8-cobblesongs-lite.tar.gz
+```
+
+Resource pack separado:
+
+```text
+/home/somente/dev/atlas/Atlas-CobbleSongs-Lite-v1.0.0.zip
+```
+
+Tamanho aproximado:
+
+```text
+169 MB
+```
+
+Alterações em relação ao `v7-current`:
+
+- adicionado `Atlas-CobbleSongs-Lite-v1.0.0.zip` em `resourcepacks/`;
+- mantidos os mesmos mods do servidor atual;
+- mantidos `Cobblemon Interface` e `Xaeros Cobblemon Icons`;
+- mantido o CobbleSounds completo fora do modpack padrão.
+
+Validação:
+
+- `Atlas-CobbleSongs-Lite-v1.0.0.zip` validado com `ZipFile.testzip`;
+- modpack `v8-cobblesongs-lite` listado com sucesso;
+- 15 JARs e 3 resource packs no pacote;
+- o resource pack lite contém 12 faixas.
+
+Resultado do teste:
+
+O pacote customizado com IDs `atlas.music.*` não tocou corretamente no cliente. Ele foi substituído por `CobbleSounds[AtlasLite]_v1.4.1.zip`, preservando os IDs originais.
+
+## Atualização de modpack — 2026-07-07 v9-nosophisticated-cobblesongs-lite
+
+Pacote histórico para diagnóstico:
+
+```text
+/home/somente/dev/atlas/atlas-client-modpack-2026-07-07-v9-nosophisticated-cobblesongs-lite.tar.gz
+```
+
+Tamanho aproximado:
+
+```text
+165 MB
+```
+
+Motivo:
+
+- o cliente não carregava corretamente o mapa após adicionar o trio Sophisticated;
+- `sophisticatedbackpacks`, `sophisticatedcore` e `sophisticatedstorage` foram removidos do servidor;
+- o modpack do cliente foi alinhado novamente ao servidor;
+- o `Atlas CobbleSongs Lite` foi mantido para continuar o teste da trilha sonora leve.
+
+Mods removidos:
+
+- `sophisticatedbackpacks-1.21.1-3.23.4.3.106.jar`
+- `sophisticatedcore-1.21.1-1.2.9.21.168.jar`
+- `sophisticatedstorage-1.21.1-1.3.7.9.139.jar`
+
+Backup antes da remoção:
+
+```text
+/opt/atlas/server/backups/mod-versions/mods-pre-remove-sophisticated-20260707-232837.tar.gz
+```
+
+Validação:
+
+- servidor reiniciado sem os três mods;
+- `v9` validado sem entradas contendo `sophisticated`;
+- servidor estabilizou em `20.00 TPS`;
+- os warnings de datapack ausente podem aparecer por histórico do mundo, mas não impediram o boot.
+
+## Atualização de modpack — 2026-07-07 v10-cobblesounds-atlaslite
+
+Pacote recomendado atual:
+
+```text
+/home/somente/dev/atlas/atlas-client-modpack-2026-07-07-v10-cobblesounds-atlaslite.tar.gz
+```
+
+Resource pack separado:
+
+```text
+/home/somente/dev/atlas/CobbleSounds[AtlasLite]_v1.4.1.zip
+```
+
+Tamanho aproximado:
+
+```text
+165 MB
+```
+
+Motivo:
+
+- manter o servidor e o cliente sem `Sophisticated Backpacks/Core/Storage`, pois o mapa voltou a carregar sem eles;
+- substituir o pack `Atlas-CobbleSongs-Lite-v1.0.0.zip`, que usava IDs customizados e não tocou no cliente;
+- recriar o lite no mesmo padrão do CobbleSounds original, preservando os IDs como `cobblesounds:rustboro_city_hoenn2`;
+- manter apenas as 12 faixas aprovadas.
+
+Validação:
+
+- `CobbleSounds[AtlasLite]_v1.4.1.zip` validado com `ZipFile.testzip`;
+- o modpack `v10-cobblesounds-atlaslite` foi listado com sucesso;
+- 12 JARs e 3 resource packs no pacote;
+- nenhuma entrada contendo `sophisticated`;
+- resource pack contém 12 faixas e `assets/cobblesounds/sounds.json` com IDs originais.
+
 ### Observações sobre Xaero
 
 O `xaerominimap-fabric-1.21.1-26.1.0.jar` inclui o `XaeroLib` internamente em:
@@ -183,6 +447,34 @@ META-INF/jars/xaerolib-fabric-1.21.1-1.1.15.jar
 ```
 
 Por isso não foi necessário baixar um jar separado de `XaeroLib`.
+
+## Atualização de modpack — 2026-07-09 v11-cobblesounds-themefix
+
+Pacote atual:
+
+```text
+/home/somente/dev/atlas/atlas-client-modpack-2026-07-09-v11-cobblesounds-themefix.tar.gz
+```
+
+Motivo:
+
+- o `CobbleSounds[Complete]` tocava músicas porque incluía aliases em `assets/minecraft/sounds.json`;
+- o `CobbleSounds[AtlasLite]` anterior tinha apenas IDs diretos em `assets/cobblesounds/sounds.json`;
+- o `WorldThemeService` ainda tocava discos vanilla, então os temas escolhidos não eram chamados pelo servidor.
+
+Alterações:
+
+- `CobbleSounds[AtlasLite]_v1.4.1.zip` foi refeito;
+- adicionados aliases mínimos em `assets/minecraft/sounds.json`;
+- corrigida a faixa `surfing_hoenn2`;
+- o modpack v11 mantém Sophisticated removido;
+- o pacote permanece com 12 JARs e 3 resource packs.
+
+Temas esperados com `atlas-core` atualizado:
+
+- Auth Lobby / Hub: `cobblesounds:rustboro_city_hoenn2`;
+- Lobby Emerald: `cobblesounds:introductions_hoenn`;
+- Survival Emerald: `cobblesounds:route1_sinnoh`.
 
 ### Não instalado: Tim's TMs
 

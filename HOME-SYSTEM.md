@@ -31,3 +31,47 @@ Os nomes aceitam de 1 a 16 caracteres: letras, números, `_` e `-`.
 - Locais obstruídos não teleportam o jogador e não aplicam cooldown.
 - O teleporte possui aquecimento de três segundos.
 - Movimento cancela sem aplicar cooldown; girar a câmera é permitido.
+
+## GUI planejada
+
+O comando `/homes` deve evoluir de lista em texto para um menu visual simples, inspirado no fluxo do Ultra SetHome, mas com identidade própria do Atlas.
+
+### Menu principal
+
+Título:
+
+```text
+Homes do Atlas
+```
+
+Layout previsto:
+
+- 6 linhas.
+- Slots centrais para homes existentes.
+- Linha inferior reservada para ações.
+- Slots vazios preenchidos com vidro cinza para reduzir clique acidental.
+
+### Ícones
+
+| Função | Ícone sugerido | Ação |
+|---|---|---|
+| Home principal | Cama verde ou esmeralda | Clique teleporta para a home principal |
+| Home comum | Cama colorida | Clique teleporta para a home escolhida |
+| Slot disponível | Mapa vazio | Clique cria home na posição atual, quando permitido |
+| Slot bloqueado por limite | Vidro vermelho ou barreira | Mostra o cargo necessário para liberar mais homes |
+| Cooldown ativo | Relógio | Mostra tempo restante antes de teleportar |
+| Criar/atualizar home | Bússola | Abre confirmação para salvar a posição atual |
+| Modo deletar | Corante vermelho | Alterna exclusão segura de homes |
+| Fechar | Barreira | Fecha o menu |
+
+### Comportamento esperado
+
+- Clique esquerdo em uma home: iniciar teleporte.
+- Shift + clique em uma home: definir como home principal.
+- Clique com modo deletar ativo: pedir confirmação antes de remover.
+- Homes obstruídas devem mostrar aviso no chat e não aplicar cooldown.
+- Jogadores comuns não devem ver opções que não podem usar; quando fizer sentido, o menu mostra o motivo do bloqueio.
+
+### Próxima implementação
+
+A implementação deve usar container server-side do Fabric, sem depender de plugin Bukkit. A GUI será apenas uma camada visual sobre o `HomeService`, mantendo PostgreSQL, limites, cooldowns e validações atuais como fonte oficial.

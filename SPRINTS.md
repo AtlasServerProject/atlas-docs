@@ -2,11 +2,12 @@
 
 ## Próximas prioridades
 
-1. Acompanhar e concluir a pré-geração integral do Survival Emerald.
-2. Concluir as regras essenciais da Sprint 5: PvP, fome, dano de queda, Void e exceções para arenas.
-3. Validar morte no Survival, retorno ao Lobby Emerald e limpeza de posição com `/lobby emerald`.
-4. Validar e concluir a GUI da Sprint 6 — Home System.
+1. Validar em jogo a limpeza `v1.27.10`: Pokémon selvagens distantes devem ser removidos sem aguardar 5 minutos.
+2. Validar morte no Survival, retorno ao Lobby Emerald e limpeza de posição com `/lobby emerald`.
+3. Definir o fluxo de retorno opcional ao Survival salvo sem pular o seletor.
+4. Implementar a GUI da Sprint 6 — Home System a partir do desenho aprovado.
 5. Retomar o conteúdo visual do Lobby Emerald: NPCs, tutorial, rankings, crates, BossBar e scoreboard.
+6. Organizar commits pendentes de `atlas-core` e `atlas-docs`.
 
 ---
 
@@ -138,8 +139,8 @@ Status: 🚧 Base funcional concluída; pendências visuais e expansão futura
 - [x] Remover/desativar NPCs externos ou legados
 - [x] Permitir NPCs oficiais do Atlas apenas para navegação
 - [x] Adicionar NPC `Lobby Emerald` no Auth Lobby
-- [ ] Desativar economia
-- [ ] Desativar demais gameplays
+- [x] Desativar economia no Auth Hub por bloqueio de comandos e interações
+- [x] Desativar demais gameplays no Auth Hub por bloqueio de comandos, inventário, dano, interações e Pokémon
 - [x] Bloquear todos os comandos no Hub mesmo após autenticação
 - [x] Permitir exclusivamente `/login` e `/register` no Hub
 
@@ -175,7 +176,7 @@ Status: 🚧 Base funcional concluída; pendências visuais e expansão futura
 - [x] Criar o mundo `atlas:survival_emerald`
 - [x] Implementar `/lobby emerald` para retornar do Survival ao Lobby Emerald
 - [x] Iniciar pré-geração integral do Survival Emerald
-- [ ] Concluir pré-geração integral do Survival Emerald
+- [x] Concluir pré-geração integral do Survival Emerald
 - [ ] Implementar NPCs
 - [ ] Implementar tutorial
 - [ ] Implementar rankings
@@ -183,6 +184,9 @@ Status: 🚧 Base funcional concluída; pendências visuais e expansão futura
 - [ ] Implementar BossBar
 - [ ] Implementar scoreboard
 - [x] Adicionar tema sonoro de entrada por mundo
+- [x] Criar pacote leve `CobbleSounds AtlasLite`
+- [x] Aplicar `introductions_hoenn.ogg` como tema do Lobby Emerald
+- [x] Aplicar `rustboro_city_hoenn2.ogg` como tema do Lobby Hub/Auth Lobby
 
 ### Hierarquia visual
 
@@ -209,15 +213,15 @@ Status: 🚧 Em andamento
 
 Objetivo: padronizar toda a experiência PvE.
 
-- [ ] Desativar PvP
-- [ ] Desativar fome
-- [ ] Desativar dano de queda
+- [x] Desativar PvP
+- [x] Desativar fome
+- [x] Desativar dano de queda
 - [x] Implementar regras por mundo
 - [x] Proteger os lobbys
 - [x] Definir limite de 12000 × 12000 blocos para o Survival Emerald
 - [x] Reposicionar jogadores que ultrapassarem o limite
 - [x] Iniciar pré-geração automática dos 750 × 750 chunks do Survival Emerald
-- [ ] Concluir pré-geração automática dos 750 × 750 chunks do Survival Emerald
+- [x] Concluir pré-geração automática dos 750 × 750 chunks do Survival Emerald
 - [x] Resetar o Survival Emerald com a mesma seed e estruturas/worldgen dos addons
 - [x] Implementar `/rtp` seguro no Lobby e Survival Emerald
 - [x] Aplicar cooldown de `/rtp` por cargo
@@ -228,8 +232,19 @@ Objetivo: padronizar toda a experiência PvE.
 - [x] Retornar ao Lobby Emerald após morte no Survival
 - [x] Implementar saída voluntária com `/lobby emerald`
 - [x] Adicionar `/endbattle` para jogadores encerrarem batalhas travadas
-- [ ] Proteger contra o Void
+- [x] Proteger contra o Void
+- [x] Aplicar trilha de mar com `sea_mauville_unova.ogg` e `surfing_hoenn2.ogg`
+- [x] Aplicar trilha de cavernas com `pettleburg_woods-granite_cave.ogg`
+- [x] Aplicar tema geral temporário de batalha com prioridade sobre músicas de área
+- [ ] Aplicar `distortion_world_sinnoh.ogg` no The End
 - [ ] Preparar exceções para arenas futuras
+
+### Soundtrack futura
+
+- [ ] Guardar `azalea_town_sinnoh.ogg` para shopping
+- [ ] Guardar `dragonspiral_tower.ogg` para templos lendários
+- [x] Incluir `battle_regis_hoenn.ogg` no pacote Lite e usar temporariamente como tema geral de batalha
+- [ ] Reservar `battle_regis_hoenn.ogg` como tema exclusivo futuro das batalhas contra Regis
 
 ### Validação pendente
 
@@ -262,7 +277,8 @@ Status: 🚧 Em andamento
 - [x] Validar criação, atualização e exclusão em jogo
 - [x] Validar limites com Player, VIP e Staff
 - [x] Validar home obstruída e cancelamento por movimento
-- [ ] Projetar GUI e ícones das homes
+- [x] Projetar GUI e ícones das homes
+- [ ] Implementar GUI das homes
 
 ---
 
@@ -318,6 +334,7 @@ Status: ✅ Concluída
 
 - [x] Limpeza de drops antigos
 - [x] Limpeza segura de Pokémon selvagens distantes
+- [x] Remover Pokémon selvagens elegíveis independente do tempo de spawn
 - [x] Monitoramento de TPS e MSPT
 - [x] `/atlas cleanup`
 - [x] `/atlas tps`
@@ -343,15 +360,27 @@ Status: ✅ Concluída
 
 ## Sprint 9 — Moderation & Staff
 
-Status: ⏳ Planejada
+Status: 🚧 Em andamento
 
 ### Punições
 
-- [ ] Warn
-- [ ] Kick
-- [ ] Mute
-- [ ] Ban
-- [ ] BanIP
+- [x] Warn
+- [x] Kick
+- [x] Mute
+- [x] Unmute
+- [x] Ban
+- [x] Unban
+- [x] `/unban` também remove ban vanilla aplicado por engano
+- [x] Aliases seguros `/atlasban` e `/atlasunban`
+- [x] BanIP
+- [x] UnbanIP
+- [x] Histórico com `/punishments`
+- [x] Bloquear chat de jogadores mutados
+- [x] Bloquear entrada de jogadores banidos
+- [x] Bloquear entrada por IP banido
+- [x] Registrar punições no PostgreSQL
+- [x] Respeitar hierarquia da staff ao punir
+- [ ] Validar punições em jogo com player comum e staff
 
 ### Staff
 
@@ -364,7 +393,7 @@ Status: ⏳ Planejada
 
 ### Broadcast
 
-- [ ] Warn privado
+- [x] Warn privado
 - [ ] Ban global
 - [ ] Configuração
 
