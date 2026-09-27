@@ -10,9 +10,17 @@ API Spring Boot e frontend Angular fazem parte do planejamento.
 - [Sprints e validações pendentes](SPRINTS.md)
 - [Histórico de mudanças](CHANGELOG.md)
 - [Versões](versions/README.md)
-- [Contexto e visão original](CONTEXT.md)
+- [Princípios e arquitetura](CONTEXT.md)
 
 ## Operação
 
 - [Runtime do servidor](SERVER-RUNTIME.md)
 - [Acesso externo com Playit](PLAYIT.md)
+
+## Guias por sistema
+
+- [Lobbys](LOBBYS.md), [NPCs](NPCS.md) e [Survival](SURVIVAL-EMERALD.md)
+- [Homes](HOME-SYSTEM.md), [claims](CLAIMS.md) e [moderação](MODERATION.md)
+- [Economia e kits](ECONOMY.md), [anti lag](ANTILAG.md) e [eventos planejados](ATLAS-EVENTS.md)
+- [Mods](MODS_COBBLEMON_ADDONS.md), [músicas](SOUNDTRACK.md) e [WorldEdit](WORLDEDIT.md)
+- [Regras de desenvolvimento e release](AGENTS.md)

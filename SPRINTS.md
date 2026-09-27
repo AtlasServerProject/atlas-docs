@@ -10,6 +10,8 @@ comportamentos descritos em documentos históricos.
 
 ## Próximas prioridades
 
+Pendência operacional prioritária: implementar backup/restauração reais e testar recuperação; os scripts atuais são placeholders.
+
 1. Validar em jogo a limpeza atual: selvagens elegíveis são removidos mesmo próximos de jogadores; Pokémon protegidos devem permanecer.
 2. Validar limpeza da posição salva com `/lobby emerald` e definir retorno opcional ao Survival sem pular o seletor. Morte e retorno ao lobby já constam como validados nesta lista.
 3. Validar punições com Player e Staff, kits VIP, cooldowns e escolha de mints.

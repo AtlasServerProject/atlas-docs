@@ -23,7 +23,7 @@ Consolidação documental: 2026-09-27.
 - Kits comuns e VIP, cooldowns, GUI de kits e seleção de mints; `/fly` e `/ec`.
 - Punições persistentes e histórico, respeitando hierarquia da staff.
 - Limpeza de entidades, TPS/MSPT e recuperação persistente de itens.
-- Scripts operacionais, backup/restauração e comandos de pré-geração.
+- Scripts operacionais e comandos de pré-geração. Backup/restauração na CLI ainda são placeholders.
 
 ## Últimas entregas consolidadas
 
@@ -36,6 +36,8 @@ As versões 1.29.9 e 1.29.10 descrevem intervenções no mundo; não são, por s
 novas versões do JAR. Consulte [CHANGELOG.md](CHANGELOG.md) e [versions/](versions/README.md).
 
 ## Pendências imediatas
+
+- Implementar backup/restauração reais, retenção e teste de recuperação.
 
 - GUI das homes e conteúdo final do Lobby Emerald.
 - Fluxo de retorno opcional ao Survival e validação de `/lobby emerald`.
@@ -50,10 +52,8 @@ novas versões do JAR. Consulte [CHANGELOG.md](CHANGELOG.md) e [versions/](versi
 
 [SPRINTS.md](SPRINTS.md) contém o checklist de implementação e validação.
 [ROADMAP.MD](ROADMAP.MD) organiza o trabalho restante.
-[CONTEXT.md](CONTEXT.md) preserva a visão e decisões originais; descrições históricas
-não devem substituir o comportamento documentado nas versões mais recentes.
-Por exemplo, a economia atual usa CobbleDollars, embora o desenho inicial previsse
-saldo próprio no PostgreSQL.
+[CONTEXT.md](CONTEXT.md) reúne princípios, arquitetura e persistência.
+O histórico detalhado fica nas notas de versão.
 
 Esta consolidação organiza alterações locais existentes e documentação. Não representa
 uma nova release, novo deploy ou uma nova rodada de validação dentro do Minecraft.

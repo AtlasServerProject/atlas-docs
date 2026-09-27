@@ -53,3 +53,10 @@ Pause ao terminar o período de manutenção:
 ```bash
 infra/scripts/atlas-cli pregenerate-survival pause
 ```
+
+## Backup e restauração — pendência operacional
+
+`infra/scripts/backup.sh` e `restore.sh` são placeholders: apenas mostram
+“Em desenvolvimento.” Os comandos da CLI ainda não criam nem restauram backups.
+Implementar backup de banco e mundos, retenção e teste de restauração antes de
+considerar essa rotina pronta. Backups manuais históricos não comprovam automação.

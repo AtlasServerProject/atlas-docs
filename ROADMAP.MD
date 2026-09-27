@@ -42,6 +42,8 @@ podem permanecer abertas.
 
 ## Ordem de continuidade
 
+Pendência operacional prioritária: implementar backup/restauração reais e testar recuperação; os scripts atuais são placeholders.
+
 1. Validar os fluxos essenciais e as entregas recentes em jogo; confirmar pré-geração do Nether/End.
 2. Finalizar GUI das homes e conteúdo do Lobby Emerald.
 3. Completar ferramentas de staff e regras.
