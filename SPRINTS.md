@@ -2,7 +2,7 @@
 
 ## Estado consolidado — 2026-09-27
 
-Referência: Atlas Core `1.29.13`. Os itens marcados representam entregas registradas;
+Referência: Atlas Core `1.29.14`. Os itens marcados representam entregas registradas;
 validações em jogo ainda abertas continuam explicitamente pendentes.
 O [STATUS.md](STATUS.md) resume o estado atual e o [ROADMAP.MD](ROADMAP.MD)
 organiza as próximas entregas. Notas de versões posteriores prevalecem sobre

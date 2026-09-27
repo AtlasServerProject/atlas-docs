@@ -4,8 +4,8 @@ Consolidação documental: 2026-09-27.
 
 ## Referência técnica
 
-- Versão declarada em `atlas-core/gradle.properties`: **1.29.13**.
-- O JAR instalado em `/opt/atlas/server/fabric/mods/atlas-core.jar` declara **1.29.13**.
+- Versão declarada em `atlas-core/gradle.properties`: **1.29.14**.
+- O JAR instalado em `/opt/atlas/server/fabric/mods/atlas-core.jar` declara **1.29.14**.
 - O serviço `atlas` estava ativo na consulta desta consolidação. Isso não substitui testes em jogo.
 - `atlas-api/` e `atlas-web/` estão vazias no workspace: API e frontend ainda são planejados.
 - A CLI operacional está em `infra/scripts/atlas-cli`.
@@ -27,6 +27,9 @@ Consolidação documental: 2026-09-27.
 
 ## Últimas entregas consolidadas
 
+A [v1.29.14](versions/v1.29.14.md) corrige a localização de classes Java, remove
+avisos de código e define UTF-8. Build e implantação foram validados em 2026-09-27.
+
 As versões 1.28.5 a 1.29.13 registram ajustes de limpeza e compatibilidade de mods,
 RTP multidimensional, pré-geração, kits, benefícios VIP, reconstrução do Lobby Emerald
 e correções de WorldEdit. A 1.29.13 libera todos os comandos para Dono autenticado,
@@ -38,7 +41,6 @@ novas versões do JAR. Consulte [CHANGELOG.md](CHANGELOG.md) e [versions/](versi
 ## Pendências imediatas
 
 - Implementar backup/restauração reais, retenção e teste de recuperação.
-
 - GUI das homes e conteúdo final do Lobby Emerald.
 - Fluxo de retorno opcional ao Survival e validação de `/lobby emerald`.
 - Validação em jogo da limpeza atual, punições e kits VIP/seleção de mints.
@@ -55,5 +57,5 @@ novas versões do JAR. Consulte [CHANGELOG.md](CHANGELOG.md) e [versions/](versi
 [CONTEXT.md](CONTEXT.md) reúne princípios, arquitetura e persistência.
 O histórico detalhado fica nas notas de versão.
 
-Esta consolidação organiza alterações locais existentes e documentação. Não representa
-uma nova release, novo deploy ou uma nova rodada de validação dentro do Minecraft.
+As validações de build e implantação estão nas notas de versão. Os testes em jogo
+ainda pendentes permanecem listados nas sprints.

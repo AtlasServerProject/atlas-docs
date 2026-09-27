@@ -5,7 +5,7 @@ API Spring Boot e frontend Angular fazem parte do planejamento.
 
 ## Estado e planejamento
 
-- [Estado atual — Atlas Core 1.29.13](STATUS.md)
+- [Estado atual — Atlas Core 1.29.14](STATUS.md)
 - [Roadmap](ROADMAP.MD)
 - [Sprints e validações pendentes](SPRINTS.md)
 - [Histórico de mudanças](CHANGELOG.md)

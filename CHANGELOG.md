@@ -105,6 +105,8 @@ Registros históricos descrevem a época da entrega; o estado atual está em [ST
 - [v1.29.12](versions/v1.29.12.md) — Corrigido o `/wand`: o machado entregue agora é uma stack vanilla de `minecraft:wooden_axe`, exatamente igual ao item configurado pelo WorldEdit, sem nome ou componentes customizados que pudessem impedir o reconhecimento.
 - [v1.29.13](versions/v1.29.13.md) — Adicionado bypass total de comandos para `OWNER/DONO` após a autenticação. O Dono agora pode executar todos os comandos registrados pelo servidor, inclusive no Auth Hub, enquanto a proteção antes do login permanece ativa.
 
+- [v1.29.14](versions/v1.29.14.md) — Corrigidos pacotes Java e avisos do editor.
+
 ## Registros operacionais
 
 Documentação operacional
