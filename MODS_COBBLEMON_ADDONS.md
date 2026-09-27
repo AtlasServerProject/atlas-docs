@@ -505,6 +505,160 @@ Decisão:
 - procurar uma versão atualizada para `1.21.1`;
 - ou criar/adaptar estruturas próprias do Atlas futuramente.
 
+## Atualização de modpack — 2026-07-13 v13-e19-minimap-icons
+
+Pacote atual:
+
+```text
+/home/somente/dev/atlas/atlas-client-modpack-2026-07-13-v13-e19-minimap-icons.tar.gz
+```
+
+Arquivo separado para instalação manual:
+
+```text
+/home/somente/dev/atlas/E19 Cobblemon Minimap Icons.zip
+```
+
+Motivo:
+
+- o pack antigo `Xaeros Cobblemon Icons v2.1.zip` estava desatualizado;
+- o Cobbleverse usa `E19 Cobblemon Minimap Icons.zip`, com cobertura mais completa de sprites para o Xaero Minimap;
+- o E19 inclui Pokémon e formas recentes, chegando até `1025_pecharunt`.
+
+Alterações:
+
+- removido `Xaeros Cobblemon Icons v2.1.zip` do modpack do cliente;
+- adicionado `E19 Cobblemon Minimap Icons.zip`;
+- mantidos `CobbleSounds[AtlasLite]_v1.4.1.zip` e `Cobblemon Interface v1.6.0.zip`;
+- mantido `xaerominimap-fabric-1.21.1-26.1.0.jar`.
+
+Validação:
+
+- `E19 Cobblemon Minimap Icons.zip` validado com `ZipFile.testzip`;
+- pack possui `9947` entradas;
+- pack possui `9447` imagens `.png`;
+- definição `assets/xaerominimap/entity/icon/definition/cobblemon/pokemon.json` presente;
+- o modpack v13 foi listado com sucesso e não contém mais `Xaeros Cobblemon Icons v2.1.zip`.
+
+Observação de licença:
+
+- o Cobbleverse distribui o E19 com licença `Mozilla Public License 2.0`;
+- manter o crédito do autor do pack ao distribuir para testadores.
+
+## Pacote QoL de testes — 2026-07-13
+
+Pasta para instalação manual no cliente:
+
+```text
+/home/somente/dev/atlas/mods-qol-2026-07-13
+```
+
+Arquivo compactado:
+
+```text
+/home/somente/dev/atlas/mods-qol-2026-07-13.tar.gz
+```
+
+Mods incluídos para o cliente:
+
+- `catchrate-display-fabric-2.8.14.jar`
+- `catchindicator-fabric-1.6.2.jar`
+- `MouseTweaks-fabric-mc1.21-2.26.jar`
+- `Controlling-fabric-1.21.1-19.0.5.jar`
+- `BetterF3-11.0.3-Fabric-1.21.1.jar`
+- `zoomify-2.15.1+1.21.1.jar`
+- `BetterThirdPerson-Fabric-1.21-1.9.0.jar`
+- `notenoughanimations-fabric-1.12.0-mc1.21.1.jar`
+- `entityculling-fabric-1.10.0-mc1.21.1.jar`
+- `ImmediatelyFast-Fabric-1.6.10+1.21.1.jar`
+- `modernfix-fabric-5.25.1+mc1.21.1.jar`
+- `ferritecore-7.0.3-fabric.jar`
+- `lithium-fabric-0.15.3+mc1.21.1.jar`
+- `krypton-0.2.8.jar`
+- `packetfixer-3.3.1-1.20.5-1.21.X-merged.jar`
+
+Dependências incluídas para evitar falta no cliente:
+
+- `fabric-language-kotlin-1.13.10+kotlin.2.3.20.jar`
+- `Searchables-fabric-1.21.1-1.0.2.jar`
+- `yet_another_config_lib_v3-3.8.1+1.21.1-fabric.jar`
+
+Instalados no servidor:
+
+- `modernfix-fabric-5.25.1+mc1.21.1.jar`
+- `ferritecore-7.0.3-fabric.jar`
+- `lithium-fabric-0.15.3+mc1.21.1.jar`
+- `krypton-0.2.8.jar`
+- `packetfixer-3.3.1-1.20.5-1.21.X-merged.jar`
+
+Não instalados no servidor:
+
+- mods `environment: client`, como `MouseTweaks`, `Controlling`, `BetterF3`, `Zoomify`, `BetterThirdPerson`, `CatchIndicator`, `CatchRate Display` e `ImmediatelyFast`;
+- mods visuais sem ganho real no servidor, como `EntityCulling` e `NotEnoughAnimations`.
+
+Backup criado antes da instalação no servidor:
+
+```text
+/opt/atlas/server/backups/mod-versions/mods-pre-qol-server-20260713-144049.tar.gz
+```
+
+Observação:
+
+- os JARs já foram copiados para `/opt/atlas/server/fabric/mods`;
+- é necessário reiniciar o serviço `atlas` para carregar os novos mods no servidor;
+- o ambiente do Codex não conseguiu reiniciar via `systemctl` por exigir autenticação interativa.
+
+## Pacote Fase 3 Cobblemon Gameplay — 2026-07-13
+
+Pasta para instalação manual no cliente:
+
+```text
+/home/somente/dev/atlas/mods-phase3-cobblemon-2026-07-13
+```
+
+Arquivo compactado:
+
+```text
+/home/somente/dev/atlas/mods-phase3-cobblemon-2026-07-13.tar.gz
+```
+
+Incluídos:
+
+- `cobblemonraiddens-fabric-0.10.0+1.21.1.jar`
+- `Cobbreeding-fabric-2.2.0.jar`
+- `SafePastures-1.1.1+1.21.1.jar`
+- `pastureLoot-1.0.5+1.21.1.jar`
+- `cobblecuisine-2.0.1-1.7-rc1.jar`
+- `pokeblocks-1.4.0-1.21.1.jar`
+- `cobblemon-additions-4.1.6.jar`
+- `cobblemon-battle-extras-fabric-1.12.42.jar`
+- `cobblemon-battle-positions-1.1.3.jar`
+- `mega_showdown-fabric-1.7.3+1.7.3+1.21.1.jar`
+- `CobbleverseBadges-1.3.jar`
+- `fabric-language-kotlin-1.13.10+kotlin.2.3.20.jar`
+
+Não incluído:
+
+- `fightorflight-fabric-0.10.7.jar`, por decisão de design. O mod altera comportamento e combate dos Pokémon de forma agressiva demais para esta fase do Atlas.
+
+Instalação no servidor:
+
+- todos os JARs acima foram copiados para `/opt/atlas/server/fabric/mods`;
+- o servidor ainda precisa ser reiniciado manualmente para carregar a fase 3.
+
+Backup criado antes da instalação no servidor:
+
+```text
+/opt/atlas/server/backups/mod-versions/mods-pre-phase3-cobblemon-20260713-145356.tar.gz
+```
+
+Observações de risco:
+
+- `mega_showdown` altera muito o balanceamento: megas, z-moves, dynamax, tera, ultra burst e fusions;
+- `cobblemonraiddens` adiciona raids e pode impactar progressão;
+- `cobblemon-additions` adiciona estruturas/spawners e pode interferir no controle próprio de mundo do Atlas;
+- `cobblemon-additions`, `mega_showdown` e `CobbleverseBadges` possuem `fabric.mod.json` com quebra de linha em campos de texto. O Cobbleverse usa esses JARs, mas se o servidor falhar no boot, esses devem ser os primeiros suspeitos.
+
 ### Validação da atualização
 
 Após instalar `SimpleTMs` no servidor:
@@ -514,3 +668,87 @@ Após instalar `SimpleTMs` no servidor:
 - Easy NPC persistiu o NPC `Lobby Emerald`;
 - comando `/atlas tps` respondeu;
 - TPS estabilizou em `20.00`.
+
+## Hotfix Z-A Mega — 2026-07-13
+
+Problema observado:
+
+- ao pegar algumas mega pedras na mão em modo criativo, o jogador era desconectado com `Failed to decode packet 'serverbound/minecraft:set_creative_mode_slot'`.
+
+Causa provável:
+
+- o cliente possuía itens do addon `zamega`, mas o servidor tinha apenas `mega_showdown`;
+- ao enviar o item pelo inventário criativo, o servidor não conseguia decodificar o registro/componente do item.
+
+Adicionado ao servidor:
+
+- `zamega-fabric-1.7.1.jar`
+
+Dependências já presentes:
+
+- `mega_showdown-fabric-1.7.3+1.7.3+1.21.1.jar`
+- `accessories-fabric-1.1.0-beta.53+1.21.1.jar`
+- `architectury-13.0.8-fabric.jar`
+- `fabric-api-0.116.12+1.21.1.jar`
+- `Cobblemon-fabric-1.7.3+1.21.1.jar`
+
+Pacote separado para instalação manual:
+
+```text
+/home/somente/dev/atlas/mods-zamega-hotfix-2026-07-13.tar.gz
+```
+
+Backup criado antes da instalação no servidor:
+
+```text
+/opt/atlas/server/backups/mod-versions/mods-pre-zamega-hotfix-20260713-152237.tar.gz
+```
+
+Observação:
+
+- é necessário reiniciar o servidor para carregar `zamega`.
+
+## Hotfix de alinhamento de registry — 2026-07-13
+
+Após novos testes, o erro `Failed to decode packet 'serverbound/minecraft:set_creative_mode_slot'` também ocorreu com outros itens de gameplay.
+
+Causa confirmada:
+
+- os JARs novos estavam na pasta do servidor, mas o processo ativo ainda tinha sido iniciado antes da instalação;
+- o log antigo carregava apenas `76 mods`;
+- o cliente enviava itens novos pelo inventário criativo, mas o servidor ativo ainda não conhecia esses registros.
+
+Correção:
+
+- servidor reiniciado via console administrativo com `stop`;
+- `systemd` subiu o serviço novamente por `Restart=always`;
+- novo boot validado com `102 mods`.
+
+Mods adicionais alinhados no servidor:
+
+- `CobbleDollars-fabric-2.0.0+Beta-5.1+1.21.1.jar`
+- `CobbleFurnies-fabric-1.0.jar`
+- `MoreCobblemonTweaks-fabric-1.3.3.jar`
+- `Only Bottle Caps-1.3.0.jar`
+- `cobblenav-fabric-2.3.2.jar`
+- `tmcraft-1.4.18+1.7.3.jar`
+- `supermartijn642configlib-1.1.8-fabric-mc1.21.jar`
+- `supermartijn642corelib-1.1.21-fabric-mc1.21.jar`
+
+Resultado:
+
+- `mega_showdown`, `zamega`, CobbleDollars, CobbleFurnies, CobbleNav, TM Craft, MoreCobblemonTweaks e Only Bottle Caps aparecem no boot;
+- o erro de datapack com `cobblenav:fishingnav_item` deixou de aparecer;
+- o próximo teste deve ser pegar itens desses mods no criativo e confirmar que o kick não ocorre mais.
+
+Pacote separado:
+
+```text
+/home/somente/dev/atlas/mods-registry-align-2026-07-13.tar.gz
+```
+
+Backup antes da alteração:
+
+```text
+/opt/atlas/server/backups/mod-versions/mods-pre-registry-align-20260713-153645.tar.gz
+```

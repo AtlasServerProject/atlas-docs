@@ -7,15 +7,17 @@ O Atlas complementa Lithium, FerriteCore e ModernFix controlando acúmulo de ent
 - Executada a cada 15 minutos.
 - Avisos globais com 60, 30 e 10 segundos de antecedência.
 - Remove somente drops com pelo menos 5 minutos no chão.
-- Remove Pokémon selvagens elegíveis independente do tempo de existência, desde que estejam a mais de 64 blocos de todos os jogadores.
+- Remove Pokémon selvagens elegíveis independente do tempo de existência, mesmo que estejam perto de jogadores.
 
 Nunca são removidos Pokémon:
 
 - pertencentes a jogadores;
 - em batalha ou ocupados;
 - vinculados a pastures;
-- próximos de jogadores;
+- lendários ou míticos da lista protegida do Atlas;
 - existentes nos lobbys.
+
+A lista protegida usa os IDs internos do Cobblemon e cobre lendários/míticos de Kanto até Paldea, incluindo variações com nomes compostos como `typenull`, `tapukoko`, `gougingfire`, `ironboulder`, `ironcrown`, `wochien`, `chienpao`, `tinglu` e `chiyu`.
 
 ## Comandos
 

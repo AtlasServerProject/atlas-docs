@@ -69,7 +69,7 @@ ao Survival Emerald, NPCs, crates, rankings, tutorial, loja, eventos, scoreboard
 e navegação.
 
 O mapa está instalado como a dimensão `atlas:emerald`. O seletor envia o jogador
-para o centro do spawn original do mapa:
+para o centro da base autoral do lobby:
 
 ```text
 X: 975.5
@@ -79,7 +79,16 @@ Orientação: leste (-90°)
 ```
 
 Fora dos chunks existentes, a dimensão utiliza geração vazia para impedir a
-criação de terreno aleatório ao redor do lobby.
+criação de terreno aleatório ao redor do lobby. A base mede 129 × 129 blocos
+(X 911–1039, Z 1509–1637, topo em Y 178) e fica protegida por barreiras
+invisíveis laterais e superiores.
+
+Em 14/07/2026, a plataforma de quartzo e os elementos decorativos antigos foram
+removidos. O lobby agora é uma ilha flutuante autoral completa: a superfície é
+de grama, seguida por terra, pedra e deepslate em camadas progressivamente
+menores, terminando em um núcleo pontudo de dripstone próximo de Y 145. O topo
+permanece livre para a construção dos NPCs, tutorial, rankings, crates e demais
+elementos do hub.
 
 Após autenticar no Auth Lobby, o jogador recebe uma bússola protegida no slot
 central da barra rápida. Ela abre um menu de nove slots que, no lançamento,

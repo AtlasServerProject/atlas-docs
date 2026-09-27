@@ -507,3 +507,201 @@ Adicionados `/warn`, `/kick`, `/mute`, `/unmute`, `/ban`, `/unban`, `/banip`, `/
 v1.28.1
 
 Hotfix da Sprint 9: `/unban` agora também remove banimentos vanilla aplicados por engano com o comando `/ban` do Minecraft. Adicionados aliases seguros `/atlasban` e `/atlasunban` para evitar ambiguidade com o comando vanilla.
+
+---
+
+v1.28.2
+
+Atualização do modpack cliente para `v13-e19-minimap-icons`. O resource pack antigo `Xaeros Cobblemon Icons v2.1.zip` foi substituído por `E19 Cobblemon Minimap Icons.zip`, extraído do pacote Cobbleverse analisado localmente.
+
+O E19 foi validado com `9947` entradas, `9447` sprites `.png` e definição do Xaero em `assets/xaerominimap/entity/icon/definition/cobblemon/pokemon.json`. Também foi disponibilizado separadamente em `/home/somente/dev/atlas/E19 Cobblemon Minimap Icons.zip` para instalação manual.
+
+---
+
+v1.28.3
+
+Criado o pacote manual `mods-qol-2026-07-13` com mods de qualidade de vida para o cliente: MouseTweaks, Controlling, BetterF3, Zoomify, BetterThirdPerson, NotEnoughAnimations, EntityCulling, ImmediatelyFast, ModernFix, FerriteCore, Lithium, Krypton, PacketFixer, CatchIndicator e CatchRate Display.
+
+No servidor foram instalados apenas os mods seguros de lado servidor: ModernFix, FerriteCore, Lithium, Krypton e PacketFixer. Foi criado backup em `/opt/atlas/server/backups/mod-versions/mods-pre-qol-server-20260713-144049.tar.gz`. O restart ainda precisa ser executado manualmente por exigir autenticação interativa do `systemctl`.
+
+---
+
+v1.28.4
+
+Criado o pacote manual `mods-phase3-cobblemon-2026-07-13`, contendo a fase 3 de gameplay Cobblemon sem `fightorflight`.
+
+Adicionados ao pacote e copiados para o servidor: Cobblemon Raid Dens, Cobbreeding, SafePastures, PastureLoot, CobbleCuisine, PokéBlocks, Cobblemon Additions, Cobblemon Battle Extras, Cobblemon Battle Positions, Mega Showdown, Cobbleverse Badges e Fabric Language Kotlin.
+
+`fightorflight` foi propositalmente excluído por alterar o combate/comportamento dos Pokémon de maneira agressiva. Backup criado antes da instalação em `/opt/atlas/server/backups/mod-versions/mods-pre-phase3-cobblemon-20260713-145356.tar.gz`. O restart ainda precisa ser executado manualmente para carregar os novos JARs.
+
+---
+
+v1.28.5
+
+Hotfix do Anti Lag: a limpeza automática do Survival Emerald agora remove Pokémon selvagens elegíveis mesmo quando estão próximos de jogadores. Isso corrige o acúmulo de Pokémon comuns ao redor de players, bases e áreas movimentadas.
+
+Continuam protegidos Pokémon de jogadores, Pokémon em batalha, ocupados ou vinculados a pastures. Também foi adicionada uma lista protegida de lendários e míticos de Kanto até Paldea, usando os IDs internos reais do Cobblemon para evitar remoções indevidas.
+
+---
+
+v1.28.6
+
+Hotfix de compatibilidade das mega pedras: adicionado `zamega-fabric-1.7.1.jar` ao servidor.
+
+O problema investigado desconectava o jogador ao pegar certas mega stones em modo criativo com `Failed to decode packet 'serverbound/minecraft:set_creative_mode_slot'`. A causa provável era diferença entre cliente e servidor: o cliente possuía itens do addon Z-A Mega, mas o servidor tinha apenas `mega_showdown`.
+
+Criado backup antes da instalação em `/opt/atlas/server/backups/mod-versions/mods-pre-zamega-hotfix-20260713-152237.tar.gz` e pacote separado em `/home/somente/dev/atlas/mods-zamega-hotfix-2026-07-13.tar.gz`.
+
+---
+
+v1.28.7
+
+Hotfix de alinhamento de registry entre cliente e servidor.
+
+O servidor estava em execução desde antes da instalação dos mods de gameplay, então os JARs existiam na pasta `mods`, mas não estavam carregados no processo ativo. Isso fazia o cliente enviar itens novos pelo inventário criativo enquanto o servidor ainda não conhecia aqueles registros, causando `Failed to decode packet 'serverbound/minecraft:set_creative_mode_slot'`.
+
+O servidor foi reiniciado pelo console administrativo e passou a carregar `102 mods`, incluindo `mega_showdown`, `zamega`, CobbleDollars, CobbleFurnies, CobbleNav, TM Craft, MoreCobblemonTweaks e Only Bottle Caps.
+
+Também foram instalados mods que estavam documentados/esperados mas ausentes na pasta ativa do servidor: `CobbleDollars`, `CobbleFurnies`, `MoreCobblemonTweaks`, `Only Bottle Caps`, `cobblenav`, `tmcraft` e as libs `supermartijn642configlib`/`supermartijn642corelib`.
+
+Criado backup antes do alinhamento em `/opt/atlas/server/backups/mod-versions/mods-pre-registry-align-20260713-153645.tar.gz` e pacote separado em `/home/somente/dev/atlas/mods-registry-align-2026-07-13.tar.gz`.
+
+---
+
+v1.28.8
+
+Evolução do `/rtp`: o comando sem argumentos agora abre uma interface com três destinos do Survival Emerald: Overworld, Nether e The End.
+
+Também foram adicionados atalhos diretos `/rtp overworld`, `/rtp nether` e `/rtp end`. Cada dimensão possui fila própria de destinos seguros, mantendo cooldown por cargo e cancelamento por movimento sem aplicar cooldown.
+
+Nether e The End passam a herdar regras PvE das áreas survival, incluindo fome desativada, dano de queda desativado, proteção contra Void e retorno ao Lobby Emerald após morte. The End recebeu a trilha `distortion_world_sinnoh.ogg`.
+
+---
+
+v1.28.9
+
+Chunky reinstalado no servidor com `Chunky-Fabric-1.4.23.jar` para pré-gerar Nether e The End após a liberação do `/rtp` multidimensional.
+
+Adicionados comandos ao `atlas-cli`: `pregenerate-nether` e `pregenerate-end`, ambos com `start`, `status`, `pause` e `continue`. O `pregenerate-survival start` também foi atualizado para a sintaxe nova do Chunky.
+
+Pré-geração do Nether iniciada em `minecraft:the_nether`, formato `square`, centro `0 0`, raio `6000`. Após o Chunky ficar sem tarefas pendentes, a pré-geração do The End foi iniciada em `minecraft:the_end` com a mesma seleção.
+
+---
+
+v1.29.0
+
+Primeira entrega prática da Sprint 10 com sistema de kits.
+
+Adicionado `/kits`, que abre uma interface com os kits disponíveis. O primeiro kit liberado é o Kit Diário, com cooldown de 24 horas e entrega da `Pá de Claim do Atlas` para criação de claims no Survival Emerald. O atalho `/kit diario` continua disponível para resgate direto.
+
+---
+
+v1.29.1
+
+Expansão do sistema de kits.
+
+A interface `/kits` agora usa o `Baú do Gimmighoul` como ícone dos kits, diferenciando Diário, Semanal e Mensal pelas cores. O Kit Diário passou a entregar Poké Bolas, Super Bolas e Ultra Bolas junto da pá de claim. Foram adicionados Kit Semanal e Kit Mensal, com cooldowns separados e recompensas próprias.
+
+---
+
+v1.29.2
+
+Adicionado `/back` para retornar à última localização salva antes de teleportes manuais.
+
+O sistema registra a posição anterior antes de `/lobby emerald`, `/spawn`, `/home`, `/claimtp` e `/rtp`. Ao usar `/back`, o jogador volta para essa posição e o local atual passa a ser o novo destino de volta, permitindo alternar entre os dois pontos.
+
+---
+
+v1.29.3
+
+Adicionado `/fly` para alternar voo.
+
+O comando está disponível para VIP, VIP+, VIP++, SUP, MOD, ADM e DONO. Também aceita a permissão técnica `atlas.fly` para ajustes futuros por cargo. Ao desativar, jogadores fora do criativo/espectador perdem o estado de voo imediatamente.
+
+---
+
+v1.29.4
+
+Adicionados kits VIP ao `/kits`.
+
+O menu agora possui três linhas e exibe também Kit VIP, Kit VIP+ e Kit VIP++. Cada kit possui cooldown semanal e restrição por cargo, permitindo que cargos superiores resgatem os kits inferiores. Foram adicionados atalhos `/kit vip`, `/kit vip+`, `/kit vipplus`, `/kit vip++` e `/kit vipplusplus`.
+
+---
+
+v1.29.5
+
+Kits VIP reformulados conforme a tabela final de benefícios.
+
+VIP, VIP+ e VIP++ agora possuem kits Diário, Semanal e Mensal separados. VIP++ pode resgatar também os kits VIP e VIP+. Foram adicionados itens Cobblemon como Exp. Candy, Revive, Max Revive, Lucky Egg, Ability Capsule, Ability Patch, Destiny Knot, Everstone e Master Ball, além de Bottle Caps do mod `Only Bottle Caps`.
+
+Mints aleatórias e Pedras de Evolução aleatórias são sorteadas automaticamente. Kits VIP++ com “Mint à escolha” agora abrem uma GUI própria para o jogador selecionar a mint desejada.
+
+---
+
+v1.29.6
+
+Adicionado `/ec` com alias `/enderchest`.
+
+O comando abre o Ender Chest remoto do jogador e está disponível para VIP, VIP+, VIP++, SUP, MOD, ADM e DONO. Também aceita a permissão técnica `atlas.ec` para ajustes futuros por cargo.
+
+---
+
+v1.29.7
+
+Adicionadas as variações visuais de VIP.
+
+O Atlas agora possui `VIP`, `VIP ✦` e `VIP ✦✦` como cargos separados, mantendo a hierarquia abaixo da Staff e acima de Player. O `/rank set` aceita aliases como `vipplus`, `vip+`, `vipestrela`, `vipplusplus`, `vip++` e `vipestrelas`, mas exibe os cargos com o símbolo `✦` no TAB, nametag, `/rank list` e menus dos kits.
+
+---
+
+v1.29.8
+
+Adicionado chat colorido para VIPs e Staff.
+
+Jogadores com VIP, VIP ✦, VIP ✦✦, SUP, MOD, ADM ou DONO podem usar códigos com `&` no chat, como `&cMensagem vermelha`, `&aMensagem verde`, `&lNegrito` e `&rReset`. Jogadores comuns continuam enviando o texto sem conversão de cores.
+
+---
+
+v1.29.9 (atualização de mundo)
+
+O Lobby Emerald foi preparado em um mundo void/superflat autoral, removendo o
+terreno legado e mantendo a base de construção de 129 × 129 blocos no spawn
+`975.5 179 1573.5`. Foi criada uma ilha flutuante sob a base, com camadas
+reduzidas de pedra, terra e deepslate e pontas de dripstone. As barreiras
+invisíveis e as regras do lobby foram preservadas. Esta atualização é
+operacional; o jar do Atlas Core permanece na versão `1.29.8`.
+
+---
+
+v1.29.10 (atualização de mundo)
+
+Correção visual do Lobby Emerald: a antiga plataforma de quartzo, blocos
+brancos e detalhes de esmeralda foram removidos completamente. A base foi
+reconstruída como uma ilha flutuante natural, com superfície de grama, camadas
+de terra, pedra e deepslate e cone inferior de dripstone. As barreiras
+invisíveis de proteção foram restauradas após a reconstrução.
+
+---
+
+v1.29.11
+
+Corrigida a autorização do WorldEdit para a sintaxe de dupla barra (`//set`,
+`//pos1`, `//pos2`, `//wand` e demais comandos). Dono/OWNER e ADM/ADMIN são
+reconhecidos pelo filtro global e continuam sendo os únicos cargos permitidos;
+jogadores comuns permanecem bloqueados.
+
+---
+
+v1.29.12
+
+Corrigido o `/wand`: o machado entregue agora é uma stack vanilla de
+`minecraft:wooden_axe`, exatamente igual ao item configurado pelo WorldEdit,
+sem nome ou componentes customizados que pudessem impedir o reconhecimento.
+
+---
+
+v1.29.13
+
+Adicionado bypass total de comandos para `OWNER/DONO` após a autenticação. O
+Dono agora pode executar todos os comandos registrados pelo servidor, inclusive
+no Auth Hub, enquanto a proteção antes do login permanece ativa.

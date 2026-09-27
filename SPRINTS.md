@@ -1,13 +1,22 @@
 # Sprints do Atlas
 
+## Estado consolidado — 2026-09-27
+
+Referência: Atlas Core `1.29.13`. Os itens marcados representam entregas registradas;
+validações em jogo ainda abertas continuam explicitamente pendentes.
+O [STATUS.md](STATUS.md) resume o estado atual e o [ROADMAP.MD](ROADMAP.MD)
+organiza as próximas entregas. Notas de versões posteriores prevalecem sobre
+comportamentos descritos em documentos históricos.
+
 ## Próximas prioridades
 
-1. Validar em jogo a limpeza `v1.27.10`: Pokémon selvagens distantes devem ser removidos sem aguardar 5 minutos.
-2. Validar morte no Survival, retorno ao Lobby Emerald e limpeza de posição com `/lobby emerald`.
-3. Definir o fluxo de retorno opcional ao Survival salvo sem pular o seletor.
-4. Implementar a GUI da Sprint 6 — Home System a partir do desenho aprovado.
-5. Retomar o conteúdo visual do Lobby Emerald: NPCs, tutorial, rankings, crates, BossBar e scoreboard.
-6. Organizar commits pendentes de `atlas-core` e `atlas-docs`.
+1. Validar em jogo a limpeza atual: selvagens elegíveis são removidos mesmo próximos de jogadores; Pokémon protegidos devem permanecer.
+2. Validar limpeza da posição salva com `/lobby emerald` e definir retorno opcional ao Survival sem pular o seletor. Morte e retorno ao lobby já constam como validados nesta lista.
+3. Validar punições com Player e Staff, kits VIP, cooldowns e escolha de mints.
+4. Confirmar o estado final da pré-geração do Nether e The End.
+5. Implementar a GUI da Sprint 6 — Home System a partir do desenho aprovado.
+6. Retomar o conteúdo do Lobby Emerald: NPCs, tutorial, rankings, crates, BossBar e scoreboard.
+7. Completar ferramentas de staff e regras; depois avançar economia, missões e eventos.
 
 ---
 
@@ -114,6 +123,9 @@ Status: 🚧 Base funcional concluída; pendências visuais e expansão futura
 - [x] Converter os biomas dos chunks existentes do Auth Lobby para `minecraft:the_void`
 - [x] Instalar o Auth Lobby como mundo inicial
 - [x] Instalar o Lobby Emerald como mundo selecionável
+- [x] Resetar o Lobby Emerald para mundo void/superflat autoral
+- [x] Criar base inicial autoral de 129 × 129 blocos para o Lobby Emerald
+- [x] Criar ilha flutuante estrutural sob a base do Lobby Emerald
 - [x] Definir o spawn global do Auth Lobby
 - [x] Forçar o spawn exato em toda conexão
 - [x] Validar o spawn do Auth Lobby em jogo
@@ -141,8 +153,8 @@ Status: 🚧 Base funcional concluída; pendências visuais e expansão futura
 - [x] Adicionar NPC `Lobby Emerald` no Auth Lobby
 - [x] Desativar economia no Auth Hub por bloqueio de comandos e interações
 - [x] Desativar demais gameplays no Auth Hub por bloqueio de comandos, inventário, dano, interações e Pokémon
-- [x] Bloquear todos os comandos no Hub mesmo após autenticação
-- [x] Permitir exclusivamente `/login` e `/register` no Hub
+- [x] Restringir comandos comuns no Hub ao fluxo de autenticação
+- [x] Manter exceções administrativas; desde a v1.29.13, Dono autenticado possui acesso a todos os comandos
 
 ### Seletor de servidores
 
@@ -224,6 +236,8 @@ Objetivo: padronizar toda a experiência PvE.
 - [x] Concluir pré-geração automática dos 750 × 750 chunks do Survival Emerald
 - [x] Resetar o Survival Emerald com a mesma seed e estruturas/worldgen dos addons
 - [x] Implementar `/rtp` seguro no Lobby e Survival Emerald
+- [x] Criar interface do `/rtp` com Overworld, Nether e The End
+- [x] Permitir `/rtp overworld`, `/rtp nether` e `/rtp end`
 - [x] Aplicar cooldown de `/rtp` por cargo
 - [x] Manter fila rápida de destinos seguros
 - [x] Cancelar `/rtp` por movimento sem aplicar cooldown
@@ -236,7 +250,7 @@ Objetivo: padronizar toda a experiência PvE.
 - [x] Aplicar trilha de mar com `sea_mauville_unova.ogg` e `surfing_hoenn2.ogg`
 - [x] Aplicar trilha de cavernas com `pettleburg_woods-granite_cave.ogg`
 - [x] Aplicar tema geral temporário de batalha com prioridade sobre músicas de área
-- [ ] Aplicar `distortion_world_sinnoh.ogg` no The End
+- [x] Aplicar `distortion_world_sinnoh.ogg` no The End
 - [ ] Preparar exceções para arenas futuras
 
 ### Soundtrack futura
@@ -251,7 +265,7 @@ Objetivo: padronizar toda a experiência PvE.
 - [x] Validar que reconexão Premium permanece no Auth Hub até escolha pela bússola
 - [x] Validar que `/login` Offline permanece no Auth Hub até escolha pela bússola
 - [x] Validar persistência após reinício completo do servidor
-- [ ] Validar morte no Survival e retorno ao Lobby Emerald
+- [x] Validar morte no Survival e retorno ao Lobby Emerald
 - [ ] Validar limpeza da posição com `/lobby emerald`
 
 ---
@@ -274,6 +288,7 @@ Status: 🚧 Em andamento
 - [x] Limites por cargo
 - [x] Teleporte seguro
 - [x] Aquecimento e cancelamento por movimento
+- [x] `/back` para retornar à última localização salva antes de teleportes
 - [x] Validar criação, atualização e exclusão em jogo
 - [x] Validar limites com Player, VIP e Staff
 - [x] Validar home obstruída e cancelamento por movimento
@@ -333,7 +348,7 @@ Status: ✅ Concluída
 ### Anti Lag
 
 - [x] Limpeza de drops antigos
-- [x] Limpeza segura de Pokémon selvagens distantes
+- [x] Limpeza segura de Pokémon selvagens elegíveis, inclusive próximos de jogadores
 - [x] Remover Pokémon selvagens elegíveis independente do tempo de spawn
 - [x] Monitoramento de TPS e MSPT
 - [x] `/atlas cleanup`
@@ -417,12 +432,15 @@ Status: 🚧 Em andamento
 - [x] Adicionar `/pay <player> <valor>`
 - [ ] Pesquisa Pokémon
 - [ ] Contratos
-- [ ] Mercado
+- [ ] Mercado e GTS
 - [ ] Profissões
 - [ ] Oferta e demanda
 - [ ] Ginásios
 - [ ] Login diário
-- [ ] Kit diário com pá dourada para criação de claims
+- [x] Kit diário com pá dourada para criação de claims
+- [x] `/kits` com interface dos kits disponíveis
+- [x] Kit semanal com Poké Bolas e Doces Raros
+- [x] Kit mensal com ferramentas iniciais, Poké Bolas, Doces Raros e pá de claim
 
 ### Filosofia
 
@@ -446,7 +464,7 @@ Status: ⏳ Planejada
 
 ## Sprint 12 — Atlas Events
 
-Status: 🚧 Em andamento
+Status: 🚧 Planejamento concluído; implementação pendente
 
 ### Planejamento
 
@@ -576,17 +594,25 @@ Status: ⏳ Planejada
 
 ## Sprint 18 — VIP System
 
-Status: ⏳ Planejada
+Status: 🚧 Parcialmente implementada
 
 ### Qualidade de vida
 
-- [ ] Homes extras
+- [x] Limites de homes por cargo
+- [ ] Revisar tabela final de benefícios e limites VIP
+- [ ] Implementar assinatura, expiração e entrega automática do VIP
+- [ ] Validar kits VIP, cooldowns e GUI de escolha de mints em jogo
+- [ ] Revisar benefícios diante da filosofia de não vender vantagem competitiva
 - [ ] Backpack
 - [ ] PVs
-- [ ] Fly somente nos lobbys
-- [ ] Back
+- [x] `/fly` para VIP, SUP, MOD, ADM e DONO
+- [x] `/ec` Ender Chest remoto para VIP, SUP, MOD, ADM e DONO
+- [x] Back
 - [x] Spawn
 - [x] RTP com vantagens de cooldown por cargo
+- [x] Kits VIP, VIP+ e VIP++
+- [x] Cargos visuais `VIP`, `VIP ✦` e `VIP ✦✦`
+- [x] Chat colorido com `&` para VIPs e Staff
 
 ### Cosméticos
 

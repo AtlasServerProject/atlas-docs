@@ -2,6 +2,10 @@
 
 Version: 1.0
 
+> Documento histórico da visão e arquitetura original. Para o estado implementado
+> em 2026-09-27, consulte [STATUS.md](STATUS.md), [SPRINTS.md](SPRINTS.md) e as notas
+> de versão. A economia atual usa CobbleDollars como fonte oficial de saldo.
+
 ---
 
 # Atlas

@@ -9,6 +9,7 @@ O sistema de homes do Atlas foi inspirado nas funções centrais do Ultra SetHom
 - `/home <nome>` teleporta para uma home específica.
 - `/delhome <nome>` remove uma home.
 - `/homes` lista as homes e o limite atual.
+- `/back` retorna para a última localização salva antes de teleportes manuais.
 
 Os nomes aceitam de 1 a 16 caracteres: letras, números, `_` e `-`.
 
@@ -31,6 +32,8 @@ Os nomes aceitam de 1 a 16 caracteres: letras, números, `_` e `-`.
 - Locais obstruídos não teleportam o jogador e não aplicam cooldown.
 - O teleporte possui aquecimento de três segundos.
 - Movimento cancela sem aplicar cooldown; girar a câmera é permitido.
+- `/back` salva a posição anterior antes de teleportes como `/lobby emerald`, `/spawn`, `/home`, `/claimtp` e `/rtp`.
+- Usar `/back` troca a posição atual pela anterior, permitindo voltar e retornar novamente.
 
 ## GUI planejada
 

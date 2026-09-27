@@ -23,11 +23,33 @@ infra/scripts/atlas-cli pregenerate-survival status
 
 A configuração `continueOnRestart` do Chunky fica desativada no servidor de testes. Isso impede que a pré-geração volte automaticamente após reinicializações e derrube o TPS sem intenção.
 
+Após liberar RTP para Nether e The End, as duas dimensões também devem ser pré-geradas uma por vez:
+
+```bash
+infra/scripts/atlas-cli pregenerate-nether start
+infra/scripts/atlas-cli pregenerate-nether status
+
+infra/scripts/atlas-cli pregenerate-end start
+infra/scripts/atlas-cli pregenerate-end status
+```
+
+Não iniciar Nether e The End ao mesmo tempo. O padrão recomendado é concluir o Nether primeiro e iniciar The End depois, mantendo o intervalo de mensagens do Chunky em 60 segundos.
+
 Durante testes com jogadores, a geração deve permanecer pausada. Ela pode ser pausada e retomada sem perder progresso:
 
 ```bash
 infra/scripts/atlas-cli pregenerate-survival pause
 infra/scripts/atlas-cli pregenerate-survival continue
+```
+
+Os mesmos subcomandos existem para:
+
+```bash
+infra/scripts/atlas-cli pregenerate-nether pause
+infra/scripts/atlas-cli pregenerate-nether continue
+
+infra/scripts/atlas-cli pregenerate-end pause
+infra/scripts/atlas-cli pregenerate-end continue
 ```
 
 Se o servidor ficar pesado ou o console administrativo retornar `Connection refused`, pare a pré-geração e aguarde o TPS estabilizar:
@@ -60,13 +82,27 @@ A posição persistente é removida somente quando:
 
 ## Teleporte aleatório
 
-No Lobby Emerald, o comando `/rtp` envia o jogador para um terreno seguro do Survival Emerald, entre 500 e 5850 blocos do centro. O mesmo comando pode ser usado novamente dentro do Survival para trocar de região. Água, lava, blocos de magma, espaços obstruídos e posições fora da borda são rejeitados. Dentro do Survival, `/lobby emerald` realiza o caminho de volta.
+No Lobby Emerald ou dentro das dimensões do Survival, o comando `/rtp` abre uma interface com três opções:
+
+- Overworld;
+- Nether;
+- The End.
+
+Também existem atalhos diretos:
+
+- `/rtp overworld`;
+- `/rtp nether`;
+- `/rtp end`.
+
+Todas as opções usam busca segura entre 500 e 5850 blocos do centro. Água, lava, blocos de magma, cactus, fogueiras, powder snow, bedrock, espaços obstruídos e posições fora da borda são rejeitados. Dentro do Survival, `/lobby emerald` realiza o caminho de volta.
 
 A busca continua em segundo plano até encontrar um destino válido. Ela não é encerrada por falta de um local nas primeiras tentativas, não consome o cooldown antes do teleporte e não cria solicitações duplicadas quando o jogador repete o comando.
 
 Para reduzir o tempo de espera, o servidor mantém uma fila de 32 destinos previamente carregados e validados. Cada uso consome um destino e a reserva é reabastecida gradualmente, seguindo a estratégia de fila usada pelo BetterRTP sem bloquear o tick do servidor.
 
 Após executar `/rtp`, o jogador deve permanecer parado durante três segundos. Qualquer deslocamento cancela a solicitação, devolve o destino reservado à fila e não aplica cooldown. Olhar ao redor continua permitido.
+
+The End usa a trilha `distortion_world_sinnoh.ogg`.
 
 Cooldown entre usos:
 
