@@ -2,7 +2,7 @@
 
 ## Estado consolidado — 2026-09-27
 
-Referência: Atlas Core `1.29.14`. Os itens marcados representam entregas registradas;
+Referência: Atlas Core `1.29.17`. Os itens marcados representam entregas registradas;
 validações em jogo ainda abertas continuam explicitamente pendentes.
 O [STATUS.md](STATUS.md) resume o estado atual e o [ROADMAP.MD](ROADMAP.MD)
 organiza as próximas entregas. Notas de versões posteriores prevalecem sobre
@@ -10,13 +10,13 @@ comportamentos descritos em documentos históricos.
 
 ## Próximas prioridades
 
-Pendência operacional prioritária: implementar backup/restauração reais e testar recuperação; os scripts atuais são placeholders.
+Backup/restauração implementados e testados em ambiente isolado. Serviço/timer ativados e primeiro snapshot completo aprovado em 2026-09-27; acompanhar espaço em disco conforme [BACKUP.md](BACKUP.md).
 
 1. Validar em jogo a limpeza atual: selvagens elegíveis são removidos mesmo próximos de jogadores; Pokémon protegidos devem permanecer.
 2. Validar limpeza da posição salva com `/lobby emerald` e definir retorno opcional ao Survival sem pular o seletor. Morte e retorno ao lobby já constam como validados nesta lista.
 3. Validar punições com Player e Staff, kits VIP, cooldowns e escolha de mints.
 4. Confirmar o estado final da pré-geração do Nether e The End.
-5. Implementar a GUI da Sprint 6 — Home System a partir do desenho aprovado.
+5. GUI da Sprint 6 aprovada; seguir com conteúdo do Lobby Emerald.
 6. Retomar o conteúdo do Lobby Emerald: NPCs, tutorial, rankings, crates, BossBar e scoreboard.
 7. Completar ferramentas de staff e regras; depois avançar economia, missões e eventos.
 
@@ -274,7 +274,7 @@ Objetivo: padronizar toda a experiência PvE.
 
 ## Sprint 6 — Home System
 
-Status: 🚧 Em andamento
+Status: ✅ Concluída — GUI testada e aprovada pelo usuário em 2026-09-27
 
 - [x] Migration `homes`
 - [x] Migration complementar `024_home_system.sql`
@@ -295,7 +295,8 @@ Status: 🚧 Em andamento
 - [x] Validar limites com Player, VIP e Staff
 - [x] Validar home obstruída e cancelamento por movimento
 - [x] Projetar GUI e ícones das homes
-- [ ] Implementar GUI das homes
+- [x] Implementar GUI das homes com paginação e confirmações
+- [x] GUI das homes testada e aprovada pelo usuário
 
 ---
 
@@ -401,10 +402,11 @@ Status: 🚧 Em andamento
 
 ### Staff
 
-- [ ] Freeze
+- [x] Freeze temporário, com reconexão e logs
 - [ ] StaffMode
-- [ ] InvSee
-- [ ] EnderSee
+- [x] InvSee somente leitura
+- [x] EnderSee somente leitura
+- [ ] Validar freeze, hierarquia e menus de inspeção em jogo
 - [ ] Staff Notes
 - [ ] Histórico
 

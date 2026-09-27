@@ -107,6 +107,12 @@ Registros históricos descrevem a época da entrega; o estado atual está em [ST
 
 - [v1.29.14](versions/v1.29.14.md) — Corrigidos pacotes Java e avisos do editor.
 
+- [v1.29.15](versions/v1.29.15.md) — Removidas as integrações e os arquivos operacionais do WorldEdit.
+
+- [v1.29.16](versions/v1.29.16.md) — GUI das homes com paginação, teleporte, principal e confirmações.
+
+- [v1.29.17](versions/v1.29.17.md) — Freeze temporário e inspeção de inventário/Ender Chest somente leitura.
+
 ## Registros operacionais
 
 Documentação operacional
@@ -120,3 +126,10 @@ Instalado WorldEdit `7.3.8` para Fabric 1.21.1 como ferramenta de construção e
 Runtime do servidor
 
 Corrigido o runtime do Atlas para `-Xms1G -Xmx4G`, compatível com a RAM atual da máquina. O Chunky deixou de continuar automaticamente após reinício e o `atlas-cli pregenerate-survival` sem argumento agora consulta status em vez de iniciar pré-geração.
+
+## Infraestrutura — backup e restauração (2026-09-27)
+
+Scripts reais com dump PostgreSQL, arquivos Fabric, checksums, retenção e recuperação
+isolada. Testes aprovados, incluindo cópia do banco real. Timer diário ativado e primeiro
+snapshot completo concluído em 3min22s; veja [BACKUP.md](BACKUP.md). GUI das homes
+testada e aprovada pelo usuário. Sem alteração de versão do Atlas Core nesta etapa.

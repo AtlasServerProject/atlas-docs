@@ -8,7 +8,7 @@ O sistema de homes do Atlas foi inspirado nas funções centrais do Ultra SetHom
 - `/home` teleporta para a home principal, inicialmente a primeira criada.
 - `/home <nome>` teleporta para uma home específica.
 - `/delhome <nome>` remove uma home.
-- `/homes` lista as homes e o limite atual.
+- `/homes` abre o menu visual de homes, com limite e paginação.
 - `/back` retorna para a última localização salva antes de teleportes manuais.
 
 Os nomes aceitam de 1 a 16 caracteres: letras, números, `_` e `-`.
@@ -35,46 +35,35 @@ Os nomes aceitam de 1 a 16 caracteres: letras, números, `_` e `-`.
 - `/back` salva a posição anterior antes de teleportes como `/lobby emerald`, `/spawn`, `/home`, `/claimtp` e `/rtp`.
 - Usar `/back` troca a posição atual pela anterior, permitindo voltar e retornar novamente.
 
-## GUI planejada
+## GUI — v1.29.16
 
-O comando `/homes` deve evoluir de lista em texto para um menu visual simples, inspirado no fluxo do Ultra SetHome, mas com identidade própria do Atlas.
+`/homes` abre **Homes do Atlas**, um container de seis linhas no servidor.
+Não exige mod adicional no cliente. Disponível após autenticação, fora do Auth Hub.
 
-### Menu principal
+- 28 posições por página, com navegação para acomodar até 100 homes.
+- Cama verde: principal; cama azul: demais homes.
+- Clique esquerdo: inicia o mesmo teleporte seguro de `/home`.
+- Shift + clique esquerdo: define a principal no PostgreSQL.
+- Clique direito: confirma atualização da posição no Survival Emerald.
+- Modo excluir: clique na home e confirme a exclusão; cancelar não altera dados.
+- Mapa vazio ou bússola: confirma criação na posição atual do Survival Emerald.
+- Criações pelo menu usam o primeiro nome disponível `home1`, `home2`, etc.
+  Para nomes personalizados, usar `/sethome <nome>`.
+- Vidro vermelho: posição bloqueada pelo limite do cargo, com limites no texto de ajuda.
+- Relógio: tempo restante do cooldown, atualizado enquanto o menu está aberto.
+- Barreira: fecha o menu; vidro cinza preenche os espaços sem ação.
 
-Título:
+O inventário visual bloqueia coleta de ícones, hotbar swap, arraste, descarte,
+clone e clique duplo. Limites, mundo e existência da home são conferidos nas ações.
+Após excluir a principal, uma home restante assume esse papel.
+`/home` e `/home <nome>` mantêm o comportamento anterior.
 
-```text
-Homes do Atlas
-```
+## Validação em jogo
 
-Layout previsto:
+GUI testada e aprovada pelo usuário em 2026-09-27. Checklist de regressão:
 
-- 6 linhas.
-- Slots centrais para homes existentes.
-- Linha inferior reservada para ações.
-- Slots vazios preenchidos com vidro cinza para reduzir clique acidental.
-
-### Ícones
-
-| Função | Ícone sugerido | Ação |
-|---|---|---|
-| Home principal | Cama verde ou esmeralda | Clique teleporta para a home principal |
-| Home comum | Cama colorida | Clique teleporta para a home escolhida |
-| Slot disponível | Mapa vazio | Clique cria home na posição atual, quando permitido |
-| Slot bloqueado por limite | Vidro vermelho ou barreira | Mostra o cargo necessário para liberar mais homes |
-| Cooldown ativo | Relógio | Mostra tempo restante antes de teleportar |
-| Criar/atualizar home | Bússola | Abre confirmação para salvar a posição atual |
-| Modo deletar | Corante vermelho | Alterna exclusão segura de homes |
-| Fechar | Barreira | Fecha o menu |
-
-### Comportamento esperado
-
-- Clique esquerdo em uma home: iniciar teleporte.
-- Shift + clique em uma home: definir como home principal.
-- Clique com modo deletar ativo: pedir confirmação antes de remover.
-- Homes obstruídas devem mostrar aviso no chat e não aplicar cooldown.
-- Jogadores comuns não devem ver opções que não podem usar; quando fizer sentido, o menu mostra o motivo do bloqueio.
-
-### Próxima implementação
-
-A implementação deve usar container server-side do Fabric, sem depender de plugin Bukkit. A GUI será apenas uma camada visual sobre o `HomeService`, mantendo PostgreSQL, limites, cooldowns e validações atuais como fonte oficial.
+- Criar, atualizar, cancelar e excluir pelo menu.
+- Escolher principal e conferir `/home` após reconectar.
+- Navegar páginas com Staff e conferir limites com Player/VIP.
+- Tentar retirar ícones com Shift, teclas numéricas, arraste e clique duplo.
+- Conferir cooldown, movimento durante aquecimento e destino obstruído.

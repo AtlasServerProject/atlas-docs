@@ -12,7 +12,7 @@ e Cobblemon `1.7.3`. Antes de distribuir um cliente, conferir os JARs ativos em
 | Gameplay | Cobbreeding, SafePastures, PastureLoot, CobbleCuisine, PokéBlocks, MoreCobblemonTweaks |
 | Batalhas e progressão | Raid Dens, Additions, Battle Extras, Battle Positions, Mega Showdown, Z-A Mega, Cobbleverse Badges |
 | Navegação e decoração | CobbleNav, CobbleFurnies, Easy NPC |
-| Operação | WorldEdit e Chunky |
+| Operação | Chunky |
 | Performance do servidor | ModernFix, FerriteCore, Lithium, Krypton, PacketFixer |
 | Cliente | Xaero Minimap, MouseTweaks, Controlling, BetterF3, Zoomify, BetterThirdPerson, NotEnoughAnimations, EntityCulling, ImmediatelyFast, CatchIndicator e CatchRate Display |
 | Resource packs | Cobblemon Interface, E19 Cobblemon Minimap Icons e CobbleSounds AtlasLite |

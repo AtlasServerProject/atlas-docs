@@ -4,8 +4,8 @@ Consolidação documental: 2026-09-27.
 
 ## Referência técnica
 
-- Versão declarada em `atlas-core/gradle.properties`: **1.29.14**.
-- O JAR instalado em `/opt/atlas/server/fabric/mods/atlas-core.jar` declara **1.29.14**.
+- Versão declarada em `atlas-core/gradle.properties`: **1.29.17**.
+- O JAR instalado em `/opt/atlas/server/fabric/mods/atlas-core.jar` declara **1.29.17**.
 - O serviço `atlas` estava ativo na consulta desta consolidação. Isso não substitui testes em jogo.
 - `atlas-api/` e `atlas-web/` estão vazias no workspace: API e frontend ainda são planejados.
 - A CLI operacional está em `infra/scripts/atlas-cli`.
@@ -18,14 +18,23 @@ Consolidação documental: 2026-09-27.
 - Registro/login Offline, autenticação automática Premium e proteção de sessões.
 - Auth Hub, bússola seletora, NPC de acesso ao Emerald e preservação do inventário.
 - Lobbys autorais, Survival Emerald, regras PvE, RTP para Overworld/Nether/End e músicas contextuais.
-- Homes por comandos, `/back`, claims, confiança e proteções auditáveis.
+- Homes por comandos e GUI, `/back`, claims, confiança e proteções auditáveis.
 - CobbleDollars como fonte oficial de saldo, `/saldo`, `/addmoney` e `/pay`.
 - Kits comuns e VIP, cooldowns, GUI de kits e seleção de mints; `/fly` e `/ec`.
 - Punições persistentes e histórico, respeitando hierarquia da staff.
 - Limpeza de entidades, TPS/MSPT e recuperação persistente de itens.
-- Scripts operacionais e comandos de pré-geração. Backup/restauração na CLI ainda são placeholders.
+- Scripts operacionais e comandos de pré-geração. Backup/restauração implementados e testados; timer ativo e primeiro snapshot completo concluído.
 
 ## Últimas entregas consolidadas
+
+A [v1.29.17](versions/v1.29.17.md) adiciona freeze temporário e consultas
+de inventário/Ender Chest somente leitura, com hierarquia e logs.
+
+A [v1.29.16](versions/v1.29.16.md) adiciona a GUI de `/homes`, com paginação,
+teleporte, escolha da principal e confirmação de criação/atualização/exclusão.
+GUI testada e aprovada pelo usuário em 2026-09-27.
+
+A [v1.29.15](versions/v1.29.15.md) remove WorldEdit do servidor e as integrações do Core.
 
 A [v1.29.14](versions/v1.29.14.md) corrige a localização de classes Java, remove
 avisos de código e define UTF-8. Build e implantação foram validados em 2026-09-27.
@@ -40,8 +49,8 @@ novas versões do JAR. Consulte [CHANGELOG.md](CHANGELOG.md) e [versions/](versi
 
 ## Pendências imediatas
 
-- Implementar backup/restauração reais, retenção e teste de recuperação.
-- GUI das homes e conteúdo final do Lobby Emerald.
+- Ampliar capacidade para retenção de backups e ensaiar recuperação integral dos mundos; [guia](BACKUP.md).
+- Conteúdo final do Lobby Emerald.
 - Fluxo de retorno opcional ao Survival e validação de `/lobby emerald`.
 - Validação em jogo da limpeza atual, punições e kits VIP/seleção de mints.
 - Confirmação do término da pré-geração do Nether e End.
