@@ -1,6 +1,6 @@
 # Roadmap do Atlas
 
-Atualizado em 2026-09-27. Referência: Atlas Core `1.29.17`.
+Atualizado em 2026-09-29. Referência: Atlas Core `1.29.19`.
 
 O detalhamento e os critérios de conclusão estão em [SPRINTS.md](SPRINTS.md).
 O estado consolidado está em [STATUS.md](STATUS.md).

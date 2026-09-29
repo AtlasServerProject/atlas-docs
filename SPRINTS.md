@@ -1,14 +1,16 @@
 # Sprints do Atlas
 
-## Estado consolidado — 2026-09-27
+## Estado consolidado — 2026-09-29
 
-Referência: Atlas Core `1.29.17`. Os itens marcados representam entregas registradas;
+Referência: Atlas Core `1.29.19`. Os itens marcados representam entregas registradas;
 validações em jogo ainda abertas continuam explicitamente pendentes.
 O [STATUS.md](STATUS.md) resume o estado atual e o [ROADMAP.MD](ROADMAP.MD)
 organiza as próximas entregas. Notas de versões posteriores prevalecem sobre
 comportamentos descritos em documentos históricos.
 
 ## Próximas prioridades
+
+Atlas Web adiado para foco no servidor. Melhorias registradas em [ATLAS-WEB.md](ATLAS-WEB.md).
 
 Backup/restauração implementados e testados em ambiente isolado. Serviço/timer ativados e primeiro snapshot completo aprovado em 2026-09-27; acompanhar espaço em disco conforme [BACKUP.md](BACKUP.md).
 
@@ -402,13 +404,17 @@ Status: 🚧 Em andamento
 
 ### Staff
 
+Implementação dos itens abaixo concluída na v1.29.19; aceite em jogo ainda pendente.
+
 - [x] Freeze temporário, com reconexão e logs
-- [ ] StaffMode
+- [x] StaffMode em espectador com recuperação persistente
+- [ ] Validar StaffMode em jogo (usuário indisponível nesta etapa)
 - [x] InvSee somente leitura
 - [x] EnderSee somente leitura
 - [ ] Validar freeze, hierarquia e menus de inspeção em jogo
-- [ ] Staff Notes
-- [ ] Histórico
+- [x] Staff Notes: adicionar, consultar e arquivar notas internas persistentes
+- [x] Histórico paginado de notas, punições e revogações com `/history`
+- [ ] Validar Staff Notes e Histórico em jogo (ver [guia e checklist](STAFF-NOTES.md))
 
 ### Broadcast
 

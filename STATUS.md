@@ -1,13 +1,13 @@
 # Estado atual do Atlas
 
-Consolidação documental: 2026-09-27.
+Consolidação documental: 2026-09-29.
 
 ## Referência técnica
 
-- Versão declarada em `atlas-core/gradle.properties`: **1.29.17**.
-- O JAR instalado em `/opt/atlas/server/fabric/mods/atlas-core.jar` declara **1.29.17**.
+- Versão declarada em `atlas-core/gradle.properties`: **1.29.19**.
+- O JAR instalado em `/opt/atlas/server/fabric/mods/atlas-core.jar` declara **1.29.19**.
 - O serviço `atlas` estava ativo na consulta desta consolidação. Isso não substitui testes em jogo.
-- `atlas-api/` e `atlas-web/` estão vazias no workspace: API e frontend ainda são planejados.
+- `atlas-web/` foi importado como submódulo e iniciado em desenvolvimento; melhorias adiadas conforme [ATLAS-WEB.md](ATLAS-WEB.md). A API continua planejada.
 - A CLI operacional está em `infra/scripts/atlas-cli`.
 - Migrations existentes para funcionalidades futuras não comprovam implementação dessas funcionalidades.
 
@@ -26,6 +26,11 @@ Consolidação documental: 2026-09-27.
 - Scripts operacionais e comandos de pré-geração. Backup/restauração implementados e testados; timer ativo e primeiro snapshot completo concluído.
 
 ## Últimas entregas consolidadas
+
+A [v1.29.19](versions/v1.29.19.md) adiciona notas internas e histórico paginado, com autenticação, hierarquia e arquivamento auditável. Build, testes automatizados e consultas pelo console aprovados; validação em jogo pendente. Guia: [STAFF-NOTES.md](STAFF-NOTES.md).
+
+A [v1.29.18](versions/v1.29.18.md) adiciona StaffMode com modo espectador,
+restauração persistente e bloqueios de gameplay. Testes em jogo pendentes.
 
 A [v1.29.17](versions/v1.29.17.md) adiciona freeze temporário e consultas
 de inventário/Ender Chest somente leitura, com hierarquia e logs.

@@ -87,3 +87,12 @@ ficam registradas no log. Não há leitura de inventários de jogadores offline.
 - Consultas fecham quando o alvo desconecta ou a autorização deixa de existir.
 
 Build e inicialização da v1.29.17 aprovados; este checklist em jogo está pendente.
+
+## StaffMode
+
+Implementado na v1.29.18: `/staffmode` (`/staff`) com `on`, `off` e `tp <jogador>`.
+Veja [STAFFMODE.md](STAFFMODE.md) para restauração, restrições e testes pendentes.
+
+## Notas internas e histórico unificado
+
+A v1.29.19 adiciona `/staffnotes` e `/history`, com autenticação, hierarquia, paginação e arquivamento auditável. Consulte [Staff Notes e Histórico](STAFF-NOTES.md).

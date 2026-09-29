@@ -113,6 +113,8 @@ Registros históricos descrevem a época da entrega; o estado atual está em [ST
 
 - [v1.29.17](versions/v1.29.17.md) — Freeze temporário e inspeção de inventário/Ender Chest somente leitura.
 
+- [v1.29.18](versions/v1.29.18.md) — StaffMode com recuperação persistente e integração à moderação.
+
 ## Registros operacionais
 
 Documentação operacional
@@ -133,3 +135,5 @@ Scripts reais com dump PostgreSQL, arquivos Fabric, checksums, retenção e recu
 isolada. Testes aprovados, incluindo cópia do banco real. Timer diário ativado e primeiro
 snapshot completo concluído em 3min22s; veja [BACKUP.md](BACKUP.md). GUI das homes
 testada e aprovada pelo usuário. Sem alteração de versão do Atlas Core nesta etapa.
+
+- [v1.29.19](versions/v1.29.19.md) — Staff Notes e histórico paginado de notas, punições e revogações.
