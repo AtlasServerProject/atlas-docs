@@ -137,3 +137,7 @@ snapshot completo concluído em 3min22s; veja [BACKUP.md](BACKUP.md). GUI das ho
 testada e aprovada pelo usuário. Sem alteração de versão do Atlas Core nesta etapa.
 
 - [v1.29.19](versions/v1.29.19.md) — Staff Notes e histórico paginado de notas, punições e revogações.
+
+- [v1.29.20](versions/v1.29.20.md) — Spawn do novo Lobby Emerald com posição e rotação exatas.
+
+- [v1.29.21](versions/v1.29.21.md) — Limpeza global de drops sem idade mínima e Pokémon selvagens elegíveis em todas as dimensões carregadas.

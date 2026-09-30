@@ -4,8 +4,8 @@ Consolidação documental: 2026-09-29.
 
 ## Referência técnica
 
-- Versão declarada em `atlas-core/gradle.properties`: **1.29.19**.
-- O JAR instalado em `/opt/atlas/server/fabric/mods/atlas-core.jar` declara **1.29.19**.
+- Versão declarada em `atlas-core/gradle.properties`: **1.29.21**.
+- O JAR instalado em `/opt/atlas/server/fabric/mods/atlas-core.jar` declara **1.29.21**.
 - O serviço `atlas` estava ativo na consulta desta consolidação. Isso não substitui testes em jogo.
 - `atlas-web/` foi importado como submódulo e iniciado em desenvolvimento; melhorias adiadas conforme [ATLAS-WEB.md](ATLAS-WEB.md). A API continua planejada.
 - A CLI operacional está em `infra/scripts/atlas-cli`.
@@ -26,6 +26,10 @@ Consolidação documental: 2026-09-29.
 - Scripts operacionais e comandos de pré-geração. Backup/restauração implementados e testados; timer ativo e primeiro snapshot completo concluído.
 
 ## Últimas entregas consolidadas
+
+A [v1.29.21](versions/v1.29.21.md) amplia a limpeza para todas as dimensões carregadas, sem idade mínima dos drops, preservando proteções de Pokémon. Build, inicialização e teste de drops em duas dimensões aprovados.
+
+A [v1.29.20](versions/v1.29.20.md) atualiza o spawn do novo Lobby Emerald para `918.5302583016859 71 3838.5058040626927`, com yaw `179.39441°` e pitch `-1.7545054°`. Build e implantação aprovados; conferência visual em jogo pendente.
 
 A [v1.29.19](versions/v1.29.19.md) adiciona notas internas e histórico paginado, com autenticação, hierarquia e arquivamento auditável. Build, testes automatizados e consultas pelo console aprovados; validação em jogo pendente. Guia: [STAFF-NOTES.md](STAFF-NOTES.md).
 

@@ -69,26 +69,38 @@ ao Survival Emerald, NPCs, crates, rankings, tutorial, loja, eventos, scoreboard
 e navegação.
 
 O mapa está instalado como a dimensão `atlas:emerald`. O seletor envia o jogador
-para o centro da base autoral do lobby:
+para a posição configurada no novo mapa (v1.29.20):
 
 ```text
-X: 975.5
-Y: 179
-Z: 1573.5
-Orientação: leste (-90°)
+X: 918.5302583016859
+Y: 71.0
+Z: 3838.5058040626927
+Yaw: 179.39441° (quase norte)
+Pitch: -1.7545054°
 ```
 
 Fora dos chunks existentes, a dimensão utiliza geração vazia para impedir a
-criação de terreno aleatório ao redor do lobby. A base mede 129 × 129 blocos
-(X 911–1039, Z 1509–1637, topo em Y 178) e fica protegida por barreiras
+criação de terreno aleatório ao redor do lobby. A antiga base media 129 × 129 blocos
+(X 911–1039, Z 1509–1637, topo em Y 178) e era protegida por barreiras
 invisíveis laterais e superiores.
 
 Em 14/07/2026, a plataforma de quartzo e os elementos decorativos antigos foram
-removidos. O lobby agora é uma ilha flutuante autoral completa: a superfície é
+removidos. Naquela etapa, o lobby recebeu uma ilha flutuante autoral completa: a superfície é
 de grama, seguida por terra, pedra e deepslate em camadas progressivamente
 menores, terminando em um núcleo pontudo de dripstone próximo de Y 145. O topo
-permanece livre para a construção dos NPCs, tutorial, rankings, crates e demais
+ficou livre para a construção dos NPCs, tutorial, rankings, crates e demais
 elementos do hub.
+
+Em 29/09/2026, todos os blocos de `atlas:emerald` foram removidos a pedido do usuário,
+incluindo ilha e barreiras. A limpeza ocorreu com o servidor ligado, sem mover o
+jogador e sem reinício. Foram limpos 90 chunks; após salvar, a leitura dos 3.736
+chunks existentes confirmou nenhuma seção com blocos diferentes de ar. Os chunks
+carregados temporariamente para manutenção foram liberados.
+
+Após outras limpezas solicitadas, o usuário instalou um novo mapa e confirmou o término da colagem. Na v1.29.20, a posição e a rotação de chegada foram capturadas diretamente do personagem no portal do novo lobby. O seletor, `/lobby emerald` e os retornos ao Emerald pelo serviço de viagem usam esse destino. Auth Lobby e Survival não foram alterados.
+
+Backup anterior à limpeza:
+`/opt/atlas/server/backups/emerald-before-clear-20260929T173530Z.tar.gz`.
 
 Após autenticar no Auth Lobby, o jogador recebe uma bússola protegida no slot
 central da barra rápida. Ela abre um menu de nove slots que, no lançamento,
