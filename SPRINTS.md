@@ -19,7 +19,7 @@ Backup/restauração implementados e testados em ambiente isolado. Serviço/time
 3. Validar punições com Player e Staff, kits VIP, cooldowns e escolha de mints.
 4. Confirmar o estado final da pré-geração do Nether e The End.
 5. GUI da Sprint 6 aprovada; seguir com conteúdo do Lobby Emerald.
-6. Retomar o conteúdo do Lobby Emerald: NPCs, tutorial, rankings, crates, BossBar e scoreboard.
+6. Mapa do Lobby Emerald aprovado pelo usuário; iniciar NPC de acesso ao Survival conforme [projeto](NPCS.md#projeto--npc-de-acesso-ao-survival), aguardando coordenadas. Depois: tutorial, rankings, crates, BossBar e scoreboard.
 7. Completar ferramentas de staff e regras; depois avançar economia, missões e eventos.
 
 ---
