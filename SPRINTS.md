@@ -10,7 +10,7 @@ comportamentos descritos em documentos históricos.
 
 ## Sprint Backend — Conta, Loja e Administração (03/10/2026)
 
-Planejamento detalhado em [SPRINT-BACKEND.md](SPRINT-BACKEND.md). M1–M3 implementados; M4 instalado e vínculo validado em jogo por três jogadores em 03/10/2026. M5 implementado com testes locais: [M5-BACKEND.md](M5-BACKEND.md). Credenciais e homologação externa do Mercado Pago pendentes; vendas e pagamentos desativados até validar gateway, entrega VIP e operação. Não altera o status das entregas históricas abaixo.
+Planejamento detalhado em [SPRINT-BACKEND.md](SPRINT-BACKEND.md). M1–M3 implementados; M4 instalado e vínculo validado em jogo por três jogadores em 03/10/2026. M5 com credenciais/webhook e cartão aprovado validados; demais cenários externos pendentes: [M5-BACKEND.md](M5-BACKEND.md). M6 implementado, testado e instalado com API 0.6.0/Core 1.30.0 e frontend Cloudflare: [M6-BACKEND.md](M6-BACKEND.md). Vendas continuam fechadas até homologação final e operação M7. Não altera o status das entregas históricas abaixo.
 
 
 Migração de hospedagem preparada em 03/10/2026: [Cloudflare Pages e túnel permanente](CLOUDFLARE.md). Domínio `atlascobblemon.com.br`; publicação pendente da autorização da conta e ativação do DNS.
