@@ -1,6 +1,6 @@
 # Cloudflare — migração do Atlas
 
-03/10/2026. Migração preparada e testada localmente; acesso à conta autorizado, publicação e integração Git pendentes. Domínio comprado pelo dono: `atlascobblemon.com.br`. DNS configurado no Registro.br para `brady.ns.cloudflare.com` e `faye.ns.cloudflare.com`; aguardar status Active na Cloudflare. Não substituir esses nameservers por IPs do servidor.
+03/10/2026. Frontend publicado em `https://atlas-cobblemon.pages.dev`, com integração GitHub ativa; domínio e API pública aguardam propagação DNS. Domínio comprado pelo dono: `atlascobblemon.com.br`. DNS configurado no Registro.br para `brady.ns.cloudflare.com` e `faye.ns.cloudflare.com`; aguardar status Active na Cloudflare. Não substituir esses nameservers por IPs do servidor.
 
 ## Arquitetura preparada
 
@@ -25,7 +25,7 @@ Saída: `dist/atlas-web/browser`. Build Pages gera `_worker.js` e `_routes.json`
 
 O workflow hosting-check verifica o proxy e compila a saída em pushes/PRs. Os testes cobrem sessão/Set-Cookie, corpo, CSRF, assinatura do Mercado Pago, ausência de cache, destino fixo, redirects externos, limite de tamanho e indisponibilidade. Prévia real do Wrangler também deve confirmar rotas Angular e assets antes de publicar.
 
-## Acesso à conta — ainda necessário
+## Acesso à conta autorizado
 
 A conta foi autorizada pelo dono via OAuth Device Grant em 03/10/2026. O acesso da VM está confirmado; não reenviar credenciais nem repetir login enquanto a sessão for válida. Para renovar a autorização pelo navegador quando necessário:
 
@@ -92,6 +92,10 @@ Validação local concluída: sete testes do proxy aprovados, build Angular/Page
 
 Túnel remoto `atlas-api` criado e configurado para `api.atlascobblemon.com.br` → `http://127.0.0.1:4201`. Token salvo somente no arquivo privado de runtime (0600). Serviço `atlas-api-cloudflare` instalado, ativo e habilitado para iniciar com a VM. O túnel temporário anterior e sua configuração foram preservados até validação pública.
 
-A criação do projeto Pages com source GitHub foi recusada pelo provedor (erro 8000011, instalação Git não conectada). É necessário autorizar o Cloudflare GitHub App para `AtlasServerProject/atlas-web` no fluxo de criação de Pages. Projeto nativo Git ainda não criado; não criar um projeto Direct Upload como substituto sem definir a mudança de automação.
+Após autorização GitHub, o projeto Pages `atlas-cobblemon` foi criado com integração nativa ao repositório e branch main. O projeto Workers `atlas-web` criado inicialmente foi preservado. Primeira publicação de produção concluída com sucesso: `86d5206c-66d9-4a5a-a0b7-196d4b74fadd`. Home e /login retornaram HTTP 200; API retornou 503 enquanto seu hostname não resolve publicamente.
 
-DNS da API ainda precisa ser criado no painel: CNAME `api`, destino `ff6c623c-1ce6-4051-a734-104e58c7ce39.cfargotunnel.com`, proxy ativado, TTL automático. OAuth desta VM não tem permissão de editar registros DNS (HTTP 403); o UUID de túnel nesse destino é público e não é o token privado. A zona segue com status pending enquanto Registro.br conclui a delegação.
+DNS da API criado pelo dono e confirmado no servidor autoritativo Cloudflare: CNAME `api` → `ff6c623c-1ce6-4051-a734-104e58c7ce39.cfargotunnel.com`. A delegação pública ainda aponta aos nameservers antigos do Registro.br. OAuth da VM não permite editar DNS (HTTP 403).
+
+Domínios principal e www já associados ao Pages. Ainda precisam dos registros CNAME `@` → `atlas-cobblemon.pages.dev` e `www` → `atlas-cobblemon.pages.dev`, com proxy ativado e TTL automático. Configuração de emails/CORS e desativação do túnel anterior aguardam validação pública.
+
+O primeiro build automático usou Node 22.16.0, incompatível com Angular. Arquivo `.node-version` fixa Node 24.21.0 para os próximos builds.
