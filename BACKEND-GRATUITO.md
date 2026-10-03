@@ -9,9 +9,9 @@ Não foi contratado plano nem domínio. Esta configuração é para desenvolvime
 - `atlas-api`: API e PostgreSQL dedicado persistente.
 - `atlas-api-preview`: gateway restrito à API.
 - `atlas-api-tunnel`: `cloudflared` com HTTPS público, transporte HTTP/2 e reinício em caso de falha.
-- `atlas-api-tunnel-sync.timer`: verifica a cada minuto se o endereço mudou. Quando muda, publica novamente o frontend já compilado com o novo proxy. Usa a autenticação local existente do Netlify CLI. Não publica commits no GitHub automaticamente.
+- `atlas-api-tunnel-sync.timer`: verifica a cada 30 segundos se o endereço mudou. Se o túnel expira mesmo com o processo ativo, recria a conexão. Depois de três falhas de saúde com a API local saudável, também recria o túnel. Quando muda, publica novamente a última versão validada do frontend com o novo proxy. Usa a autenticação local existente do Netlify CLI. Não publica commits no GitHub automaticamente.
 
-Templates ficam em `infra/templates/atlas-api-*.service` e `atlas-api-tunnel-sync.timer`. O checkout utilizado é `~/dev/atlas`; o binário Cloudflare é `~/.local/bin/cloudflared`. É necessário instalar o Netlify CLI, autenticar a conta e vincular `atlas-web` ao site Atlas. A sincronização depende do build em `atlas-web/dist/atlas-web/browser`. Mudanças de endereço consomem publicações/créditos do plano gratuito do Netlify; não habilitar upgrade automático pago.
+Templates ficam em `infra/templates/atlas-api-*.service` e `atlas-api-tunnel-sync.timer`. O checkout utilizado é `~/dev/atlas`; o binário Cloudflare é `~/.local/bin/cloudflared`. É necessário instalar o Netlify CLI, autenticar a conta e vincular `atlas-web` ao site Atlas. A sincronização usa a cópia validada em `atlas-api/.runtime/published-web`, evitando publicar trabalho ainda em construção. O Node é acessado por `~/.local/bin/node`, inclusive sem ambiente de terminal. Mudanças de endereço consomem publicações/créditos do plano gratuito do Netlify; não habilitar upgrade automático pago.
 
 ## Configuração privada
 
@@ -27,8 +27,10 @@ python3 ~/dev/atlas/infra/scripts/sync-api-tunnel.py
 journalctl --user -u atlas-api-tunnel-sync.service --no-pager -n 20
 ```
 
-Se o túnel reiniciar, pode haver uma breve indisponibilidade até a republicação do Netlify. Falha de autenticação do CLI ou limite do plano gratuito exige correção; o último frontend publicado é preservado. Não é uma instalação com garantia de produção. Ao concluir a construção, escolher domínio e hospedagem com endereço estável, backup e disponibilidade adequados.
+Se o túnel reiniciar, pode haver uma breve indisponibilidade até a republicação do Netlify. A verificação inicial ocorre aproximadamente 15 segundos após o início; rede, DNS e publicação podem acrescentar tempo. Serviços habilitados e linger garantem início sem abrir sessão no terminal. Falha de autenticação do CLI ou limite do plano gratuito exige correção; o último frontend publicado é preservado. Não é uma instalação com garantia de produção. Ao concluir a construção, escolher domínio e hospedagem com endereço estável, backup e disponibilidade adequados.
 
 ## Validação em 02/10/2026
 
 Teste Playwright no endereço público validou cadastro, confirmação, login, recuperação, revogação da sessão antiga e rejeição de link já usado. Durante esse teste os emails ficaram em arquivos privados locais; depois foi ativado SMTP. As duas contas temporárias foram removidas. A saúde da API e o bloqueio externo do Actuator também foram verificados.
+
+Correção operacional: Cloudflare retornou “Unauthorized: Tunnel not found” com processo ainda ativo. O teste reiniciou API/gateway/túnel e validou a republicação pelo systemd, com `Result=success`, e o formulário de login público. A versão da API usada em operação é fixada por `ATLAS_API_JAR` em `.runtime/releases`, sem depender de um build em andamento.
