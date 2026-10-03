@@ -35,14 +35,14 @@ ATLAS_MP_MODE=test
 ATLAS_MP_ACCESS_TOKEN=
 ATLAS_MP_WEBHOOK_SECRET=
 ATLAS_MP_COLLECTOR_ID=
-ATLAS_MP_NOTIFICATION_URL=https://atlas-cobblemon.netlify.app/api/v1/webhooks/mercadopago
+ATLAS_MP_NOTIFICATION_URL=https://www.atlascobblemon.com.br/api/v1/webhooks/mercadopago
 ATLAS_SALES_ENABLED=false
 ```
 
 - ACCESS_TOKEN: credencial da integração/conta de teste compatível com Checkout Pro.
 - WEBHOOK_SECRET: assinatura secreta mostrada na configuração de Webhooks da aplicação.
 - COLLECTOR_ID: User ID do recebedor associado ao token, não o número da aplicação nem o comprador.
-- No painel de Webhooks, cadastrar a URL acima em teste e selecionar pagamentos. O hostname do túnel gratuito não é usado nessa configuração; o proxy Netlify permanece estável.
+- No painel de Webhooks, cadastrar a URL acima em teste e selecionar pagamentos. O hostname do túnel gratuito não é usado nessa configuração; o proxy Cloudflare Pages usa o domínio definitivo.
 - Public Key não é necessária para este redirecionamento hospedado sem SDK de cartão no frontend.
 - Nunca enviar esses valores pelo chat, colocar no frontend ou versionar `.env`. Credenciais de produção e teste precisam de ambientes separados. O flag mode não converte uma credencial real em credencial de teste; confirmar origem antes de habilitar.
 
@@ -80,3 +80,16 @@ Publicação do frontend preparada, porém bloqueada pelo Netlify: a API respond
 O hostname antigo do proxy público também está expirado: GET público `/api/v1/system` retornou HTTP 530 / Cloudflare 1016, enquanto a API local responde 0.5.0 e o túnel atual está ativo. O timer tenta publicar o endereço atual, mas recebe o mesmo bloqueio de créditos. Isso impede cadastro/login público enquanto não houver publicação do proxy atualizado. Não confundir esse problema de hospedagem com credenciais Mercado Pago: pagamentos seguem deliberadamente desativados.
 
 Pendências para concluir a homologação: liberar publicação do Netlify dentro do orçamento autorizado ou definir outra hospedagem gratuita; publicar o frontend/proxy validado; preencher os três campos privados do Mercado Pago; testar o checkout externo. Não declarar o M5 homologado até fechar essas etapas.
+
+
+## Retomada da homologação no domínio definitivo
+
+Frontend M5 publicado no Cloudflare Pages e API permanente conectada. Os bloqueios de hospedagem Netlify descritos acima são históricos e foram resolvidos pela migração. Nesta revisão, os três campos privados Mercado Pago ainda estavam vazios; nenhuma chamada autenticada ou compra externa foi executada.
+
+1. Em Suas integrações → Atlas Cobblemon → Credenciais de teste, salvar o Access Token somente em `atlas-api/.env`, campo `ATLAS_MP_ACCESS_TOKEN`.
+2. Em Contas de teste, identificar o vendedor associado às credenciais e salvar seu User ID em `ATLAS_MP_COLLECTOR_ID`. Não usar o ID da aplicação nem o comprador. Criar/identificar uma conta comprador distinta para os testes.
+3. Em Webhooks → ambiente de teste, selecionar pagamentos e cadastrar `https://www.atlascobblemon.com.br/api/v1/webhooks/mercadopago`. Salvar a assinatura secreta em `ATLAS_MP_WEBHOOK_SECRET`.
+4. Manter modo test e flags de pagamento/vendas false até validar credenciais e definir a execução isolada da homologação. Não abrir vendas no banco público só para testar: a entrega VIP M6 ainda está pendente.
+5. Validar recebedor/token, checkout, confirmação por webhook/reconciliação, duplicação e recuperação antes de declarar M5 homologado. PIX exige validação específica de disponibilidade no Checkout Pro e no ambiente escolhido.
+
+Credenciais de teste Checkout Pro podem começar com APP_USR; o prefixo sozinho não comprova o ambiente. A documentação do provedor informa que o vendedor de teste e suas credenciais são criados junto à aplicação. Não publicar credenciais em screenshots, logs, Git ou chat.
