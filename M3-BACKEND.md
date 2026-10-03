@@ -39,7 +39,7 @@ IDs comerciais são inteiros restritos ao intervalo seguro do JavaScript. Não h
 
 ## ADMIN e operação
 
-Primeiro ADMIN solicitado: nickname VFSomente, email vfsomente@gmail.com. Conceder somente depois de encontrar a conta confirmada correspondente e registrar concessão pelo script operacional do M2. Não criar senha nem conceder ADMIN ao amigo cadastrado.
+Primeiro ADMIN concedido à conta confirmada VFSomente (vfsomente@gmail.com), pelo script operacional do M2, com auditoria da autorização do titular.
 
 Antes de aplicar migrations ao ambiente persistente, preservar dump privado e JAR anterior. Executar `python3 scripts/verify-local.py --web-tests` em banco descartável. Publicar frontend após a atualização da API e verificar catálogo/saúde no endereço público. Segredos e backups ficam fora do Git.
 
@@ -48,3 +48,7 @@ Referências: [locks de linhas PostgreSQL](https://www.postgresql.org/docs/curre
 Validação: 26 testes Java/PostgreSQL e 34 testes Playwright aprovados. A migração V3 de um build intermediário havia sido aplicada durante teste operacional de reinício; seu conteúdo foi preservado, e a correção de duração exclusiva de VIP entrou em V4 incremental, sem repair do histórico e sem apagar contas.
 
 CI remoto: build e 26 testes com PostgreSQL/Testcontainers passaram no GitHub Actions. Dependency review está indisponível enquanto o grafo de dependências do repositório não estiver habilitado; a checagem registra explicitamente a ausência da revisão, e o inventário de dependências permanece publicado pelo build. Nenhum plano pago foi ativado.
+
+## Melhoria de confirmação — API 0.3.1
+
+Após o cadastro aceito, o frontend exibe um popup com o endereço informado, orientação para confirmar o email e verificar spam/lixo eletrônico. Mantém resposta genérica para proteger a privacidade das contas. A confirmação concluída mostra uma mensagem de boas-vindas e botão de login. Emails de confirmação e recuperação usam o visual Atlas em HTML, botão de ação e alternativa em texto, preservando tokens individuais de uso único. Não há mudança de schema.
