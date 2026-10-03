@@ -1,6 +1,6 @@
 # M4 — Identidade Minecraft e pedidos
 
-API 0.4.0, migration V5; Core 1.29.24, migration de jogo 033. Vendas permanecem fechadas. Pagamento, entrega e contagem de VIP pertencem ao M5/M6.
+API 0.4.1, migration V5; Core 1.29.24, migration de jogo 033. Vendas permanecem fechadas. Pagamento, entrega e contagem de VIP pertencem ao M5/M6.
 
 ## Vínculo
 
@@ -51,4 +51,6 @@ Preservar dump privado de ambos os bancos, JARs anteriores e frontend publicado.
 
 Aplicar migration 033 antes de instalar o Core, pois a mescla Premium passa a participar da proteção de identidade. Instalar apenas um JAR de Core; reiniciar e revisar inicialização. API aplica V5 por Flyway, sem editar V1–V4. Voltar para API anterior mantém schema aditivo; não executar down migration ou apagar contas/pedidos.
 
-Validação concluída: 38 testes API/PostgreSQL, testes dos repositories reais do Core (nickname, Premium, mescla e rollback) e 35 testes Playwright, incluindo comprovação interna e confirmação web reais em banco descartável. Checkout no navegador usa injeção controlada de falhas/cotação; idempotência e preços têm testes transacionais reais separados. Builds API/Angular/Core aprovados. API 0.4.0 publicada, schema 5 aplicado, frontend no Netlify, migration 033 aplicada ao Core e 1.29.24 instalado com um único JAR. Serviço ativo, inicialização concluída e ponte configurada, sem erro de Site. Teste manual do comando pelo jogador no cliente Minecraft permanece parte da homologação; nenhuma compra ou entrega foi liberada.
+Validação concluída: 39 testes API/PostgreSQL, testes dos repositories reais do Core (nickname, Premium, mescla e rollback) e 35 testes Playwright, incluindo comprovação interna e confirmação web reais em banco descartável. Checkout no navegador usa injeção controlada de falhas/cotação; idempotência e preços têm testes transacionais reais separados. Builds API/Angular/Core aprovados. API 0.4.1 publicada, schema 5 aplicado, frontend no Netlify, migration 033 aplicada ao Core e 1.29.24 instalado com um único JAR. Serviço ativo, inicialização concluída e ponte configurada, sem erro de Site. Teste manual do comando pelo jogador no cliente Minecraft permanece parte da homologação; nenhuma compra ou entrega foi liberada.
+
+Patch 0.4.1: criação de pedidos normaliza horários para microssegundos antes da persistência, alinhando prazo informado e limite real armazenado pelo PostgreSQL. Evita divergência de estado na borda exata da expiração.

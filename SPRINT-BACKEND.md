@@ -173,7 +173,7 @@ Aceite: preço/promoção persistem após reinício; duas requisições não cri
 
 ### M4 — Identidade Minecraft e pedidos
 
-Implementação: [M4-BACKEND.md](M4-BACKEND.md). API 0.4.0 e Core 1.29.24; checkout protegido e vendas fechadas. API/Netlify publicados, migration 033 aplicada, Core instalado e servidor reiniciado. Teste manual do comando com o cliente Minecraft ainda compõe a homologação.
+Implementação: [M4-BACKEND.md](M4-BACKEND.md). API 0.4.1 e Core 1.29.24; checkout protegido e vendas fechadas. API/Netlify publicados, migration 033 aplicada, Core instalado e servidor reiniciado. Teste manual do comando com o cliente Minecraft ainda compõe a homologação.
 
 - [x] Gerar desafio aleatório vinculado à conta web autenticada, com hash, expiração e limite de tentativas.
 - [x] Implementar `/site vincular <codigo>` no Core; exigir autenticação do jogador e contexto de servidor elegível.
