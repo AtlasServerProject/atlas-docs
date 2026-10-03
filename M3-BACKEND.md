@@ -46,3 +46,5 @@ Antes de aplicar migrations ao ambiente persistente, preservar dump privado e JA
 Referências: [locks de linhas PostgreSQL](https://www.postgresql.org/docs/current/explicit-locking.html) e [visibilidade em triggers](https://www.postgresql.org/docs/current/trigger-datachanges.html).
 
 Validação: 26 testes Java/PostgreSQL e 34 testes Playwright aprovados. A migração V3 de um build intermediário havia sido aplicada durante teste operacional de reinício; seu conteúdo foi preservado, e a correção de duração exclusiva de VIP entrou em V4 incremental, sem repair do histórico e sem apagar contas.
+
+CI remoto: build e 26 testes com PostgreSQL/Testcontainers passaram no GitHub Actions. Dependency review está indisponível enquanto o grafo de dependências do repositório não estiver habilitado; a checagem registra explicitamente a ausência da revisão, e o inventário de dependências permanece publicado pelo build. Nenhum plano pago foi ativado.

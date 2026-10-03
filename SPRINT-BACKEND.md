@@ -127,7 +127,8 @@ Base implementada e validada localmente em 02/10/2026: [entrega M1](M1-BACKEND.m
 - [x] Configurar validação, DTOs e erros padronizados com código, campos e requestId.
 - [x] Incluir logs estruturados, health/readiness, métricas protegidas e tratamento de falhas.
 - [x] Configurar CI: build, testes PostgreSQL/Testcontainers, dependency review em PR e artefato versionado.
-- [ ] Executar workflow remoto e confirmar disponibilidade de dependency review no repositório.
+- [x] Executar workflow remoto: build e testes PostgreSQL/Testcontainers aprovados.
+- [ ] Habilitar grafo de dependências e confirmar dependency review; indisponibilidade registrada no CI.
 - [x] Ambiente local reproduzível e banco de teste isolado, sem dados/credenciais de produção.
 - [ ] Implantar homologação externa após escolha de hospedagem/domínio.
 - [x] Configuração de segredos externa ao Git, rotação e valores de exemplo sem segredos.
