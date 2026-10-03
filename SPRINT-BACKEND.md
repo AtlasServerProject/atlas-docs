@@ -1,6 +1,6 @@
 # Sprint Backend — Conta, Loja e Administração Atlas
 
-Data: 02/10/2026. Status: M1 implementado localmente; M2 integrado ao Netlify/SMTP; M3 implementado e validado; M4 implementado, testado e instalado; M5 implementado localmente, com homologação externa pendente. Ambiente público gratuito de desenvolvimento, sem liberação de vendas.
+Data do planejamento: 02/10/2026. Atualização: 03/10/2026. M1–M6 implementados e instalados; M4 validado em jogo; cartão aprovado do M5 validado em banco separado; M6 com API/Core/frontend publicados e testes isolados concluídos. Homologação externa completa, aceite final em jogo e operação M7 pendentes. Vendas fechadas.
 
 Objetivo: substituir os mocks do Atlas Web por uma API persistente, validar permissões no servidor e completar cadastro → vínculo Minecraft → catálogo → pedido → pagamento confirmado → entrega → expiração VIP. A entrega termina com operação monitorada, recuperação testada e aceite em homologação; habilitar vendas depende dos critérios comerciais e operacionais.
 
@@ -190,7 +190,7 @@ Aceite: outro usuário não acessa pedido; nickname manual não autoriza entrega
 
 ### M5 — Pagamento e reconciliação
 
-Implementação: [M5-BACKEND.md](M5-BACKEND.md). API 0.5.0/schema 7 instalada. Frontend/proxy preparados, mas publicação bloqueada por créditos gratuitos esgotados do Netlify. Testes locais cobrem confirmação/reconciliação com provedor isolado. Credenciais e homologação externa Mercado Pago pendentes; vendas e pagamentos continuam desativados.
+Implementação: [M5-BACKEND.md](M5-BACKEND.md). Base M5 instalada e frontend/proxy publicados na Cloudflare. Credenciais de teste validadas, webhook e cartão aprovado conferidos externamente; cenários restantes do gateway pendentes. API evoluiu para 0.6.0/schema 8 no M6. Vendas continuam fechadas; processamento de pagamentos somente em modo test.
 
 - [x] Implementar PaymentProvider e adaptador do gateway escolhido; checkout hospedado, sem dados de cartão no Atlas.
 - [x] Criar tentativa de pagamento com idempotência externa e referência ao pedido.
@@ -211,22 +211,24 @@ Aceite: assinatura inválida, evento duplicado, fora de ordem, valor diferente, 
 
 ### M6 — Entrega e ciclo VIP no Core
 
-- [ ] API interna para claim/ack de entregas; autenticação e escopo por servidor.
-- [ ] Claim transacional com lease, concorrência segura, retry com backoff e revisão após limite.
-- [ ] Consumidor no Core via HTTPS de saída; não usar RCON ou comandos arbitrários vindos da loja.
-- [ ] Dispatcher por tipo de produto validado; VIP resolve identificador de plano conhecido e player_id vinculado.
-- [ ] Gravar recibo idempotente e concessão/prazo VIP na mesma transação. Retry devolve recibo existente.
-- [ ] Modelar saldos VIP por nível/destino e recibos por compra; superior pausa inferior, retomada preserva o saldo, recompra adiciona duração e reconciliação atravessa múltiplas expirações offline.
-- [ ] Incluir DTO/tela de nível atual e saldos pausados.
-- [ ] Modelar staff e VIP separadamente; cálculo de benefício efetivo usa entitlement vigente sem rebaixar ADM/MOD/SUP.
-- [ ] Adaptar kits, homes, claims, fly, ec e apresentação onde necessário; cache invalidado na concessão/expiração e revalidado ao login.
-- [ ] Implementar expiração online/offline; verificar prazo nas operações, com job apenas para sincronização/cache.
-- [ ] Preservar cooldowns e dados do jogador. Expiração não deve apagar homes/claims existentes: bloquear novos excedentes conforme regra aprovada, sem destruição automática.
-- [ ] Suportar recebimento offline e refletir status real na conta web.
-- [ ] Administrador consulta tentativas e solicita reprocessamento com justificativa; nova tentativa usa mesmo delivery_id.
-- [ ] Versionar Core, changelog, build, backup do JAR, implantação com um único JAR, reinício e revisão de logs conforme AGENTS.md durante a implementação.
+Implementação/instalação: [M6-BACKEND.md](M6-BACKEND.md). API 0.6.0/schema 8 e Core 1.30.0, com testes isolados e frontend Cloudflare publicados. Homologação final em jogo e abertura continuam pendentes.
 
-Aceite: queda após commit antes do ACK, dois workers, servidor fora do ar e jogador offline não duplicam nem perdem VIP; 30 dias começam no instante aprovado; expiração remove benefícios comerciais preservando staff e cooldowns.
+- [x] API interna para claim/ack de entregas; autenticação e escopo por servidor.
+- [x] Claim transacional com lease, concorrência segura, retry com backoff e revisão após limite.
+- [x] Consumidor no Core via HTTPS de saída; não usar RCON ou comandos arbitrários vindos da loja.
+- [x] Dispatcher por tipo de produto validado; VIP resolve identificador de plano conhecido e player_id vinculado.
+- [x] Gravar recibo idempotente e concessão/prazo VIP na mesma transação. Retry devolve recibo existente.
+- [x] Modelar saldos VIP por nível/destino e recibos por compra; superior pausa inferior, retomada preserva o saldo, recompra adiciona duração e reconciliação atravessa múltiplas expirações offline.
+- [x] Incluir DTO/tela de nível atual e saldos pausados.
+- [x] Modelar staff e VIP separadamente; cálculo de benefício efetivo usa entitlement vigente sem rebaixar ADM/MOD/SUP.
+- [x] Adaptar kits, homes, claims, fly, ec e apresentação onde necessário; cache invalidado na concessão/expiração e revalidado ao login.
+- [x] Implementar expiração online/offline; verificar prazo nas operações, com job apenas para sincronização/cache.
+- [x] Preservar cooldowns e dados do jogador. Expiração não deve apagar homes/claims existentes: bloquear novos excedentes conforme regra aprovada, sem destruição automática.
+- [x] Suportar recebimento offline e refletir status real na conta web.
+- [x] Administrador consulta tentativas e solicita reprocessamento com justificativa; nova tentativa usa mesmo delivery_id.
+- [x] Versionar Core, changelog, build, backup do JAR, implantação com um único JAR, reinício e revisão de logs conforme AGENTS.md durante a implementação.
+
+Aceite: queda após commit antes do ACK, dois workers, servidor fora do ar e jogador offline não duplicam nem perdem VIP; 30 dias começam na ativação registrada no Core; expiração remove benefícios comerciais preservando staff e cooldowns.
 
 ### M7 — Operação, homologação e abertura
 
