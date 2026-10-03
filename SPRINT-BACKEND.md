@@ -1,6 +1,6 @@
 # Sprint Backend — Conta, Loja e Administração Atlas
 
-Data: 02/10/2026. Status: M1 implementado localmente; M2 integrado ao Netlify/SMTP; M3 implementado e validado. Ambiente público gratuito de desenvolvimento, sem liberação de vendas.
+Data: 02/10/2026. Status: M1 implementado localmente; M2 integrado ao Netlify/SMTP; M3 implementado e validado; M4 implementado, testado e instalado. Ambiente público gratuito de desenvolvimento, sem liberação de vendas.
 
 Objetivo: substituir os mocks do Atlas Web por uma API persistente, validar permissões no servidor e completar cadastro → vínculo Minecraft → catálogo → pedido → pagamento confirmado → entrega → expiração VIP. A entrega termina com operação monitorada, recuperação testada e aceite em homologação; habilitar vendas depende dos critérios comerciais e operacionais.
 
@@ -154,7 +154,7 @@ Aceite: registrar → confirmar email → entrar → atualizar página → sair 
 
 ### M3 — Catálogo e promoções reais
 
-Implementado: [M3-BACKEND.md](M3-BACKEND.md). Catálogo persistente e vendas fechadas; primeiro ADMIN aguarda cadastro/confirmacão da conta indicada.
+Implementado: [M3-BACKEND.md](M3-BACKEND.md). Catálogo persistente e vendas fechadas; primeiro ADMIN concedido à conta confirmada VFSomente.
 
 - [x] Criar seeds comerciais versionados dos três VIPs com valores aprovados; sem criar produtos falsamente vendáveis.
 - [x] Listar catálogo público filtrado por active/destino e categorias únicas.
@@ -173,16 +173,18 @@ Aceite: preço/promoção persistem após reinício; duas requisições não cri
 
 ### M4 — Identidade Minecraft e pedidos
 
-- [ ] Gerar desafio aleatório vinculado à conta web autenticada, com hash, expiração e limite de tentativas.
-- [ ] Implementar `/site vincular <codigo>` no Core; exigir autenticação do jogador e contexto de servidor elegível.
-- [ ] Confirmar challenge pela identidade interna do Core e player canônico, sem confiar em nick/UUID enviados pelo browser.
-- [ ] Proteger contra reuso, concorrência, vínculo duplicado e tomada de conta; confirmação web final antes de concluir vínculo.
-- [ ] Definir desvinculação/revínculo seguro, sem alterar destinatário de pedidos antigos; manter histórico auditável.
-- [ ] Criar checkout: usuário autenticado/verificado/vinculado, produto ativo, destino permitido e preço recalculado no servidor.
-- [ ] Um item por pedido; quantidade validada conforme produto. Mesmo idempotency key + mesmo corpo retorna mesmo pedido; corpo diferente retorna conflito.
-- [ ] Congelar snapshot e definir expiração; mudança de preço/revisão pede nova confirmação antes da criação.
-- [ ] Listar compras reais e detalhe acessíveis apenas ao dono; paginação e estados distintos de pagamento/entrega.
-- [ ] Integrar Minha conta, vinculação, confirmação de compra e Minhas compras no Angular.
+Implementação: [M4-BACKEND.md](M4-BACKEND.md). API 0.4.0 e Core 1.29.24; checkout protegido e vendas fechadas. API/Netlify publicados, migration 033 aplicada, Core instalado e servidor reiniciado. Teste manual do comando com o cliente Minecraft ainda compõe a homologação.
+
+- [x] Gerar desafio aleatório vinculado à conta web autenticada, com hash, expiração e limite de tentativas.
+- [x] Implementar `/site vincular <codigo>` no Core; exigir autenticação do jogador e contexto de servidor elegível.
+- [x] Confirmar challenge pela identidade interna do Core e player canônico, sem confiar em nick/UUID enviados pelo browser.
+- [x] Proteger contra reuso, concorrência, vínculo duplicado e tomada de conta; confirmação web final antes de concluir vínculo.
+- [x] Definir desvinculação/revínculo seguro, sem alterar destinatário de pedidos antigos; manter histórico auditável.
+- [x] Criar checkout: usuário autenticado/verificado/vinculado, produto ativo, destino permitido e preço recalculado no servidor.
+- [x] Um item por pedido; quantidade validada conforme produto. Mesmo idempotency key + mesmo corpo retorna mesmo pedido; corpo diferente retorna conflito.
+- [x] Congelar snapshot e definir expiração; mudança de preço/revisão pede nova confirmação antes da criação.
+- [x] Listar compras reais e detalhe acessíveis apenas ao dono; paginação e estados distintos de pagamento/entrega.
+- [x] Integrar Minha conta, vinculação, confirmação de compra e Minhas compras no Angular.
 
 Aceite: outro usuário não acessa pedido; nickname manual não autoriza entrega; dois cliques criam um pedido; outro servidor/produto inválido é rejeitado; troca de nick não troca destinatário.
 
