@@ -8,6 +8,10 @@ O [STATUS.md](STATUS.md) resume o estado atual e o [ROADMAP.MD](ROADMAP.MD)
 organiza as próximas entregas. Notas de versões posteriores prevalecem sobre
 comportamentos descritos em documentos históricos.
 
+## Sprint Backend — Conta, Loja e Administração (03/10/2026)
+
+Planejamento detalhado em [SPRINT-BACKEND.md](SPRINT-BACKEND.md). M1–M3 implementados; M4 instalado e vínculo validado em jogo por três jogadores em 03/10/2026. M5 implementado com testes locais: [M5-BACKEND.md](M5-BACKEND.md). Credenciais e homologação externa do Mercado Pago pendentes; vendas e pagamentos desativados até validar gateway, entrega VIP e operação. Não altera o status das entregas históricas abaixo.
+
 ## Próximas prioridades
 
 Atlas Web adiado para foco no servidor. Melhorias registradas em [ATLAS-WEB.md](ATLAS-WEB.md).

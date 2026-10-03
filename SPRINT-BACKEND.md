@@ -1,6 +1,6 @@
 # Sprint Backend — Conta, Loja e Administração Atlas
 
-Data: 02/10/2026. Status: M1 implementado localmente; M2 integrado ao Netlify/SMTP; M3 implementado e validado; M4 implementado, testado e instalado. Ambiente público gratuito de desenvolvimento, sem liberação de vendas.
+Data: 02/10/2026. Status: M1 implementado localmente; M2 integrado ao Netlify/SMTP; M3 implementado e validado; M4 implementado, testado e instalado; M5 implementado localmente, com homologação externa pendente. Ambiente público gratuito de desenvolvimento, sem liberação de vendas.
 
 Objetivo: substituir os mocks do Atlas Web por uma API persistente, validar permissões no servidor e completar cadastro → vínculo Minecraft → catálogo → pedido → pagamento confirmado → entrega → expiração VIP. A entrega termina com operação monitorada, recuperação testada e aceite em homologação; habilitar vendas depende dos critérios comerciais e operacionais.
 
@@ -190,19 +190,24 @@ Aceite: outro usuário não acessa pedido; nickname manual não autoriza entrega
 
 ### M5 — Pagamento e reconciliação
 
-- [ ] Implementar PaymentProvider e adaptador do gateway escolhido; checkout hospedado, sem dados de cartão no Atlas.
-- [ ] Criar tentativa de pagamento com idempotência externa e referência ao pedido.
-- [ ] Tratar timeout na criação sem criar cobranças duplicadas; persistir intenção/tentativa e reconciliar resultado desconhecido.
-- [ ] Validar autenticidade do webhook conforme documentação oficial do provedor; persistir/deduplicar evento antes do processamento durável.
-- [ ] Consultar provedor para confirmar referência, recebedor, valor, moeda e status. Redirect nunca confirma pagamento.
-- [ ] Responder conforme contrato de retry do gateway; eventos inválidos não concedem benefício.
-- [ ] Confirmar pagamento e criar outbox de entrega em uma transação local; chamada externa não fica presa em transação longa.
-- [ ] Reconciliação periódica de pagamentos pendentes, eventos perdidos e divergências.
-- [ ] Tratar webhook tardio após expiração: pagamento realmente recebido vai para revisão conforme política, nunca é descartado silenciosamente.
-- [ ] Registrar reembolso/contestação com estado e fluxo de compensação/revisão. Eventos antigos não regressam PAID para PENDING.
+Implementação: [M5-BACKEND.md](M5-BACKEND.md). API 0.5.0/schema 7 instalada. Frontend/proxy preparados, mas publicação bloqueada por créditos gratuitos esgotados do Netlify. Testes locais cobrem confirmação/reconciliação com provedor isolado. Credenciais e homologação externa Mercado Pago pendentes; vendas e pagamentos continuam desativados.
+
+- [x] Implementar PaymentProvider e adaptador do gateway escolhido; checkout hospedado, sem dados de cartão no Atlas.
+- [x] Criar tentativa de pagamento com idempotência externa e referência ao pedido.
+- [x] Tratar timeout na criação sem criar cobranças duplicadas; persistir intenção/tentativa e reconciliar resultado desconhecido.
+- [x] Validar autenticidade do webhook conforme documentação oficial do provedor; persistir/deduplicar evento antes do processamento durável.
+- [x] Consultar provedor para confirmar referência, recebedor, valor, moeda e status. Redirect nunca confirma pagamento.
+- [x] Responder conforme contrato de retry do gateway; eventos inválidos não concedem benefício.
+- [x] Confirmar pagamento e criar outbox de entrega em uma transação local; chamada externa não fica presa em transação longa.
+- [x] Reconciliação periódica de pagamentos pendentes, eventos perdidos e divergências.
+- [x] Tratar webhook tardio após expiração: pagamento realmente recebido vai para revisão conforme política, nunca é descartado silenciosamente.
+- [x] Registrar reembolso/contestação com estado e fluxo de compensação/revisão. Eventos antigos não regressam PAID para PENDING.
 - [ ] Substituir botão de simulação por checkout real apenas em ambiente autorizado/configurado; sandbox separado de produção.
 
 Aceite: assinatura inválida, evento duplicado, fora de ordem, valor diferente, timeout e retorno manipulado não geram entrega incorreta; pagamento válido produz exatamente uma obrigação de entrega.
+
+
+- [ ] Completar testes externos com comprador/recebedor de teste e fechar aceite do gateway.
 
 ### M6 — Entrega e ciclo VIP no Core
 
