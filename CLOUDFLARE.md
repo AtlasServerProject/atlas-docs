@@ -101,3 +101,5 @@ Domínios principal e www já associados ao Pages. Ainda precisam dos registros 
 O primeiro build automático usou Node 22.16.0, incompatível com Angular. Arquivo `.node-version` fixa Node 24.21.0 para os próximos builds.
 
 Deploy automático pelo GitHub validado com sucesso após fixar Node: `f09b91e3-aa9d-4c07-b38a-71c88073bf8b`, commit `370a21c`. Home, loja e login públicos também conferidos em navegador móvel (HTTP 200, renderização Angular e sem overflow horizontal).
+
+Delegação concluída em 03/10/2026: nameservers Cloudflare públicos e API permanente respondendo versão 0.5.0. Ativação executada provisoriamente com `--site-url https://atlas-cobblemon.pages.dev`: CORS e links de email configurados para Pages, webhook no mesmo endereço, túnel temporário e timer Netlify desativados após validação pública. Endpoint protegido /users/me retornou 401 com CORS correto. Domínio principal e www continuam sem registros no servidor autoritativo; após adicioná-los e validar HTTPS, executar ativação novamente sem --site-url. A verificação usa curl com timeout, pois urllib não respondeu corretamente nesta rede.
