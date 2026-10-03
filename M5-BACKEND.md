@@ -1,6 +1,6 @@
 # M5 — Pagamentos Mercado Pago
 
-03/10/2026. API 0.5.0, schema 7. Implementação local de Checkout Pro via Preferences API; homologação externa pendente de credenciais. Vendas e pagamentos permanecem desativados na VM. Entrega de VIP depende do M6.
+03/10/2026. API 0.5.0, schema 7. Implementação local de Checkout Pro via Preferences API; homologação externa pendente de credenciais. Vendas permanecem desativadas na VM; processamento de pagamentos habilitado somente em modo test após validação das credenciais. Entrega de VIP depende do M6.
 
 O dono confirmou o vínculo Minecraft de VFSomente, Principelothric e Pablix026 em jogo. Isso fecha a validação manual do comando prevista no M4; não altera permissões dessas contas.
 
@@ -93,3 +93,10 @@ Frontend M5 publicado no Cloudflare Pages e API permanente conectada. Os bloquei
 5. Validar recebedor/token, checkout, confirmação por webhook/reconciliação, duplicação e recuperação antes de declarar M5 homologado. PIX exige validação específica de disponibilidade no Checkout Pro e no ambiente escolhido.
 
 Credenciais de teste Checkout Pro podem começar com APP_USR; o prefixo sozinho não comprova o ambiente. A documentação do provedor informa que o vendedor de teste e suas credenciais são criados junto à aplicação. Não publicar credenciais em screenshots, logs, Git ou chat.
+
+
+## Credenciais validadas e receiver de teste ativado
+
+03/10/2026: campos privados preenchidos pelo dono. GET autenticado /users/me no Mercado Pago aceitou o token, confirmou site MLB, tag test_user e ID igual ao recebedor configurado. Valores não foram exibidos nem versionados. Backup privado do env preservado antes de habilitar ATLAS_PAYMENT_ENABLED=true e ATLAS_MP_MODE=test; ATLAS_SALES_ENABLED=false mantido. API reiniciada e ativa.
+
+Webhook público no domínio definitivo rejeitou POST sem assinatura com HTTP 401 / INVALID_WEBHOOK. Isso valida roteamento e rejeição de notificações não autenticadas, mas não comprova a assinatura secreta cadastrada: ainda é necessário simular evento pelo painel Mercado Pago e conferir recebimento/fila. Nenhuma compra foi feita; checkout e PIX/cartão ainda aguardam homologação externa. Não liberar vendas públicas para gerar pedido de teste: usar ambiente isolado na próxima etapa.
