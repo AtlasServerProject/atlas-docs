@@ -1,6 +1,6 @@
 # Cloudflare — migração do Atlas
 
-03/10/2026. Migração preparada e testada localmente; publicação e autorização da conta pendentes. Domínio comprado pelo dono: `atlascobblemon.com.br`. DNS configurado no Registro.br para `brady.ns.cloudflare.com` e `faye.ns.cloudflare.com`; aguardar status Active na Cloudflare. Não substituir esses nameservers por IPs do servidor.
+03/10/2026. Migração preparada e testada localmente; acesso à conta autorizado, publicação e integração Git pendentes. Domínio comprado pelo dono: `atlascobblemon.com.br`. DNS configurado no Registro.br para `brady.ns.cloudflare.com` e `faye.ns.cloudflare.com`; aguardar status Active na Cloudflare. Não substituir esses nameservers por IPs do servidor.
 
 ## Arquitetura preparada
 
@@ -27,7 +27,7 @@ O workflow hosting-check verifica o proxy e compila a saída em pushes/PRs. Os t
 
 ## Acesso à conta — ainda necessário
 
-A conta foi criada pelo dono, mas `wrangler whoami` nesta VM informa que não está autenticada. DNS ativo não concede acesso automático à conta. Para publicação via terminal, autorizar no navegador:
+A conta foi autorizada pelo dono via OAuth Device Grant em 03/10/2026. O acesso da VM está confirmado; não reenviar credenciais nem repetir login enquanto a sessão for válida. Para renovar a autorização pelo navegador quando necessário:
 
 ```bash
 cd /home/somente/dev/atlas/atlas-web
@@ -87,3 +87,11 @@ Se a validação falhar, o túnel anterior permanece ativo e o backup fica em `.
 - [Token e parâmetros do túnel](https://developers.cloudflare.com/tunnel/reference/run-parameters/)
 
 Validação local concluída: sete testes do proxy aprovados, build Angular/Pages aprovado e prévia real do Wrangler conferida com Playwright (rotas diretas, JavaScript servido corretamente, layout móvel e API indisponível retornando 503). A consulta DNS desta execução ainda retornou os nameservers anteriores do Registro.br. Nenhum serviço permanente foi ativado sem token/autorização.
+
+## Avanço após autorização da conta
+
+Túnel remoto `atlas-api` criado e configurado para `api.atlascobblemon.com.br` → `http://127.0.0.1:4201`. Token salvo somente no arquivo privado de runtime (0600). Serviço `atlas-api-cloudflare` instalado, ativo e habilitado para iniciar com a VM. O túnel temporário anterior e sua configuração foram preservados até validação pública.
+
+A criação do projeto Pages com source GitHub foi recusada pelo provedor (erro 8000011, instalação Git não conectada). É necessário autorizar o Cloudflare GitHub App para `AtlasServerProject/atlas-web` no fluxo de criação de Pages. Projeto nativo Git ainda não criado; não criar um projeto Direct Upload como substituto sem definir a mudança de automação.
+
+DNS da API ainda precisa ser criado no painel: CNAME `api`, destino `ff6c623c-1ce6-4051-a734-104e58c7ce39.cfargotunnel.com`, proxy ativado, TTL automático. OAuth desta VM não tem permissão de editar registros DNS (HTTP 403); o UUID de túnel nesse destino é público e não é o token privado. A zona segue com status pending enquanto Registro.br conclui a delegação.
