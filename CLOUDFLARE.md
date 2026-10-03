@@ -99,3 +99,5 @@ DNS da API criado pelo dono e confirmado no servidor autoritativo Cloudflare: CN
 Domínios principal e www já associados ao Pages. Ainda precisam dos registros CNAME `@` → `atlas-cobblemon.pages.dev` e `www` → `atlas-cobblemon.pages.dev`, com proxy ativado e TTL automático. Configuração de emails/CORS e desativação do túnel anterior aguardam validação pública.
 
 O primeiro build automático usou Node 22.16.0, incompatível com Angular. Arquivo `.node-version` fixa Node 24.21.0 para os próximos builds.
+
+Deploy automático pelo GitHub validado com sucesso após fixar Node: `f09b91e3-aa9d-4c07-b38a-71c88073bf8b`, commit `370a21c`. Home, loja e login públicos também conferidos em navegador móvel (HTTP 200, renderização Angular e sem overflow horizontal).
