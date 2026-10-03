@@ -1,12 +1,12 @@
 # M4 — Identidade Minecraft e pedidos
 
-API 0.4.1, migration V5; Core 1.29.24, migration de jogo 033. Vendas permanecem fechadas. Pagamento, entrega e contagem de VIP pertencem ao M5/M6.
+API 0.4.2, migrations V5/V6; Core 1.29.25, migration de jogo 033. Vendas permanecem fechadas. Pagamento, entrega e contagem de VIP pertencem ao M5/M6.
 
 ## Vínculo
 
-Conta web confirmada gera código aleatório de 256 bits, válido por 10 minutos. Somente SHA-256 persiste; o código é exibido uma vez. Gerar outro invalida desafios anteriores. O jogador autenticado executa `/site vincular <codigo>` no Emerald. O Core comprova sua identidade pela conexão interna local, e o site apresenta o nickname para confirmação explícita. Sem essa última confirmação, não há vínculo.
+Conta web confirmada gera código numérico aleatório de 6 dígitos, válido por 5 minutos, incluindo zeros iniciais. Somente HMAC-SHA256 com chave privada e contexto específico persiste; o código é exibido uma vez. Gerar outro invalida desafios anteriores. O jogador autenticado executa `/site vincular <codigo>` no Emerald. O Core comprova sua identidade pela conexão interna local, e o site apresenta o nickname para confirmação explícita. Sem essa última confirmação, não há vínculo.
 
-Conta e jogador têm política 1:1, protegida por índices únicos e locks transacionais. Código expirado, cancelado, consumido ou desconhecido não autoriza vínculo. Há limite persistente de 10 operações por conta/identidade a cada 15 minutos e intervalo de 10 segundos no comando. Código não deve ser compartilhado.
+Conta e jogador têm política 1:1, protegida por índices únicos e locks transacionais. Código expirado, cancelado, consumido ou desconhecido não autoriza vínculo. Há limite persistente de 5 operações de vínculo por conta/identidade a cada 15 minutos, 60 comprovações por servidor nesse intervalo e intervalo de 10 segundos no comando. Código não deve ser compartilhado.
 
 A identidade usada pelo site é `site_identities.subject`, UUID aleatório com referência única ao `players.id` canônico no banco do Core. Promoção Premium que apenas atualiza UUID preserva a referência. Na mescla com um player Premium existente, a referência acompanha o player canônico na mesma transação, antes da exclusão do Offline. Se ambos já possuem identidades de site distintas, a mescla inteira é revertida e exige revisão operacional: nenhuma conta web é fundida automaticamente. Trocar nickname não altera destinatário. `corePlayerId`, UUID Minecraft e nickname no pedido são snapshots; a entrega futura deve resolver **subject** no Core, nunca confiar no nickname ou no antigo número de player.
 
@@ -54,3 +54,9 @@ Aplicar migration 033 antes de instalar o Core, pois a mescla Premium passa a pa
 Validação concluída: 39 testes API/PostgreSQL, testes dos repositories reais do Core (nickname, Premium, mescla e rollback) e 35 testes Playwright, incluindo comprovação interna e confirmação web reais em banco descartável. Checkout no navegador usa injeção controlada de falhas/cotação; idempotência e preços têm testes transacionais reais separados. Builds API/Angular/Core aprovados. API 0.4.1 publicada, schema 5 aplicado, frontend no Netlify, migration 033 aplicada ao Core e 1.29.24 instalado com um único JAR. Serviço ativo, inicialização concluída e ponte configurada, sem erro de Site. Teste manual do comando pelo jogador no cliente Minecraft permanece parte da homologação; nenhuma compra ou entrega foi liberada.
 
 Patch 0.4.1: criação de pedidos normaliza horários para microssegundos antes da persistência, alinhando prazo informado e limite real armazenado pelo PostgreSQL. Evita divergência de estado na borda exata da expiração.
+
+## Código curto — API 0.4.2 / Core 1.29.25
+
+Formato `/site vincular 123456`. Alocação global serializada e índice único parcial impedem códigos ativos duplicados. Códigos consumidos, cancelados e expirados permanecem no histórico; não são reutilizados por pelo menos 15 minutos desde a criação. Pesquisa de comprovação considera apenas desafios aguardando prova, para não selecionar proprietário histórico ao reutilizar um número. A migration V6 cancela desafios antigos, preserva vínculos confirmados e permite reciclar o espaço de códigos. Quem tinha código pendente precisa gerar um novo. Emails e senhas continuam usando seus tokens fortes originais; a chave privada Core/API também permanece de 256 bits.
+
+Entrega do código curto: 43 testes API/PostgreSQL, testes de identidade do Core e 35 testes Playwright aprovados. API 0.4.2 com schema 6 instalada; Core 1.29.25 instalado com único JAR e reinício concluído. Frontend atualizado no Netlify. Backups privados de bancos/JARs preservados; vínculos confirmados mantidos.
