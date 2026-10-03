@@ -116,3 +116,16 @@ python3 atlas-api/scripts/payment-sandbox.py --stop
 ```
 
 O cluster/processo permanece disponível para conferir o pagamento após a ação do dono; --stop encerra somente o ambiente identificado e preserva evidências privadas. Não repetir criação enquanto existir estado privado: falha incerta precisa de inspeção, sem recriar preferência automaticamente. O retorno do checkout aponta ao site público, mas este pedido não aparecerá em Minhas compras de uma conta real porque pertence ao banco separado. A reconciliação do sandbox consulta o provedor a cada minuto; o webhook público pode receber o evento, porém não encontra este pedido em seu próprio banco e não gera entrega ali. Portanto a confirmação do pedido isolado será validada inicialmente por reconciliação, separadamente da validação do receiver público.
+
+
+## Cartão aprovado e confirmação externa validada
+
+03/10/2026: comprador concluiu o checkout com cartão fictício APRO, pagamento 181201673665 aprovado por 2500 centavos BRL. Consulta autenticada confirmou referência do pedido e recebedor. O provedor retornou live_mode=true mesmo para o vendedor autenticado com tag test_user; o bloqueio original encaminhou PAYMENT_MISMATCH para revisão.
+
+Correção do adaptador: preservar live_mode bruto e acrescentar evidência verifiedTestCollector somente após GET autenticado /users/me confirmar tag test_user e ID correspondente simultaneamente ao collector configurado e ao pagamento. Nickname, email e corpo de webhook não são prova do ambiente. Em modo test, aceitar live_mode=false ou esse recebedor comprovadamente fictício; produção rejeita recebedor comprovadamente test_user. Falha de consulta da identidade não aprova a compra. Referência, moeda, valor, recebedor, modo da tentativa e prazo continuam validados.
+
+67 testes API/PostgreSQL passaram, incluindo recebedor fictício com live_mode=true, recebedor real e ID divergente. Smoke tests confirmaram persistência após reinício e falha/recuperação do banco. Sandbox reiniciado com o JAR corrigido; mesma notificação assinada do pagamento verdadeiro foi enviada duas vezes ao receiver isolado (200 em ambas). Resultado: PAID/PROCESSING, exatamente uma delivery_outbox, um evento PAYMENT_CONFIRMED, fila concluída e zero falhas. A revisão inicial permanece como evidência histórica; não houve exclusão manual ou aprovação forçada no banco.
+
+Correção instalada também na API pública em `.runtime/releases/atlas-api-0.5.0-test-collector-fix.jar`, com backup privado de env/JAR/banco, sem mudanças de schema, credenciais ou flags comerciais. Health público confirmou 0.5.0/schema 7. Vendas continuam fechadas, pagamentos somente test. Não houve alteração do frontend.
+
+Teste comprova criação de preferência, aprovação de cartão e confirmação/outbox no banco separado. Entrega efetiva VIP no Minecraft continua pendente do M6. Cartão recusado, PIX pendente/expiração, estornos e operação ainda precisam de homologação antes de abrir vendas; este resultado não fecha sozinho todo o M5.
