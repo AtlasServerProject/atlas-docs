@@ -100,3 +100,19 @@ Credenciais de teste Checkout Pro podem começar com APP_USR; o prefixo sozinho 
 03/10/2026: campos privados preenchidos pelo dono. GET autenticado /users/me no Mercado Pago aceitou o token, confirmou site MLB, tag test_user e ID igual ao recebedor configurado. Valores não foram exibidos nem versionados. Backup privado do env preservado antes de habilitar ATLAS_PAYMENT_ENABLED=true e ATLAS_MP_MODE=test; ATLAS_SALES_ENABLED=false mantido. API reiniciada e ativa.
 
 Webhook público no domínio definitivo rejeitou POST sem assinatura com HTTP 401 / INVALID_WEBHOOK. Isso valida roteamento e rejeição de notificações não autenticadas, mas não comprova a assinatura secreta cadastrada: ainda é necessário simular evento pelo painel Mercado Pago e conferir recebimento/fila. Nenhuma compra foi feita; checkout e PIX/cartão ainda aguardam homologação externa. Não liberar vendas públicas para gerar pedido de teste: usar ambiente isolado na próxima etapa.
+
+
+## Primeiro checkout externo de teste preparado
+
+Webhook simulado pelo painel aceito com HTTP 200 e registrado no banco: payment_id 123456, uma entrada na tabela de recebimentos. Por ser identificador fictício, consulta autenticada ao provedor não confirma compra; fila permanece em retry. Isso validou assinatura e persistência do recebimento, sem validar aprovação.
+
+`atlas-api/scripts/payment-sandbox.py` inicializa um cluster PostgreSQL próprio, porta aleatória em loopback, API 0.5.0 e fixtures fictícias de usuário/vínculo. Revalida vendedor brasileiro test_user e correspondência de collector antes de iniciar. Credenciais chegam somente pelo ambiente do processo e estado privado `.runtime/payment-sandbox` (diretório 0700, arquivos de configuração 0600); nenhum email SMTP é enviado. Vendas são habilitadas apenas neste processo isolado. O banco público permanece fechado para vendas.
+
+Primeiro pedido VIP 1 de 2500 centavos criado pela API, e preferência real de teste criada com sucesso pelo adaptador Mercado Pago. Estado persistido READY/test, pedido PENDING/WAITING e zero obrigações de entrega. Link fornecido ao dono para pagamento manual com comprador/cartão de teste; ainda não pago nesta execução. Prazo do pedido: 03/10/2026 14:14:34 America/Fortaleza.
+
+```bash
+python3 atlas-api/scripts/payment-sandbox.py --status
+python3 atlas-api/scripts/payment-sandbox.py --stop
+```
+
+O cluster/processo permanece disponível para conferir o pagamento após a ação do dono; --stop encerra somente o ambiente identificado e preserva evidências privadas. Não repetir criação enquanto existir estado privado: falha incerta precisa de inspeção, sem recriar preferência automaticamente. O retorno do checkout aponta ao site público, mas este pedido não aparecerá em Minhas compras de uma conta real porque pertence ao banco separado. A reconciliação do sandbox consulta o provedor a cada minuto; o webhook público pode receber o evento, porém não encontra este pedido em seu próprio banco e não gera entrega ali. Portanto a confirmação do pedido isolado será validada inicialmente por reconciliação, separadamente da validação do receiver público.
