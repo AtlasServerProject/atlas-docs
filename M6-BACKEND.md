@@ -59,3 +59,9 @@ Frontend commit 5701fd2 publicado automaticamente, deploy Pages ccf2d587-dc71-4e
 ## Pendências antes de abrir vendas
 
 Concluir cenários externos M5 (cartão recusado, PIX, expiração e compensação), confirmar regras/benefícios em jogo e validar autostart em reinício integral da VM. M7 deve completar monitoramento, restauração, incidentes e operação. Não alterar ATLAS_SALES_ENABLED nem credenciais para produção somente porque M6 foi instalado.
+
+## Homologação em jogo — 04/10/2026
+
+VFSomente teve DONO retirado para verificar permissões. Sem cargos, o jogador confirmou bloqueio de kit VIP e fly. Com VIP 1 manual, resgatou kit VIP, teve kit VIP 2 negado e ativou fly. Com VIP 3 manual, resgatou kits dos níveis 2/3 e manteve cooldown do nível 1. Cargos temporários foram removidos; o jogador confirmou bloqueio de kit VIP e fly. Após instalar 1.30.1, /clear também ficou indisponível à conta sem cargos. Esses testes de ranks manuais não comprovam entrega comercial, pausa/retomada ou expiração de saldo.
+
+Core 1.30.1 restringe /clear a ADM/ADMIN e DONO/OWNER, inclusive para jogadores OP. Core 1.30.2 adiciona /vip para consultar somente o próprio saldo comercial, nível ativo, término e níveis pausados. O comando não considera ranks manuais como compra. ADMIN do site não foi alterado durante os testes.
